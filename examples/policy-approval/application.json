@@ -1,0 +1,18 @@
+{
+  "schema_version": "aegis.application.v4",
+  "service_name": "policy-approval-agent",
+  "policy_file": "policy.json",
+  "tools": [
+    {
+      "name": "write",
+      "permission": "records.write",
+      "execution": "policy",
+      "tool_revision": "write-v1",
+      "graph": null
+    }
+  ],
+  "telemetry": {
+    "mode": "jsonl",
+    "path": "../../artifacts/policy-approval/traces.jsonl"
+  }
+}

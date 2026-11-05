@@ -1,0 +1,286 @@
+{
+  "spec": "SPEC-007",
+  "verified_on": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "basis": "Real LangGraph / ToolNode; synthetic official OpenAI SDK transport; real HTTP / PostgreSQL / Dashboard",
+  "versions": {
+    "langgraph": "1.2.15",
+    "langgraph-prebuilt": "1.1.1",
+    "langchain-core": "1.6.12",
+    "openai": "3.33.0",
+    "opentelemetry-sdk": "1.45.1"
+  },
+  "automated_methods": {
+    "sdk": 57,
+    "collector_protocol": 15,
+    "postgres_integration": 13,
+    "frontend": 23,
+    "python_total": 85,
+    "total": 108
+  },
+  "cli_comparisons": [
+    {
+      "scenario": "complete",
+      "async": false,
+      "execution": {
+        "mode": "offline",
+        "async": false,
+        "early_close": false,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "chunks": 3,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    },
+    {
+      "scenario": "early",
+      "async": false,
+      "execution": {
+        "mode": "offline",
+        "async": false,
+        "early_close": true,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "chunks": 1,
+        "before_counts": {
+          "model_calls": 1,
+          "tool_calls": 0
+        },
+        "after_counts": {
+          "model_calls": 1,
+          "tool_calls": 0
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 2,
+          "exported_spans": 2,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    },
+    {
+      "scenario": "handled-error",
+      "async": false,
+      "execution": {
+        "mode": "offline",
+        "async": false,
+        "early_close": false,
+        "handled_tool_error": true,
+        "equivalent": true,
+        "chunks": 3,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    },
+    {
+      "scenario": "complete",
+      "async": true,
+      "execution": {
+        "mode": "offline",
+        "async": true,
+        "early_close": false,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "chunks": 3,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    },
+    {
+      "scenario": "early",
+      "async": true,
+      "execution": {
+        "mode": "offline",
+        "async": true,
+        "early_close": true,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "chunks": 1,
+        "before_counts": {
+          "model_calls": 1,
+          "tool_calls": 0
+        },
+        "after_counts": {
+          "model_calls": 1,
+          "tool_calls": 0
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 2,
+          "exported_spans": 2,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    },
+    {
+      "scenario": "handled-error",
+      "async": true,
+      "execution": {
+        "mode": "offline",
+        "async": true,
+        "early_close": false,
+        "handled_tool_error": true,
+        "equivalent": true,
+        "chunks": 3,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        }
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    }
+  ],
+  "http": {
+    "trace_count": 8,
+    "span_count": 24,
+    "graph_outcomes": {
+      "cancelled": 1,
+      "error": 1,
+      "completed": 4,
+      "closed": 2
+    },
+    "statuses": {
+      "ERROR": 4,
+      "UNSET": 4
+    },
+    "parentage_verified": true,
+    "privacy_whitelist_verified": true,
+    "status_filters_verified": true
+  },
+  "browser": {
+    "list_verified": true,
+    "early_close_detail_verified": true,
+    "screenshots": [
+      "artifacts/langgraph-stream/dashboard-list.jpg",
+      "artifacts/langgraph-stream/dashboard-closed.jpg"
+    ]
+  },
+  "packaging": {
+    "wheel_isolated_install": true,
+    "optional_langgraph_import": true
+  },
+  "builds": {
+    "windows_typescript_vite": true,
+    "docker_collector_dashboard": true
+  },
+  "database_migration_versions": [
+    1,
+    2
+  ],
+  "new_provider_requests": 0,
+  "limits": [
+    "No event projection or checkpoint/interrupt/resume acceptance",
+    "No native LangChain ChatModel adapter",
+    "No framework with real provider acceptance",
+    "No new-user onboarding timing claim"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 66,
+    "local_links": 248,
+    "official_source_ids": 31,
+    "python_pins": 59,
+    "dependency_conflicts": 0,
+    "credential_pattern_scan_files": 160
+  },
+  "cleanup": {
+    "browser_tab_closed": true,
+    "compose_down_completed": false,
+    "reason": "Docker Linux Engine pipe unavailable during final cleanup",
+    "containers_or_volume_deleted": false,
+    "follow_up_command": "docker compose -p aegis-spec007-check down"
+  },
+  "cleanup_follow_up": {
+    "verified_on": "2026-10-18",
+    "compose_down_completed": true,
+    "volume_preserved": true,
+    "completed_during": "SPEC-008 platform acceptance"
+  }
+}

@@ -1,0 +1,510 @@
+{
+  "schema_version": "aegis.resources.v1",
+  "timezone": "Asia/Shanghai",
+  "representation": "Official source links and original curated notes; no full third-party document mirrors.",
+  "sources": [
+    {
+      "id": "otel-python-instrumentation",
+      "title": "OpenTelemetry Python Instrumentation",
+      "url": "https://opentelemetry.io/docs/languages/python/instrumentation/",
+      "used_by": [
+        "SPEC-001"
+      ],
+      "version": null,
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "otel-python-trace",
+      "title": "OpenTelemetry Python Trace SDK API",
+      "url": "https://opentelemetry-python.readthedocs.io/en/latest/sdk/trace.html",
+      "used_by": [
+        "SPEC-001"
+      ],
+      "version": "verified against installed opentelemetry-sdk 1.45.1",
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "otel-python-export",
+      "title": "OpenTelemetry Python Export API",
+      "url": "https://opentelemetry-python.readthedocs.io/en/latest/sdk/trace.export.html",
+      "used_by": [
+        "SPEC-001"
+      ],
+      "version": "verified against installed opentelemetry-sdk 1.45.1",
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "genai-agent-spans",
+      "title": "GenAI agent and framework spans",
+      "url": "https://github.com/open-telemetry/semantic-conventions-genai/blob/5293effb97f18ddb0602da884dadee6119d67679/docs/gen-ai/gen-ai-agent-spans.md",
+      "used_by": [
+        "SPEC-001"
+      ],
+      "version": "5293effb97f18ddb0602da884dadee6119d67679",
+      "git_blob_sha": "884e9d2b5ba16fcc2f03d223b52b39a6df773e8e",
+      "source_sha256": "018ffd339be99c7e56ddba7265dd3095ca0735ddf680d28f96036043641384f4",
+      "stability": "Development",
+      "verification": "Read the exact committed document through the official GitHub contents API.",
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "otlp",
+      "title": "OTLP Specification",
+      "url": "https://opentelemetry.io/docs/specs/otlp/",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "version": "OTLP specification 1.11.0; tested native-span HTTP binary Protobuf subset",
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "fastapi",
+      "title": "FastAPI First Steps",
+      "url": "https://fastapi.tiangolo.com/tutorial/first-steps/",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "version": null,
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "postgresql-json",
+      "title": "PostgreSQL JSON Types",
+      "url": "https://www.postgresql.org/docs/18/datatype-json.html",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "version": "18",
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "vue",
+      "title": "Vue Introduction",
+      "url": "https://vuejs.org/guide/introduction.html",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "version": "3.5.44 tested",
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "langgraph",
+      "title": "LangGraph Overview",
+      "url": "https://docs.langchain.com/oss/python/langgraph/overview",
+      "used_by": [
+        "future LangGraph spec"
+      ],
+      "version": null,
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "otel-package",
+      "title": "OpenTelemetry SDK package",
+      "url": "https://pypi.org/project/opentelemetry-sdk/1.45.1/",
+      "used_by": [
+        "SPEC-001"
+      ],
+      "version": "1.45.1",
+      "accessed_on": "2026-10-13",
+      "content_saved": false
+    },
+    {
+      "id": "otlp-python-http",
+      "title": "Official Python OTLP Exporter",
+      "url": "https://opentelemetry-python.readthedocs.io/en/latest/exporter/otlp/otlp.html",
+      "version": "1.45.1 installed source and actual HTTP tests",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "fastapi-testing",
+      "title": "FastAPI Testing",
+      "url": "https://fastapi.tiangolo.com/tutorial/testing/",
+      "version": "FastAPI 0.143.0 tested",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "psycopg",
+      "title": "Psycopg 3 Basic Usage",
+      "url": "https://www.psycopg.org/psycopg3/docs/basic/usage.html",
+      "version": "3.3.6 tested",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "postgresql-insert",
+      "title": "PostgreSQL INSERT / ON CONFLICT",
+      "url": "https://www.postgresql.org/docs/18/sql-insert.html",
+      "version": "Documentation 18; actual database 16.15",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "postgres-image",
+      "title": "Docker Official PostgreSQL Image",
+      "url": "https://hub.docker.com/_/postgres",
+      "version": "16.15; pinned Compose image digest",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "python-image",
+      "title": "Docker Official Python Image",
+      "url": "https://hub.docker.com/_/python",
+      "version": "3.12-slim; tested Python 3.12.15",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "pypi-metadata",
+      "title": "PyPI JSON API",
+      "url": "https://docs.pypi.org/api/json/",
+      "version": "Exact release metadata / wheel hashes in downloads/",
+      "used_by": [
+        "SPEC-002"
+      ],
+      "accessed_on": "2026-10-14",
+      "content_saved": false
+    },
+    {
+      "id": "vite",
+      "title": "Vite Getting Started",
+      "url": "https://vite.dev/guide/",
+      "version": "8.3.4 tested, Node 22.23.2",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "lossless-json",
+      "title": "lossless-json official repository",
+      "url": "https://github.com/josdejong/lossless-json",
+      "version": "4.3.1; parseNumber callback verified in installed types/source",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "echarts",
+      "title": "ECharts chart sizing and lifecycle",
+      "url": "https://echarts.apache.org/handbook/en/concepts/chart-size/",
+      "version": "6.1.0 tested",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "node-image",
+      "title": "Docker Official Node Image",
+      "url": "https://hub.docker.com/_/node",
+      "version": "22-slim build target; actual verification in SPEC-003 tasks",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "nginx-image",
+      "title": "Docker Official Nginx Image",
+      "url": "https://hub.docker.com/_/nginx",
+      "version": "nginx:alpine / 1.31.7 downloaded and checked",
+      "used_by": [
+        "SPEC-003"
+      ],
+      "accessed_on": "2026-10-15",
+      "content_saved": false
+    },
+    {
+      "id": "openai-python-sdk",
+      "title": "OpenAI Python SDK Reference",
+      "url": "https://developers.openai.com/api/reference/python",
+      "used_by": [
+        "SPEC-004"
+      ],
+      "version": "OpenAI 3.33.0 installed implementation verified",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "openai-responses-stream",
+      "title": "OpenAI Responses streaming guide",
+      "url": "https://developers.openai.com/api/docs/guides/streaming-responses",
+      "used_by": [
+        "SPEC-004"
+      ],
+      "version": null,
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "openai-chat-stream",
+      "title": "OpenAI Chat Completions streaming events",
+      "url": "https://developers.openai.com/api/reference/resources/chat/subresources/completions/streaming-events",
+      "used_by": [
+        "SPEC-004"
+      ],
+      "version": null,
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "openai-pypi-333",
+      "title": "Official OpenAI 3.33.0 package metadata",
+      "url": "https://pypi.org/project/openai/3.33.0/",
+      "used_by": [
+        "SPEC-004"
+      ],
+      "version": "3.33.0",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "deepseek-first-call",
+      "title": "DeepSeek official first API call / current model alias",
+      "url": "https://api-docs.deepseek.com/",
+      "used_by": [
+        "SPEC-005"
+      ],
+      "version": "accessed 2026-10-17; deepseek-flash Chat live matrix verified, thinking disabled",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "deepseek-chat-reference",
+      "title": "DeepSeek official Chat Completions API",
+      "url": "https://api-docs.deepseek.com/api/create-chat-completion/",
+      "used_by": [
+        "SPEC-005"
+      ],
+      "version": "accessed 2026-10-17; deepseek-flash Chat live matrix verified, thinking disabled",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "langgraph-quickstart",
+      "title": "LangGraph official Graph / Functional API quickstart",
+      "url": "https://docs.langchain.com/oss/python/langgraph/quickstart",
+      "used_by": [
+        "SPEC-006"
+      ],
+      "version": "LangGraph 1.2.15 verified; streaming not implemented",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "langgraph-streaming",
+      "title": "LangGraph official streaming modes and boundaries",
+      "url": "https://docs.langchain.com/oss/python/langgraph/streaming",
+      "used_by": [
+        "SPEC-006",
+        "SPEC-007"
+      ],
+      "version": "LangGraph 1.2.15; stream/astream state modes verified; event projection and checkpoint recovery not accepted",
+      "accessed_on": "2026-10-17",
+      "content_saved": false,
+      "last_verified_on": "2026-10-18"
+    },
+    {
+      "id": "langgraph-pypi-1215",
+      "title": "Official LangGraph 1.2.15 package metadata",
+      "url": "https://pypi.org/project/langgraph/1.2.15/",
+      "used_by": [
+        "SPEC-006"
+      ],
+      "version": "LangGraph 1.2.15 verified; streaming not implemented",
+      "accessed_on": "2026-10-17",
+      "content_saved": false
+    },
+    {
+      "id": "owasp-authorization",
+      "title": "OWASP Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html",
+      "used_by": [
+        "SPEC-009"
+      ],
+      "version": "accessed 2026-10-18; authorization principles, not a compatibility certification",
+      "accessed_on": "2026-10-18",
+      "content_saved": false
+    },
+    {
+      "id": "owasp-transaction-authorization",
+      "title": "OWASP Transaction Authorization Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Transaction_Authorization_Cheat_Sheet.html",
+      "used_by": [
+        "SPEC-010",
+        "SPEC-011"
+      ],
+      "version": "design principles only; preparation records do not authorize execution",
+      "accessed_on": "2026-10-18",
+      "content_saved": false
+    },
+    {
+      "id": "httpx-async",
+      "title": "HTTPX Async Support",
+      "url": "https://www.python-httpx.org/async/",
+      "used_by": [
+        "SPEC-012"
+      ],
+      "version": "Design reference; HTTPX 0.28.1 / Python 3.12.14 tested locally",
+      "accessed_on": "2026-10-20",
+      "content_saved": false
+    },
+    {
+      "id": "httpx-timeouts",
+      "title": "HTTPX Timeouts",
+      "url": "https://www.python-httpx.org/advanced/timeouts/",
+      "used_by": [
+        "SPEC-012"
+      ],
+      "version": "Design reference; HTTPX 0.28.1 / Python 3.12.14 tested locally",
+      "accessed_on": "2026-10-20",
+      "content_saved": false
+    },
+    {
+      "id": "python311-asyncio-task",
+      "title": "Python 3.11 asyncio tasks and cancellation",
+      "url": "https://docs.python.org/3.11/library/asyncio-task.html",
+      "used_by": [
+        "SPEC-012"
+      ],
+      "version": "Design reference; HTTPX 0.28.1 / Python 3.12.14 tested locally",
+      "accessed_on": "2026-10-20",
+      "content_saved": false
+    },
+    {
+      "id": "langgraph-interrupts",
+      "title": "LangGraph Interrupts",
+      "url": "https://docs.langchain.com/oss/python/langgraph/interrupts",
+      "used_by": [
+        "SPEC-013",
+        "SPEC-015"
+      ],
+      "version": "LangGraph1.2.15 / checkpoint4.3.0 tested; rolling documentation not a support matrix",
+      "accessed_on": "2026-10-20",
+      "content_saved": false,
+      "last_verified_on": "2026-10-22"
+    },
+    {
+      "id": "langgraph-persistence",
+      "title": "LangGraph Persistence",
+      "url": "https://docs.langchain.com/oss/python/langgraph/persistence",
+      "used_by": [
+        "SPEC-013",
+        "SPEC-014",
+        "SPEC-015"
+      ],
+      "version": "LangGraph1.2.15 / checkpoint4.3.0 tested; rolling documentation not a support matrix",
+      "accessed_on": "2026-10-20",
+      "content_saved": false,
+      "last_verified_on": "2026-10-22"
+    },
+    {
+      "id": "langgraph-sqlite-312",
+      "title": "Official LangGraph SQLite Checkpoint3.1.2",
+      "url": "https://pypi.org/project/langgraph-checkpoint-sqlite/3.1.2/",
+      "used_by": [
+        "SPEC-014",
+        "SPEC-015"
+      ],
+      "version": "3.1.2",
+      "accessed_on": "2026-10-22",
+      "content_saved": false,
+      "verification": "Official PyPI JSON metadata and downloaded wheel SHA256 for Windows/Linux",
+      "last_verified_on": "2026-10-22"
+    },
+    {
+      "id": "aiosqlite-0221",
+      "title": "Official aiosqlite0.22.1",
+      "url": "https://pypi.org/project/aiosqlite/0.22.1/",
+      "used_by": [
+        "SPEC-014",
+        "SPEC-015"
+      ],
+      "version": "0.22.1",
+      "accessed_on": "2026-10-22",
+      "content_saved": false,
+      "verification": "Official PyPI JSON metadata and downloaded wheel SHA256 for Windows/Linux",
+      "last_verified_on": "2026-10-22"
+    },
+    {
+      "id": "sqlite-vec-019",
+      "title": "Official sqlite-vec0.1.9",
+      "url": "https://pypi.org/project/sqlite-vec/0.1.9/",
+      "used_by": [
+        "SPEC-014"
+      ],
+      "version": "0.1.9",
+      "accessed_on": "2026-10-22",
+      "content_saved": false,
+      "verification": "Official PyPI JSON metadata and downloaded wheel SHA256 for Windows/Linux"
+    },
+    {
+      "id": "actions-checkout",
+      "title": "Official GitHub Actions checkout",
+      "url": "https://raw.githubusercontent.com/actions/checkout/11bd71901bbe5b1630ceea73d27597364c9af683/action.yml",
+      "version": "11bd71901bbe5b1630ceea73d27597364c9af683",
+      "used_by": [
+        "SPEC-018"
+      ],
+      "accessed_on": "2026-10-23",
+      "content_saved": false
+    },
+    {
+      "id": "actions-setup-python",
+      "title": "Official GitHub Actions setup-python",
+      "url": "https://raw.githubusercontent.com/actions/setup-python/a26af69be951a213d495a4c3e4e4022e16d87065/action.yml",
+      "version": "a26af69be951a213d495a4c3e4e4022e16d87065",
+      "used_by": [
+        "SPEC-018"
+      ],
+      "accessed_on": "2026-10-23",
+      "content_saved": false
+    },
+    {
+      "id": "actions-setup-node",
+      "title": "Official GitHub Actions setup-node",
+      "url": "https://raw.githubusercontent.com/actions/setup-node/49933ea5288caeca8642d1e84afbd3f7d6820020/action.yml",
+      "version": "49933ea5288caeca8642d1e84afbd3f7d6820020",
+      "used_by": [
+        "SPEC-018"
+      ],
+      "accessed_on": "2026-10-23",
+      "content_saved": false
+    }
+  ]
+}

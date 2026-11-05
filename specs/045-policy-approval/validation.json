@@ -1,0 +1,320 @@
+{
+  "spec": "SPEC-045",
+  "status": "passed",
+  "verified_on": "2026-10-29",
+  "snapshot": {
+    "schema_version": "aegis.snapshot-check.v1",
+    "status": "passed",
+    "steps": [
+      {
+        "stage": "dependencies",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "repository",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "python",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "dashboard",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "source",
+        "status": "passed"
+      }
+    ],
+    "scope": "Local working-tree candidate bytes; no Git history, remote CI or publication approval.",
+    "before": {
+      "files": 584,
+      "sha256": "9eaee40e2c145b63f0bd63a15d3297b535f5ebb29d2ece2fe0421e3e59243e6c"
+    },
+    "python_tests": 376,
+    "frontend_tests": 102,
+    "after": {
+      "files": 584,
+      "sha256": "9eaee40e2c145b63f0bd63a15d3297b535f5ebb29d2ece2fe0421e3e59243e6c"
+    }
+  },
+  "python": {
+    "run": 376,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 126,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 76,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 57,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 2.308
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.885
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.86
+      }
+    ],
+    "tests": {
+      "run": 102,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 41628,
+        "all_js": 619349,
+        "all_css": 28527
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-BrRn_7Pk.css",
+          "bytes": 2379,
+          "gzip_bytes": 696,
+          "sha256": "cda1e76c64254d42d3d6c5aa7085778b5dc592e3796e75f0e9b7c4840bf8c95b",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-C1aFQX_e.js",
+          "bytes": 16309,
+          "gzip_bytes": 6276,
+          "sha256": "9d25be46b5d27f994b52d85c535dcb38b3778ceb4868813179ea1a33e2fa4410",
+          "entry": false
+        },
+        {
+          "path": "assets/index-BpYXuiBc.js",
+          "bytes": 110886,
+          "gzip_bytes": 41628,
+          "sha256": "387420e26d757f4ffb4123511ca191c91290f2258416e82ab0e53f304cb8273d",
+          "entry": true
+        },
+        {
+          "path": "assets/index-C-agaLmL.css",
+          "bytes": 22456,
+          "gzip_bytes": 5467,
+          "sha256": "1bbca80af337718d9fb6bd9d6c9348785cc537597965dc6ca647e019cf33b6f1",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-CmsMp0gL.js",
+          "bytes": 10653,
+          "gzip_bytes": 4639,
+          "sha256": "e1a500535bf7fbd6b01779dbbc9057fafd8bdbc82b56db40584d793e39972566",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-DB1x439K.css",
+          "bytes": 1012,
+          "gzip_bytes": 431,
+          "sha256": "f4d6b61ba5df41defdf6386719350373ac000ccdfa11b413ea20c42f70b804c5",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-BDP_UBfO.js",
+          "bytes": 1537,
+          "gzip_bytes": 714,
+          "sha256": "be013e6226cee9f4216e43069a430dba78856b7992ba38cf77c5c1a8c23c3f57",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-B4w19EKx.js",
+          "bytes": 479964,
+          "gzip_bytes": 160873,
+          "sha256": "ed47033dc4d16d63df51fe2a511cd63489850579278c704a8259d907e47da8aa",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Cu99np3M.css",
+          "bytes": 2680,
+          "gzip_bytes": 778,
+          "sha256": "e4d3e86a72ec898103e19142a76e3774ae8b4091fd485497483f7b6f6e8b5e6f",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "method_catalogue_total": 478,
+  "full_regression_evidence": "artifacts/spec045/final",
+  "installation": {
+    "profiles": {
+      "core": {
+        "python_source_matches": true,
+        "pending_zero_calls": true,
+        "resume_once": true,
+        "repeat_blocked": true,
+        "allow_direct": true,
+        "deny_zero_calls": true,
+        "langsmith_disabled": true,
+        "site_packages_disabled": true
+      },
+      "graph": {
+        "python_source_matches": true,
+        "pending_zero_calls": true,
+        "resume_once": true,
+        "repeat_blocked": true,
+        "allow_direct": true,
+        "deny_zero_calls": true,
+        "langsmith_disabled": true,
+        "site_packages_disabled": true
+      }
+    },
+    "offline_install": true,
+    "isolated_flags": [
+      "-I",
+      "-S"
+    ],
+    "policy_only": {
+      "standard_library_only": true,
+      "sdk_absent": true,
+      "v2_explain_passed": true
+    },
+    "wheel_hashes": {
+      "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl": "174cacebf9e829626c348d063846382c1da24dde43f0866ebeb2d3e93e0f09b3",
+      "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl": "060b18159bfffedcd7e7f3a37ce3f848ae45e0a0b0c89dfeb81981632ea3af85",
+      "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl": "7ed243597834fbafa6d55b133dbc3673e7936945af72e494494396081ba664bc"
+    }
+  },
+  "installation_evidence": "artifacts/spec045/installed-validation.json",
+  "added_python_methods": 19,
+  "added_frontend_methods": 4,
+  "postgres_matrix": {
+    "added_methods": 4,
+    "profiles": "native / actual StateGraph x sync / async x reader / reviewer / blocked, new host processes",
+    "bindings": "pending, rejected, expired, parameters, policy, tool revision and tampered ticket all prevent execution",
+    "failures": "concurrent claims, lost prepare response with stable action ID, lost claim, partial failure, cancellation and lost completion preserve no-business-retry boundary",
+    "legacy_floor": "forced reviewed path still requires approval even when policy allows",
+    "events": "16 exported events including 8 governance-v2; offline verify and candidate-allow replay retain original outcomes"
+  },
+  "browser": {
+    "preview": "http://127.0.0.1:5199",
+    "collector": "http://127.0.0.1:8859",
+    "database_schema": "ui045, isolated from retained ui029",
+    "action_id": "d01c1edc200d4b268a65e3cb11d9ce70",
+    "request_trace_id": "d1b8693528daf552d1349119d0ec91c2",
+    "request_span_id": "00ca5d5c01384c71",
+    "execution_trace_id": "9d2412737722a74b4bf3f44f1c983444",
+    "execution_span_id": "569d326515659944",
+    "approval": "all parameters acknowledged then approved; synthetic business file still absent",
+    "resume": "independently installed async StateGraph host wrote one row; second resume unavailable with one row retained",
+    "event_query": "exact action ID returns waiting snapshot plus completed execution, each with correct Trace/Span",
+    "request_inspector": "request phase explicitly does not execute tool; Agent return does not mean business completed; excluded from call-duration rank",
+    "mobile": {
+      "viewport_width": 390,
+      "document_width": 375,
+      "keyboard_return": "exact original action query"
+    },
+    "screenshots": [
+      "artifacts/ui045/review-pending.png",
+      "artifacts/ui045/review-completed.png",
+      "artifacts/ui045/action-events.png",
+      "artifacts/ui045/request-node.png",
+      "artifacts/ui045/request-mobile.png",
+      "artifacts/ui045/events-mobile.png"
+    ]
+  },
+  "compatibility": {
+    "current_openapi": "specs/045-policy-approval/contracts/openapi.json",
+    "020_change": "only effect=require_approval and outcome=awaiting_approval enum additions; otherwise exact equality tested",
+    "legacy": "policy v1 digest/fingerprint bytes, ordinary allow/deny governance v1, old forced-review paths and four SQL migrations preserved",
+    "dependencies": "62 Python pins and existing npm lock retained; no new external packages",
+    "client_limit": "old binary enum clients must upgrade to read new third-decision records"
+  },
+  "failed_first_run": {
+    "evidence": "artifacts/spec045/verification",
+    "failure": "existing platform diagnostics test fixture shutdown exceeded 5 seconds on Windows",
+    "fix": "bounded keepalive/graceful shutdown, Selector event loop in test worker, schema drop in nested finally",
+    "targeted_recheck": "two clean repetitions passed before the complete replacement run",
+    "cleanup": "only verified orphan platform-check test schema removed after no live test process; ui029/ui045 retained"
+  },
+  "provenance": "Full snapshot hashes cover candidate bytes during the complete test run. Later validation archival and document status changes are outside that run hash; no executable source changed after it.",
+  "limits": [
+    "No real LLM request; no GitHub remote, commit, push or publication.",
+    "Example uses explicit StateGraph request/resume driver and persisted approval ticket, not checkpointer recovery.",
+    "Historical waiting telemetry is not current pending approval state.",
+    "No production identity, tenancy, multi-interrupt, multi-host coordination or cross-system exactly-once guarantee.",
+    "Independent installation used cached official wheels; online first-time onboarding not measured."
+  ],
+  "final_audit": {
+    "candidate_files": 585,
+    "issues": 0,
+    "markdown_documents": 241,
+    "local_links": 821,
+    "official_protocol_ids": 44,
+    "python_pins": 62,
+    "dependency_caches": "Both platform wheel hashes matched; historical versions and receipts retained",
+    "current_openapi": "Exact current application snapshot matched"
+  },
+  "continuation": "One SPEC per continue. SPEC-045 complete; stop without starting SPEC-046."
+}

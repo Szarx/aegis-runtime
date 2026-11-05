@@ -1,0 +1,7 @@
+{
+  "schema_version":"aegis.application.v1",
+  "service_name":"configured-agent",
+  "policy_file":"policy.json",
+  "tools":[{"name":"lookup_order","permission":"orders.read"}],
+  "telemetry":{"mode":"otlp","endpoint":"http://127.0.0.1:8000/v1/traces","token_env":"AEGIS_API_TOKEN","timeout_millis":3000}
+}

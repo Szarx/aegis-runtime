@@ -1,0 +1,184 @@
+{
+  "spec": "SPEC-009",
+  "verified_on": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "policy": 5,
+    "runtime": 7,
+    "sdk": 59,
+    "collector_protocol": 18,
+    "postgres_integration": 14,
+    "onboarding": 8,
+    "python_total": 111,
+    "frontend": 26,
+    "total": 137,
+    "new_methods": 21
+  },
+  "postgres_skipped": 0,
+  "cli_scenarios": [
+    [
+      {
+        "mode": "local-synthetic",
+        "async": false,
+        "scenarios": [
+          {
+            "scenario": "allow",
+            "tool_calls": 1,
+            "outcome": "completed"
+          },
+          {
+            "scenario": "explicit-deny",
+            "tool_calls": 0,
+            "outcome": "denied"
+          },
+          {
+            "scenario": "default-deny",
+            "tool_calls": 0,
+            "outcome": "denied"
+          },
+          {
+            "scenario": "allowed-error",
+            "tool_calls": 1,
+            "outcome": "error"
+          }
+        ]
+      },
+      {
+        "diagnostics": {
+          "accepted_spans": 8,
+          "exported_spans": 8,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    ],
+    [
+      {
+        "mode": "local-synthetic",
+        "async": true,
+        "scenarios": [
+          {
+            "scenario": "allow",
+            "tool_calls": 1,
+            "outcome": "completed"
+          },
+          {
+            "scenario": "explicit-deny",
+            "tool_calls": 0,
+            "outcome": "denied"
+          },
+          {
+            "scenario": "default-deny",
+            "tool_calls": 0,
+            "outcome": "denied"
+          },
+          {
+            "scenario": "allowed-error",
+            "tool_calls": 1,
+            "outcome": "error"
+          }
+        ]
+      },
+      {
+        "diagnostics": {
+          "accepted_spans": 8,
+          "exported_spans": 8,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true
+      }
+    ]
+  ],
+  "database": {
+    "trace_count": 8,
+    "span_count": 16,
+    "action_count": 8,
+    "migration_versions": [
+      1,
+      2
+    ]
+  },
+  "http": {
+    "trace_count": 8,
+    "span_count": 16,
+    "allow_decisions": 4,
+    "deny_decisions": 4,
+    "completed_actions": 2,
+    "denied_actions": 4,
+    "error_actions": 2,
+    "unique_action_ids": 8,
+    "parentage_verified": true,
+    "status_counts": {
+      "UNSET": 2,
+      "ERROR": 6
+    }
+  },
+  "browser": {
+    "denied_before_execution": true,
+    "fixed_reason_subject_policy_rule_action_visible": true,
+    "allowed_decision_with_business_error": true,
+    "screenshot": "artifacts/runtime-policy/dashboard-denied.jpg",
+    "temporary_tab_closed": true
+  },
+  "builds": {
+    "windows_typescript_vite": true,
+    "docker_collector_dashboard": true
+  },
+  "local_wheels": [
+    {
+      "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "ff3f163c5cec0e24c20f5f33d22ba7abcef295a3d86ae70a5ebeb49fc773ed86",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "de29171e243084c40061534941c56a2b6eaacb1e9c0b8f543751ac6426c14940",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "52a66ba4cc1de37954e5553ad7a1aa0c2e8ade1acf57939b7f06ee33c1d01bdd",
+      "source": "local workspace build"
+    }
+  ],
+  "isolated_install_verified": true,
+  "optional_frameworks_not_imported": true,
+  "pip_check": "passed",
+  "openapi_snapshot": "specs/007-langgraph-stream/contracts/openapi.json",
+  "openapi_shape_changed": false,
+  "new_provider_requests": 0,
+  "third_party_dependency_baseline_changed": false,
+  "limits": [
+    "Host-bound local identity is not external authentication",
+    "Explicit protected wrappers are not a process sandbox",
+    "Async telemetry is not durable or tamper-proof audit",
+    "No approval/resume/remote policy/tenant isolation acceptance"
+  ],
+  "cleanup": {
+    "compose_down_completed": true,
+    "remaining_project_containers": 0,
+    "database_volume_preserved": true
+  },
+  "runtime_exporter_fault_verified": true,
+  "framework_test_external_tracing_disabled": true,
+  "delivery_checks": {
+    "markdown_documents": 76,
+    "local_links": 302,
+    "official_source_ids": 32,
+    "python_pins": 59,
+    "openapi_unchanged": true,
+    "artifact_ignores_verified": true,
+    "credential_pattern_scan_files": 189
+  }
+}

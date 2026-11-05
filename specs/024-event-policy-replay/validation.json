@@ -1,0 +1,188 @@
+{
+  "spec": "SPEC-024",
+  "verified_on": "2026-10-25",
+  "status": "passed",
+  "python_tests": {
+    "run": 263,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 43,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 42,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 9,
+  "previous_methods_rerun": 305,
+  "current_catalogue": 314,
+  "real_chain": {
+    "sdk_otlp_http_postgres": true,
+    "attempts": 25,
+    "spans": 50,
+    "business_calls_at_seed": 15,
+    "exported_events": 25,
+    "collector_stopped_before_replay": true,
+    "allow_candidate": {
+      "widened": 5,
+      "narrowed": 0,
+      "decision_changed": 0,
+      "unchanged": 20
+    },
+    "deny_candidate": {
+      "widened": 0,
+      "narrowed": 15,
+      "decision_changed": 5,
+      "unchanged": 5
+    },
+    "recorded_outcomes": {
+      "completed": 5,
+      "denied": 10,
+      "error": 5,
+      "cancelled": 5
+    }
+  },
+  "isolated": {
+    "kind": "synthetic bundle; actual SDK/HTTP/PG chain separately tested",
+    "python_flags": [
+      "-I",
+      "-S"
+    ],
+    "policy_target": "SPEC-023 wheel",
+    "no_sdk_runtime_collector_or_otel_imports": true,
+    "third_party_dependencies": false,
+    "summary": {
+      "counts": {
+        "decision_changed": 1,
+        "narrowed": 2,
+        "unchanged": 2,
+        "widened": 1
+      },
+      "events_total": 6,
+      "recorded_outcomes": {
+        "cancelled": 1,
+        "completed": 1,
+        "denied": 3,
+        "error": 1
+      },
+      "revision_differences": 0,
+      "status": "review_required"
+    },
+    "exact_nano": 1790000000000000001,
+    "script_sha256": "3f5854c26606c142a3c0f3972fa9f3a4c94dfc021b127ac296b2118cfe809cbc"
+  },
+  "docker": {
+    "project": "aegis-spec024-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec024-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "policy_package": true,
+    "sdk": true,
+    "runtime_implementation": true,
+    "collector": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020",
+    "policy_wheel": "SPEC-023"
+  },
+  "real_provider_requests": 0,
+  "original_tools_reexecuted": false,
+  "policies_automatically_applied": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Counterfactual decisions for received telemetry only; no actual tool execution or prediction of business outcome",
+    "No trusted historical policy content; matching revision is not proof of matching configuration",
+    "Source hashes do not authenticate records, ensure completeness or grant deployment/approval authority",
+    "No new core package, image build or browser acceptance"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 160,
+    "local_links": 601,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 403,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

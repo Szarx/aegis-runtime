@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-17",
+  "framework": "LangGraph",
+  "version": "1.2.15",
+  "langchain_core": "1.6.12",
+  "langgraph_prebuilt": "1.1.1",
+  "provider_transport": "synthetic HTTP JSON parsed by official OpenAI SDK",
+  "real_provider_requests": 0,
+  "trace_count": 4,
+  "span_count": 16,
+  "comparison": [
+    {
+      "async": false,
+      "handled_tool_error": false,
+      "execution": {
+        "mode": "offline",
+        "framework": "langgraph",
+        "async": false,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "cached_comparison_ms": 251.231
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true,
+        "cached_first_flush_ms": 276.528
+      }
+    },
+    {
+      "async": false,
+      "handled_tool_error": true,
+      "execution": {
+        "mode": "offline",
+        "framework": "langgraph",
+        "async": false,
+        "handled_tool_error": true,
+        "equivalent": true,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "cached_comparison_ms": 196.073
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true,
+        "cached_first_flush_ms": 216.699
+      }
+    },
+    {
+      "async": true,
+      "handled_tool_error": false,
+      "execution": {
+        "mode": "offline",
+        "framework": "langgraph",
+        "async": true,
+        "handled_tool_error": false,
+        "equivalent": true,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "cached_comparison_ms": 221.494
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true,
+        "cached_first_flush_ms": 245.356
+      }
+    },
+    {
+      "async": true,
+      "handled_tool_error": true,
+      "execution": {
+        "mode": "offline",
+        "framework": "langgraph",
+        "async": true,
+        "handled_tool_error": true,
+        "equivalent": true,
+        "before_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "after_counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "cached_comparison_ms": 223.86
+      },
+      "lifecycle": {
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "flush": true,
+        "shutdown": true,
+        "cached_first_flush_ms": 245.599
+      }
+    }
+  ],
+  "python_test_methods": {
+    "sdk": 47,
+    "collector_protocol": 12,
+    "real_postgres": 12
+  },
+  "frontend": "unchanged; SPEC-005 20 methods retained as historical evidence",
+  "explicit_integration_points": 3,
+  "minimal_added_lines_excluding_initialization_and_cleanup": 6,
+  "cold_onboarding_measured": false,
+  "limitations": [
+    "invoke/ainvoke only",
+    "no graph streaming acceptance",
+    "no checkpoint/interrupt recovery acceptance",
+    "no native ChatModel adapter",
+    "no framework live-provider acceptance"
+  ]
+}

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-runtime-sdk"
+version = "0.1.0.dev0"
+description = "Aegis native Python agent tracing development SDK"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "opentelemetry-api==1.45.1",
+    "opentelemetry-sdk==1.45.1",
+]
+
+[project.optional-dependencies]
+otlp = ["opentelemetry-exporter-otlp-proto-http==1.45.1"]
+openai = ["openai==3.33.0"]
+deepseek = ["openai==3.33.0"]
+langgraph = ["langgraph==1.2.15"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aegis*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+aegis = ["py.typed"]

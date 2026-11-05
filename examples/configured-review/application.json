@@ -1,0 +1,7 @@
+{
+  "schema_version":"aegis.application.v2",
+  "service_name":"configured-review",
+  "policy_file":"policy.json",
+  "tools":[{"name":"write","permission":"records.write","execution":"reviewed","tool_revision":"write-v1"}],
+  "telemetry":{"mode":"jsonl","path":"../../artifacts/configured-review/traces.jsonl"}
+}

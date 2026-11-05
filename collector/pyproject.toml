@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-runtime-collector"
+version = "0.1.0.dev0"
+description = "Aegis native-span OTLP collector and PostgreSQL query service"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.143.0",
+    "uvicorn==0.54.0",
+    "psycopg[binary]==3.3.6",
+    "opentelemetry-proto==1.45.1",
+    "googleapis-common-protos==1.75.5",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aegis_collector*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+"aegis_collector.storage" = ["migrations/*.sql"]

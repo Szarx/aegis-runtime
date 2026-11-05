@@ -1,0 +1,141 @@
+{
+  "spec": "SPEC-037",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 72,
+  "new_methods": 4,
+  "python_inherited_from": "SPEC-035",
+  "python_methods": 339,
+  "catalogue": 411,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.571
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.713
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.839
+      }
+    ],
+    "tests": {
+      "run": 72,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 38452,
+        "all_js": 606166,
+        "all_css": 25767
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-DpkyM5rZ.css",
+          "bytes": 1658,
+          "gzip_bytes": 543,
+          "sha256": "44d8a2d9c8961bcdd9efbe0a3b1b22437add821b8cfcc0e75e9f67eb154cc193",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-DyM3MmkH.js",
+          "bytes": 14804,
+          "gzip_bytes": 5728,
+          "sha256": "5d2462df36176c94f238cd0fa056c513ef233d0ec63c74895dee060ca95cb90b",
+          "entry": false
+        },
+        {
+          "path": "assets/index-BBIKF6Ne.js",
+          "bytes": 100610,
+          "gzip_bytes": 38452,
+          "sha256": "e3624319c79551f75459ac6575a71f36d48591cb9d2ccc241108b13b2b6fbc07",
+          "entry": true
+        },
+        {
+          "path": "assets/index-IrZFiLxg.css",
+          "bytes": 22013,
+          "gzip_bytes": 5377,
+          "sha256": "89abcb0472a9ed2e9537813381742ad6cd611e71f9e9200370d4c73dd63562d3",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-C3KQoIo8.css",
+          "bytes": 870,
+          "gzip_bytes": 388,
+          "sha256": "c54602a825fc49567144b196ec1907ced52d2c54b1c46d637b6270c5545ed6f0",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-D1U8JIR9.js",
+          "bytes": 13299,
+          "gzip_bytes": 5541,
+          "sha256": "b5c407eebbccb65508ab86926ecdbc1747161aa8823b702424729e6c11a3bdc8",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-CNTi6yQ_.js",
+          "bytes": 1537,
+          "gzip_bytes": 715,
+          "sha256": "d8044265ef0392cda1161663532248749c4f83cfffaf7f432fa4da587b141591",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-BtM1sbbK.js",
+          "bytes": 475916,
+          "gzip_bytes": 159633,
+          "sha256": "340cbe8fb2932ab63d474e541566dc4254730123450faa98de3084a96c092de9",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Vxfeh8-V.css",
+          "bytes": 1226,
+          "gzip_bytes": 450,
+          "sha256": "22b0de0960f41e76fb46a98ddc349e363dcf484795042e2dbf667176ccb9a3b6",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "chain_heading_top": 410.2708435058594,
+    "first_node_top": 559.84375,
+    "first_node_bottom": 605.84375,
+    "desktop_filters_open": true,
+    "mobile_filters_open": false,
+    "mobile_viewport": 390,
+    "mobile_page_width": 375,
+    "draft_preserved": true,
+    "submitted_count": 1,
+    "matched_rows_before": 32,
+    "matched_rows_filtered": 30,
+    "clear_restored": true,
+    "keyboard_toggle": true,
+    "resize_preserves_toggle": true,
+    "viewport_restored": true,
+    "model_filter_input_tokens": "14",
+    "model_filter_output_tokens": "6"
+  },
+  "limitations": [
+    "Local Windows IAB only",
+    "No performance or full accessibility certification"
+  ]
+}

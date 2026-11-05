@@ -1,0 +1,27 @@
+{
+  "spec": "SPEC-029",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 51,
+  "typecheck": true,
+  "production_build": true,
+  "python": "330 inherited SPEC-028; no backend changes",
+  "api_snapshot": "SPEC-020 unchanged",
+  "dependencies_changed": false,
+  "browser": {
+    "real_collector_postgres": true,
+    "traces": 25,
+    "spans": 50,
+    "reviewed_actions": 3,
+    "int64_preserved": true,
+    "unacknowledged_approve_disabled": true,
+    "mobile_width": 390,
+    "mobile_page_width": 375,
+    "all_four_navigation_visible": true,
+    "viewport_reset": true,
+    "auth_error_and_empty_observed": true,
+    "approval_decisions_submitted": 0
+  },
+  "screenshots": "artifacts/ui029",
+  "environment": "isolated aegis-ui029 retained for SPEC-030"
+}

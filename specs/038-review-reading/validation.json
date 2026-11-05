@@ -1,0 +1,147 @@
+{
+  "spec": "SPEC-038",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 75,
+  "new_methods": 3,
+  "python_inherited_from": "SPEC-035",
+  "python_methods": 339,
+  "catalogue": 414,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.514
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.525
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.753
+      }
+    ],
+    "tests": {
+      "run": 75,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 38472,
+        "all_js": 607667,
+        "all_css": 26494
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-CosN6PJY.css",
+          "bytes": 2379,
+          "gzip_bytes": 697,
+          "sha256": "55f0e2765abf4c8b565aac9a73e150321adc1d6ad59602a67f37985ac31673d2",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-YDC-yYZr.js",
+          "bytes": 16125,
+          "gzip_bytes": 6210,
+          "sha256": "985517fc112766c82b9edba34f4209b8103081ced9411cc07495448a65a2f4be",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-Mfsudh5H.js",
+          "bytes": 988,
+          "gzip_bytes": 620,
+          "sha256": "1719e3924763b7d0ca525a4ec8283fea3f2129f78f8131f8b6e74ca07a18fcee",
+          "entry": false
+        },
+        {
+          "path": "assets/index-br9qrjtW.css",
+          "bytes": 22019,
+          "gzip_bytes": 5378,
+          "sha256": "ce704efe98ed61b68a5eb89b9c5258f87e54c86c3a85a4b99ac602bbe751daa3",
+          "entry": true
+        },
+        {
+          "path": "assets/index-CpmjiDwY.js",
+          "bytes": 100645,
+          "gzip_bytes": 38472,
+          "sha256": "310837369a907a38e089126740a0aecb03d6ebb53b9b408e2007b28043e02682",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BMSSMrcz.js",
+          "bytes": 13299,
+          "gzip_bytes": 5539,
+          "sha256": "7d6186114f8ecbaa3325a0dc9188f2a2df0e391ced8c077349254d1b2eb947d9",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-C3KQoIo8.css",
+          "bytes": 870,
+          "gzip_bytes": 388,
+          "sha256": "c54602a825fc49567144b196ec1907ced52d2c54b1c46d637b6270c5545ed6f0",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-xAaugFyy.js",
+          "bytes": 1537,
+          "gzip_bytes": 714,
+          "sha256": "d1782a43798f920361a7af4f0acf6a55d262ee64c2896506907102749708c19b",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-CFganxF2.js",
+          "bytes": 475073,
+          "gzip_bytes": 159283,
+          "sha256": "367983f46bb56db1bca2a1b8ce628e701f0d79a9c7de1066dc467662c7c1d892",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Vxfeh8-V.css",
+          "bytes": 1226,
+          "gzip_bytes": 450,
+          "sha256": "22b0de0960f41e76fb46a98ddc349e363dcf484795042e2dbf667176ccb9a3b6",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "total_requests": 13,
+    "new_pending": 2,
+    "approve_before_ack": false,
+    "approve_after_ack": true,
+    "expanded_after_sort": 0,
+    "ack_after_sort": false,
+    "approve_after_sort": false,
+    "binding_visible_before": false,
+    "binding_visible_after": true,
+    "copied_action": "cd77aa6bf57f4447ac7883e1af3a5eae",
+    "mobile_width": 390,
+    "mobile_page_width": 375,
+    "exact_int64_visible": true,
+    "preparation_empty": true,
+    "failed_connection_snapshot_count": 0,
+    "viewport_restored": true
+  },
+  "decisions_submitted": 0,
+  "tool_executions": 0,
+  "real_provider_requests": 0,
+  "limitations": [
+    "Local Windows IAB only",
+    "No server-wide sorting",
+    "No network refresh failure acceptance"
+  ]
+}

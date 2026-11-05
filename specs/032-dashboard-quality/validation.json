@@ -1,0 +1,130 @@
+{
+  "spec": "SPEC-032",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "new_python_contracts": 4,
+  "new_contracts_passed": true,
+  "unchanged_python_inherited": 330,
+  "python_catalogue": 334,
+  "frontend_tests": 59,
+  "catalogue": 393,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.508
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.275
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.735
+      }
+    ],
+    "tests": {
+      "run": 59,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 37386,
+        "all_js": 601298,
+        "all_css": 22192
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/_plugin-vue_export-helper-BDNMzG2s.js",
+          "bytes": 84,
+          "gzip_bytes": 100,
+          "sha256": "27e87fe62aa760227b7529576953d8314891fd2aec28e0a3f03aece406f2d7d7",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-8s6kW8wm.css",
+          "bytes": 1658,
+          "gzip_bytes": 543,
+          "sha256": "50108b800bc8b78d40efd5524ad91a8e6a1c868e9e17f6bc67653327f60e3148",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-CWF4duRi.js",
+          "bytes": 16232,
+          "gzip_bytes": 6270,
+          "sha256": "c784538f6020136615fdc9a3a91e8a90b33c0db1cad7bead59ca304b7487256e",
+          "entry": false
+        },
+        {
+          "path": "assets/index-Cr7srLEG.css",
+          "bytes": 19649,
+          "gzip_bytes": 4957,
+          "sha256": "d6a9241ab37782e8326ab095f3b380245ca3bdee8ec2588d444a2170faaaf1b9",
+          "entry": true
+        },
+        {
+          "path": "assets/index-Cse4rMaC.js",
+          "bytes": 97877,
+          "gzip_bytes": 37386,
+          "sha256": "4f24887ce722f849fac1ce6d74d0f6482185a849db5fd635a388d0132170c98d",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BJf3Csho.css",
+          "bytes": 227,
+          "gzip_bytes": 178,
+          "sha256": "0f0f1dbc4a1a89219a49a3f8092782a64e591c58a2e65ceab60e6a446d3c617d",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-CikJBH0M.js",
+          "bytes": 11046,
+          "gzip_bytes": 4539,
+          "sha256": "9c55d947036590cbc3774a6155d25d5a432e7ccb17894388d4188f4931220ab2",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-B7j0m8Fw.js",
+          "bytes": 476059,
+          "gzip_bytes": 159616,
+          "sha256": "9ac09c9386cd2aead8a2948de38569a632b6e02e2e9edc6ce213ee7232b1efb2",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-l7DDNVFO.css",
+          "bytes": 658,
+          "gzip_bytes": 321,
+          "sha256": "9a8e9557ff4ba6012b166d0e33e8882beed1e984d802fcd23935a4e979797acd",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "production_url": "http://127.0.0.1:5189",
+    "entry": "/assets/index-Cse4rMaC.js",
+    "hash_deep_link": true,
+    "usage_input": 14,
+    "usage_output": 6,
+    "filtered_llm_nodes": 2,
+    "independent_review_connection": true,
+    "review_records": 6,
+    "decisions_submitted": 0
+  },
+  "remote_ci_run": false,
+  "remote_deployed": false,
+  "environment": "isolated aegis-ui029 and local preview retained",
+  "screenshots": "artifacts/ui032"
+}

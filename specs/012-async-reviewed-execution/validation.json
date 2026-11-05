@@ -1,0 +1,170 @@
+{
+  "spec": "SPEC-012",
+  "verified_on": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "executed_this_increment": {
+      "runtime": 33,
+      "actual_http_postgres_integration": 9,
+      "total": 42,
+      "new_methods": 12,
+      "postgres_skipped": 0
+    },
+    "previous_catalogue_total": 182,
+    "previous_methods_rerun": 30,
+    "previous_methods_inherited": 152,
+    "current_catalogue_total": 194,
+    "frontend_rerun": false,
+    "frontend_inherited_from": "SPEC-011: 35 methods and production build"
+  },
+  "behavior": {
+    "native_async_http": true,
+    "caller_task_and_agent_context_preserved": true,
+    "original_cancellation_and_business_error_identity": true,
+    "claim_response_cancel_zero_body": true,
+    "body_cancel_may_have_effect": true,
+    "completion_cancel_server_may_have_committed": true,
+    "no_business_retry_or_claim_release": true,
+    "no_detached_compensation_tasks": true
+  },
+  "cli": {
+    "cases": [
+      {
+        "scenario": "success",
+        "action_id": "2fef04a0706b4151af03403dec68559a",
+        "returncode": 0,
+        "result": {
+          "action_id": "2fef04a0706b4151af03403dec68559a",
+          "confirmation": "confirmed",
+          "result": {
+            "record_id": 9223372036854775807,
+            "updated": true
+          }
+        },
+        "execution_state": "completed",
+        "duplicate_returncode": 1
+      },
+      {
+        "scenario": "failure",
+        "action_id": "fac86004c2e34f57a468b063b91ab8c7",
+        "returncode": 2,
+        "result": {
+          "action_id": "fac86004c2e34f57a468b063b91ab8c7",
+          "business_error": "SyntheticFailure",
+          "retry": false
+        },
+        "execution_state": "failed",
+        "duplicate_returncode": 1
+      },
+      {
+        "scenario": "cancel",
+        "action_id": "2ab3a15d1608481f91681a6f906674d7",
+        "returncode": 3,
+        "result": {
+          "action_id": "2ab3a15d1608481f91681a6f906674d7",
+          "cancelled": true,
+          "confirmation": "unknown",
+          "retry": false
+        },
+        "execution_state": "claimed",
+        "duplicate_returncode": 1
+      },
+      {
+        "scenario": "rejected",
+        "action_id": "ee4c4e5501a245fbb59ad7892d4ffb44",
+        "returncode": 1,
+        "result": {
+          "action_id": "ee4c4e5501a245fbb59ad7892d4ffb44",
+          "operation": "not completed",
+          "retry": false
+        },
+        "execution_state": "available",
+        "duplicate_returncode": 1
+      }
+    ],
+    "real_http": true,
+    "real_postgres": true,
+    "models_called": 0,
+    "new_local_events": 3,
+    "events_after_host_restart": 3,
+    "duplicate_additional_events": 0,
+    "records_and_timestamps_preserved_after_host_restart": true,
+    "migration_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "reviewer": "synthetic test harness; no external messages",
+    "temporary_schema_cleaned": true
+  },
+  "packages": {
+    "four_local_wheels": [
+      {
+        "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "c44e0005c374c5efca48e96713a91c61f0ae2c49f60dee57e3bb83c44ba21adb",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "395d26b5ffd86181f0ba16128830f41cbd46ccee917c377360ae0537c1a2e4e4",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "4bacf0a81bd9a1b0790e9d2b95963cff1493416d17e1e5cd029d3fff5b3929de",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "a55a976ee38c0d6e115607896e07a014f7c40e22968aa8ac64fd28c55089f457",
+        "source": "local workspace build"
+      }
+    ],
+    "isolated_core_installed_without_httpx": true,
+    "async_module_imports_without_httpx": true,
+    "missing_extra_install_message": true,
+    "offline_extra_installed_httpx": "0.28.1",
+    "no_llm_framework_or_collector_in_extra_environment": true,
+    "native_client_close_in_clean_environment": true,
+    "isolated_pip_check": true
+  },
+  "protocol": {
+    "openapi_exact_snapshot": "specs/011-reviewed-execution/contracts/openapi.json",
+    "migrations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "all_packaged_sql_byte_identical_to_spec011_wheel": true,
+    "collector_and_dashboard_behavior_unchanged": true
+  },
+  "delivery_checks": {
+    "delivery": "Validated 96 Markdown documents, 381 local links, 36 official source IDs, 59 installed Python pins and both download receipts, npm direct pins, OpenAPI, privacy constraints and artifact ignores.",
+    "credentials": "Credential-pattern scan passed for 239 source/document/config files; no credential values printed.",
+    "pip_check": "No broken requirements found."
+  },
+  "official_source_ids": 36,
+  "third_party_python_pins": 59,
+  "real_llm_requests": 0,
+  "external_business_requests": 0,
+  "docker": {
+    "project": "aegis-spec012-check",
+    "services_used": [
+      "postgres"
+    ],
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume_preserved": true,
+    "volume": "aegis-spec012-check_postgres_data"
+  },
+  "limitations": [
+    "No LangGraph checkpoint/interrupt recovery",
+    "No require_approval policy branch",
+    "No exactly-once external business guarantee",
+    "Python3.12.14 tested; minimum3.11 API compatibility, no multi-version execution claim",
+    "Caller owns tool-created tasks and explicitly closes client; interrupted close may require another aclose"
+  ],
+  "environment_note": "First restricted-process async wheel probe timed out; remaining native async lifecycle and packaging checks passed in process permitting local Windows event-loop communication."
+}

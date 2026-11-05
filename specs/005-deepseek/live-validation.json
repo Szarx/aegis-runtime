@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-17",
+  "provider": "deepseek",
+  "requested_model": "deepseek-flash",
+  "official_model_alias_note": "Official docs identify this alias as DeepSeek-V4.1-Flash-1017; returned alias alone does not pin a checkpoint.",
+  "approved_max_requests": 6,
+  "completed_model_requests": 6,
+  "sdk_max_retries": 0,
+  "max_tokens_per_request": 128,
+  "thinking": "disabled",
+  "basic_modes": [
+    {
+      "async": false,
+      "stream": false,
+      "response_model": "deepseek-flash",
+      "input_tokens": 11,
+      "output_tokens": 1
+    },
+    {
+      "async": false,
+      "stream": true,
+      "response_model": "deepseek-flash",
+      "input_tokens": 11,
+      "output_tokens": 1
+    },
+    {
+      "async": true,
+      "stream": false,
+      "response_model": "deepseek-flash",
+      "input_tokens": 11,
+      "output_tokens": 1
+    },
+    {
+      "async": true,
+      "stream": true,
+      "response_model": "deepseek-flash",
+      "input_tokens": 11,
+      "output_tokens": 1
+    }
+  ],
+  "tool_loop": {
+    "model_calls": 2,
+    "tool_calls": 1,
+    "tool": "lookup_order",
+    "result_status": "shipped",
+    "trace_id": "629cc933607bd1744f9e9c72ac3e96b8",
+    "model_usage": [
+      {
+        "input_tokens": 299,
+        "output_tokens": 35
+      },
+      {
+        "input_tokens": 94,
+        "output_tokens": 16
+      }
+    ]
+  },
+  "trace_count": 5,
+  "span_count": 16,
+  "diagnostics": {
+    "accepted_spans": 16,
+    "exported_spans": 16,
+    "failed_spans": 0,
+    "dropped_spans": 0,
+    "pending_spans": 0,
+    "export_failures": 0,
+    "instrumentation_failures": 0
+  },
+  "database_and_dashboard_verified": true,
+  "content_recorded": false,
+  "credential_persisted": false,
+  "limitations": [
+    "Chat only",
+    "thinking disabled",
+    "synthetic tool only",
+    "no price estimate or billing claim",
+    "no LangGraph acceptance",
+    "OpenAI provider remains offline-tested"
+  ]
+}

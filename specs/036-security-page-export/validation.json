@@ -1,0 +1,143 @@
+{
+  "spec": "SPEC-036",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 68,
+  "new_methods": 4,
+  "python_inherited_from": "SPEC-035",
+  "python_methods": 339,
+  "catalogue": 407,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 36.371
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 6.239
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 1.197
+      }
+    ],
+    "tests": {
+      "run": 68,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 37886,
+        "all_js": 605078,
+        "all_css": 24276
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/_plugin-vue_export-helper-BDNMzG2s.js",
+          "bytes": 84,
+          "gzip_bytes": 100,
+          "sha256": "27e87fe62aa760227b7529576953d8314891fd2aec28e0a3f03aece406f2d7d7",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-BYV0E0Ki.js",
+          "bytes": 14857,
+          "gzip_bytes": 5761,
+          "sha256": "8362536770b5a00616d58ec10c0fd79ebe483614741b3d9555b6c60dcc3f05b5",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-DpkyM5rZ.css",
+          "bytes": 1658,
+          "gzip_bytes": 543,
+          "sha256": "44d8a2d9c8961bcdd9efbe0a3b1b22437add821b8cfcc0e75e9f67eb154cc193",
+          "entry": false
+        },
+        {
+          "path": "assets/index-Bx-Owdy6.css",
+          "bytes": 21090,
+          "gzip_bytes": 5207,
+          "sha256": "ccb04026f1590f0f93d835c03591e97ddf2ce1b9a7a4280ac33507bcdf9d00d5",
+          "entry": true
+        },
+        {
+          "path": "assets/index-CWCLVbHB.js",
+          "bytes": 99337,
+          "gzip_bytes": 37886,
+          "sha256": "5b58171e3953ed8bb59c62df14b9253923a7362f48ec0f90732777a46a606b91",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-C3KQoIo8.css",
+          "bytes": 870,
+          "gzip_bytes": 388,
+          "sha256": "c54602a825fc49567144b196ec1907ced52d2c54b1c46d637b6270c5545ed6f0",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-CKnr5bNp.js",
+          "bytes": 13204,
+          "gzip_bytes": 5521,
+          "sha256": "0a86016820a26ab47b8f95839782e4a8963397888da29fb48fcc494bf3217ff4",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-B-Y3Mors.js",
+          "bytes": 1537,
+          "gzip_bytes": 716,
+          "sha256": "97195f185e0cce70c91eccf7a70e076d4b6ad74ffac4bc72a83d171755e89e35",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-CAHtn74v.js",
+          "bytes": 476059,
+          "gzip_bytes": 159618,
+          "sha256": "2a59481673fc463b3eb7b750416fa19807bf1c0972dafd0c9c1d4e8f9a44c679",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-l7DDNVFO.css",
+          "bytes": 658,
+          "gzip_bytes": 321,
+          "sha256": "9a8e9557ff4ba6012b166d0e33e8882beed1e984d802fcd23935a4e979797acd",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "downloads": {
+    "status": "passed",
+    "first_page_rows": 20,
+    "last_page_rows": 12,
+    "total_distinct_received_events": 32,
+    "dom_ids_and_exact_ns_match": true,
+    "csv_matches_jsonl": true,
+    "temporary_links_after_download": 0
+  },
+  "browser": {
+    "empty_downloads_enabled": false,
+    "empty_feedback_count": 0,
+    "mobile_viewport": 390,
+    "mobile_page_width": 375,
+    "download_button_height": 28.375,
+    "viewport_restored": true
+  },
+  "limitations": [
+    "Local Windows IAB only",
+    "No spreadsheet application resave acceptance",
+    "Page files are not SPEC-021 verified bundles"
+  ]
+}

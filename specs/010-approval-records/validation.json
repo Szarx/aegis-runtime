@@ -1,0 +1,96 @@
+{
+  "spec": "SPEC-010",
+  "verified_on": "2026-10-20",
+  "automated_verified_on": "2026-10-18",
+  "browser_verified_on": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "policy": 5,
+    "runtime": 14,
+    "sdk": 59,
+    "collector_protocol": 22,
+    "postgres_integration": 19,
+    "onboarding": 8,
+    "python_total": 127,
+    "frontend": 31,
+    "total": 158,
+    "new_methods": 21
+  },
+  "postgres_skipped": 0,
+  "database": {
+    "migration_versions": [
+      1,
+      2,
+      3
+    ],
+    "stored_status_counts": {
+      "approved": 1,
+      "rejected": 1,
+      "pending": 1
+    },
+    "trace_count": 1,
+    "span_count": 1,
+    "request_count": 3
+  },
+  "tool_calls_for_approval_records": 0,
+  "runtime_deny_after_recorded_approval": true,
+  "http": {
+    "actual_client_binding_verified": true,
+    "repeated_prepare_does_not_extend_deadline": true,
+    "records_preserved_after_collector_rebuild": true,
+    "raw_parameters_absent": true,
+    "reviewer_server_bound": true
+  },
+  "browser": {
+    "approved_and_rejected_synthetic_records": true,
+    "trace_link_independent_auth": true,
+    "route_leave_clears_reviewer": true,
+    "screenshot": "artifacts/approval-records/dashboard-decisions.jpg",
+    "temporary_tab_closed": true
+  },
+  "builds": {
+    "windows_typescript_vite": true,
+    "docker_collector_dashboard": true
+  },
+  "local_wheels": [
+    {
+      "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "d144cfda2ac32d16c7fed9e083cd99d8ffebeab014e4c0d4620303f4d47f2a75",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "11b9d4d956b59bf8ad219b7ddd3e0fe9610cb27e201b77a12c4ab6d0340296e2",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "e033a2e968bc5b2d16af6a44366dcbb5197cf52434849dced13275f3df26700f",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "2f2c7637d7dc6dc702113f600dbcff24e25319a3e3aee06c9d24d122a81aff8a",
+      "source": "local workspace build"
+    }
+  ],
+  "isolated_install_verified": true,
+  "pip_check": "passed",
+  "openapi_snapshot": "specs/010-approval-records/contracts/openapi.json",
+  "openapi_shape_changed": true,
+  "new_provider_requests": 0,
+  "third_party_dependency_baseline_changed": false,
+  "limits": [
+    "Approval records do not execute or override Runtime policy",
+    "No require_approval or claim/consume/execute protocol",
+    "Summary and HMAC are not sufficient review context for real side effects",
+    "Fixed local reviewer is not per-user authentication or tenant isolation",
+    "No tamper-proof audit or exactly-once external execution guarantee"
+  ],
+  "cleanup": {
+    "compose_down_completed": true,
+    "remaining_project_containers": 0,
+    "database_volume_preserved": true
+  }
+}

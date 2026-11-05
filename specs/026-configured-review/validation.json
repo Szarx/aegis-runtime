@@ -1,0 +1,198 @@
+{
+  "spec": "SPEC-026",
+  "verified_on": "2026-10-25",
+  "status": "passed",
+  "python_tests": {
+    "run": 302,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 98,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 47,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 46,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 16,
+  "previous_methods_rerun": 337,
+  "current_catalogue": 353,
+  "affected_pg_rerun": {
+    "run": 3,
+    "passed": true,
+    "reason": "Added actual committed-completion HTTP503 and CLI unknown exit4; all three configured review PG tests rerun"
+  },
+  "delivered": [
+    "explicit v2 reviewed/direct configuration",
+    "no downgrade in managed binding",
+    "explicit argument disclosure",
+    "borrowed sync/async approval clients",
+    "leased prepare/resume",
+    "independent host-process workflow",
+    "actual server-role review and governance/export/replay",
+    "clean core and optional async installation"
+  ],
+  "actual_workflow": {
+    "sync_and_async": true,
+    "new_process_prepare_resume": true,
+    "pending_calls": 0,
+    "rejected_calls": 0,
+    "tampered_calls": 0,
+    "approved_calls": 1,
+    "repeated_calls_added": 0,
+    "full_int64_review_arguments": true,
+    "successful_governance_events": 2,
+    "offline_replay_unchanged": 2,
+    "business_failure_state": "failed",
+    "business_cancellation_state": "claimed",
+    "committed_completion_ack_loss": {
+      "cli_exit_code": 4,
+      "confirmation": "unknown",
+      "server_state": "completed",
+      "repeated_calls_added": 0
+    }
+  },
+  "installation": {
+    "clean_venv": true,
+    "offline_cached_install": true,
+    "online_install_or_human_timing": false,
+    "core": {
+      "packages": [
+        "aegis-runtime-control",
+        "aegis-runtime-policy",
+        "aegis-runtime-sdk",
+        "opentelemetry-api",
+        "opentelemetry-sdk",
+        "opentelemetry-semantic-conventions",
+        "pip",
+        "typing_extensions"
+      ],
+      "core_sync_review_without_httpx": true,
+      "v1_and_v2_inspection": true
+    },
+    "optional": {
+      "async_optional_extra": true,
+      "synthetic_transport_only": true,
+      "business_calls": 1,
+      "borrowed_client_closed_by_host": true
+    },
+    "old_runtime_and_approval_protocol_sources_unchanged": true,
+    "runtime_wheel": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "819034051d55a6aa3198a2c8dc20b4467f965d148da5833949d5835c8cc875b7",
+    "sdk_inherited": "SPEC-015",
+    "policy_inherited": "SPEC-023",
+    "old_025_loader_rejects_v2": true
+  },
+  "docker": {
+    "project": "aegis-spec026-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec026-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sdk": true,
+    "policy": true,
+    "existing_approval_protocols": true,
+    "collector": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "automatic_review": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Explicit full argument disclosure to approval service; trace metadata remains content-free",
+    "Tool action resume only; no arbitrary Agent graph continuation or cross-system exactly-once",
+    "Claim remains consumed on unknown, partial failure and cancellation; clients owned by host",
+    "Synthetic reviewer HTTP role tested; no new human GUI timing or browser/image acceptance",
+    "Offline cached install only; no online download or human onboarding time"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 170,
+    "local_links": 637,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 434,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

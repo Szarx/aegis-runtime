@@ -1,0 +1,182 @@
+{
+  "spec": "SPEC-044",
+  "status": "passed",
+  "verified_on": "2026-10-29",
+  "frontend": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 3.252
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 9.447
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 1.674
+      }
+    ],
+    "tests": {
+      "run": 98,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 42490,
+        "all_js": 617619,
+        "all_css": 28528
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-C9gWr6S3.js",
+          "bytes": 16082,
+          "gzip_bytes": 6182,
+          "sha256": "2b7782238e69f8e0ff7779315ca0df2a34ab219b61915dfacebef92dbff6b4b8",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-CosN6PJY.css",
+          "bytes": 2379,
+          "gzip_bytes": 697,
+          "sha256": "55f0e2765abf4c8b565aac9a73e150321adc1d6ad59602a67f37985ac31673d2",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-9TES6jkk.css",
+          "bytes": 151,
+          "gzip_bytes": 132,
+          "sha256": "13cf772c663d293a1a364a672ab6441a6499e8917d54e8594d2c3524e3b011c2",
+          "entry": true
+        },
+        {
+          "path": "assets/CopyValue-sLtf76yS.js",
+          "bytes": 80911,
+          "gzip_bytes": 31262,
+          "sha256": "92831eec44906acb6d8575b88411b311d20ce83c090d541219ff72f97e7f8f6c",
+          "entry": true
+        },
+        {
+          "path": "assets/index-BXiPOwsD.js",
+          "bytes": 29596,
+          "gzip_bytes": 11228,
+          "sha256": "63b6a95001ff16ce54149583b3782af712bf435c40f2bd750435d55e5f0100cc",
+          "entry": true
+        },
+        {
+          "path": "assets/index-DEvAyUXC.css",
+          "bytes": 22306,
+          "gzip_bytes": 5446,
+          "sha256": "67c9108320dc8b8f42a0c9ea3e215333b3f83b04102eadcd91a7332506276b82",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BfnH0Fxg.css",
+          "bytes": 1012,
+          "gzip_bytes": 431,
+          "sha256": "3d2091c0bccb99f311e2d6b1d8afc134d04a25998af89615002bb9afad6525b9",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-IhHpyEJp.js",
+          "bytes": 10514,
+          "gzip_bytes": 4598,
+          "sha256": "b652244e2a209f48f33bd2ff3d15f6df38ff626edc9392f19a12809d1acf5632",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-DuKdR2Jq.js",
+          "bytes": 1541,
+          "gzip_bytes": 719,
+          "sha256": "eee2e40226813429487722032d53805e25e1978f6dee286decacad1f36a0b870",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Bn2dpdF3.js",
+          "bytes": 478975,
+          "gzip_bytes": 160563,
+          "sha256": "d866012b891334773870b6b7cbd928e30ad549b39fbdc98b14af9964311d05fb",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-CTwDBCD8.css",
+          "bytes": 2680,
+          "gzip_bytes": 776,
+          "sha256": "94ae7e041492a649447fd24458cc10a70297dc84c38a8362f1e4287be4b99a41",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "added_frontend_methods": 6,
+  "python": {
+    "run": 357,
+    "postgres": 53,
+    "source": "SPEC-042",
+    "rerun_this_spec": false
+  },
+  "method_catalogue_total": 455,
+  "evidence": "artifacts/ui044/check2",
+  "prior_run": "artifacts/ui044/check failed on a new test syntax error, fixed before full replacement run; not passing evidence",
+  "browser": {
+    "preview": "http://127.0.0.1:5189",
+    "collector": "http://127.0.0.1:8849",
+    "database": "existing ui029; no reset",
+    "event_source": "#/security-events?tool=write_record&offset=20",
+    "trace_source": "#/traces?agent=security-events-agent&offset=20",
+    "event_trace_id": "5c16cf1bcf3d8fb7f9b8bd47770e9a79",
+    "event_span_id": "1c8dd08b7f8585eb",
+    "selected_event_span": true,
+    "explicit_returns": "Both second pages restored, 35 total matches, original conditions/page retained",
+    "node_switch": "Root selection kept return",
+    "node_copy": "Only Trace/Span; no return or source query",
+    "refresh_auth": "Reload required token again; source preserved",
+    "independent_session": "New tab started disconnected, then source restored after local synthetic token",
+    "legacy_node": "No return defaults to #/traces",
+    "error_detail": "Missing trace f*32 showed same source return; click restored event page",
+    "invalid_source": "External return rejected as invalid detail address",
+    "keyboard": "Enter activated return; Tab from return reached Trace ID copy",
+    "viewport": {
+      "width": 390,
+      "page_width": 375
+    },
+    "screenshots": [
+      "artifacts/ui044/event-node-desktop.png",
+      "artifacts/ui044/event-node-mobile.png"
+    ]
+  },
+  "unchanged": [
+    "OpenAPI",
+    "SQL migrations",
+    "Python/npm pins",
+    "approval and execution semantics"
+  ],
+  "limits": [
+    "Current local browser verification, not all engines",
+    "Source is a query, not immutable historical results",
+    "Python evidence inherited; no full backend rerun"
+  ],
+  "continuation": "One SPEC per continue; no SPEC-045 started. No remote, release, model request or review action.",
+  "final_audit": {
+    "candidate_files": 567,
+    "issues": 0,
+    "markdown_documents": 235,
+    "local_links": 804,
+    "official_protocol_ids": 44,
+    "python_pins": 62,
+    "dependency_caches": "both platform hashes matched",
+    "openapi": "unchanged"
+  }
+}

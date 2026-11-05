@@ -1,0 +1,36 @@
+{
+  "spec": "SPEC-031",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 59,
+  "new_methods": 4,
+  "typecheck": true,
+  "production_build": true,
+  "python_inherited": "SPEC-028:330",
+  "catalogue": 389,
+  "browser": {
+    "arrow_selected_and_focused": true,
+    "home_end_verified": true,
+    "tab_stops": 1,
+    "standard_row_height": 46,
+    "compact_row_heights": [
+      34,
+      34,
+      34,
+      34
+    ],
+    "compact_canvas_height": 174,
+    "filtered_model_nodes": 2,
+    "token_input_unchanged": 14,
+    "token_output_unchanged": 6,
+    "empty_view_hides_inspector": true,
+    "reset_restores_all_nodes": true,
+    "mobile_viewport": 390,
+    "mobile_page": 375,
+    "viewport_reset": true,
+    "reload_restores_standard": true
+  },
+  "backend_unchanged": true,
+  "artifacts": "artifacts/ui031",
+  "environment": "isolated aegis-ui029 retained for SPEC-032"
+}

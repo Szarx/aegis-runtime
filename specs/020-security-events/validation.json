@@ -1,0 +1,182 @@
+{
+  "spec": "SPEC-020",
+  "verified_on": "2026-10-23",
+  "status": "passed",
+  "python_tests": {
+    "run": 221,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 65,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 40,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 18,
+  "previous_methods_rerun": 254,
+  "current_catalogue": 272,
+  "typecheck": true,
+  "production_build": true,
+  "live_http_postgres": {
+    "seed": {
+      "counters": {
+        "completed": 5,
+        "denied": 10,
+        "error": 5,
+        "cancelled": 5,
+        "business_calls": 15
+      },
+      "flush": true,
+      "shutdown": true,
+      "diagnostics": {
+        "accepted_spans": 50,
+        "exported_spans": 50,
+        "failed_spans": 0,
+        "dropped_spans": 0,
+        "pending_spans": 0,
+        "export_failures": 0,
+        "instrumentation_failures": 0
+      }
+    },
+    "events": 25,
+    "traces": 25,
+    "page_sizes": [
+      20,
+      5
+    ],
+    "all_trace_associations": true,
+    "filter_counts": {
+      "deny": 10,
+      "error": 5,
+      "cancelled": 5,
+      "subject": 20
+    },
+    "wrong_token_status": 401,
+    "real_llm_requests": 0
+  },
+  "browser": {
+    "production_build": true,
+    "real_collector_postgres": true,
+    "cases": [
+      "20_and_5_pagination",
+      "deny_filter_10",
+      "empty_filter",
+      "clear_filter",
+      "trace_agent_and_governed_span",
+      "final_css_reload"
+    ],
+    "screenshots": [
+      "artifacts/security-events/denied.png",
+      "artifacts/security-events/trace.png"
+    ],
+    "own_tab_closed": true
+  },
+  "package": {
+    "collector_wheel": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "785f422c98a351efcdd2db8521362977f7d7656087d38cd851667655176898c7",
+    "installed_target_import": true,
+    "dependency_environment": "existing locked development venv",
+    "current_openapi_exact": true,
+    "old_011_paths_and_schemas_exact": true,
+    "four_sql_resources_unchanged_from_spec015": true
+  },
+  "docker": {
+    "project": "aegis-spec020-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec020-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "not rebuilt this increment; local wheel verified",
+    "dashboard_build": "local production build verified with real Collector and PostgreSQL"
+  },
+  "temporary_http_hosts_closed": true,
+  "real_provider_requests": 0,
+  "python_pins": 62,
+  "official_sources": 44,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Application-reported identity is not server authentication or tamper-proof audit",
+    "No cross-page snapshot, new indexes, large-scale performance, tenancy, retention or export",
+    "Installed Collector target uses existing locked dependency venv; new Docker images not built"
+  ],
+  "evidence_sha256": {
+    "denied.png": "c658c7fd58a0689600cda6e880ce79f6e1397d8ab287c501f9ed77f6bfccd7cf",
+    "docker.json": "fcff5391b11bb506b4291f235bb09546b4cb62c1069e6316de83a31f3f513882",
+    "live-http.json": "c9f2562fd0c6dc325c3a9c1b4e64a8bd7a8f079d022edfe94555b99edb8f9574",
+    "package.json": "dcafb09611be5f3038d5d8878f4b48ffc9661e4e148c883bac5a3b3c928b123a",
+    "trace.png": "7d0d8e5558f4352131c44d8581c7a5859211f62f24c9212c4c734ac22dfe0750"
+  },
+  "delivery_checks": {
+    "markdown_documents": 141,
+    "local_links": 532,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 358,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

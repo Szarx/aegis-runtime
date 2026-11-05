@@ -1,0 +1,130 @@
+{
+  "spec": "SPEC-033",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 61,
+  "new_methods": 2,
+  "python_catalogue_inherited": 334,
+  "catalogue": 395,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.409
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.302
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.704
+      }
+    ],
+    "tests": {
+      "run": 61,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 37873,
+        "all_js": 602793,
+        "all_css": 22706
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/_plugin-vue_export-helper-BDNMzG2s.js",
+          "bytes": 84,
+          "gzip_bytes": 100,
+          "sha256": "27e87fe62aa760227b7529576953d8314891fd2aec28e0a3f03aece406f2d7d7",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-CwwVhu8n.js",
+          "bytes": 16302,
+          "gzip_bytes": 6275,
+          "sha256": "58e8a74fffa4e66a6e0cf8445c6626edfe7762d2c05c70615f1a387ee9a1c1bc",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-DpkyM5rZ.css",
+          "bytes": 1658,
+          "gzip_bytes": 543,
+          "sha256": "44d8a2d9c8961bcdd9efbe0a3b1b22437add821b8cfcc0e75e9f67eb154cc193",
+          "entry": false
+        },
+        {
+          "path": "assets/index-CZ3wdr18.js",
+          "bytes": 99302,
+          "gzip_bytes": 37873,
+          "sha256": "56d9d8c29a8d492286c2e7fdd5117f1ed88c66b34e3002ba91c30a2a5723c06d",
+          "entry": true
+        },
+        {
+          "path": "assets/index-efj_Si7P.css",
+          "bytes": 20163,
+          "gzip_bytes": 5057,
+          "sha256": "c91828b7ec5367a57169d67ed15e0e2f36ae4e4f21825e7df98a6319b24cfbc9",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BJf3Csho.css",
+          "bytes": 227,
+          "gzip_bytes": 178,
+          "sha256": "0f0f1dbc4a1a89219a49a3f8092782a64e591c58a2e65ceab60e6a446d3c617d",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-CBD1v4Rg.js",
+          "bytes": 11046,
+          "gzip_bytes": 4540,
+          "sha256": "b1f2df1ee45b30b95ed50802f06e2bc03ee4afa5bf4016b28c4e369b9e353746",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-l7DDNVFO.css",
+          "bytes": 658,
+          "gzip_bytes": 321,
+          "sha256": "9a8e9557ff4ba6012b166d0e33e8882beed1e984d802fcd23935a4e979797acd",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-U_Hb1IpF.js",
+          "bytes": 476059,
+          "gzip_bytes": 159617,
+          "sha256": "b1baee480935299f0f1b39b63ddde93c5dce6b91281d315cbebde1784040423b",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "delayed_refresh_keeps_20_rows_with_label": true,
+    "new_filter_clears_rows_before_response": true,
+    "service_503_safe_error": true,
+    "manual_retry_recovers": true,
+    "real_missing_chunk_safe_failure": true,
+    "chunk_restored_byte_inventory": true,
+    "explicit_reload_and_reconnect_recovers": true,
+    "token_input_after_recovery": 14,
+    "production_backend_fault_switch": false
+  },
+  "not_browser_reproduced": [
+    "15-second module timeout",
+    "delayed approval counter"
+  ],
+  "artifacts": "artifacts/ui033",
+  "temporary_fault_config_cleared": true
+}

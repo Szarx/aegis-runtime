@@ -1,0 +1,10 @@
+{
+  "schema_version":"aegis.application.v1",
+  "service_name":"configured-agent",
+  "policy_file":"policy.json",
+  "tools":[
+    {"name":"lookup_order","permission":"orders.read"},
+    {"name":"write_record","permission":"orders.write"}
+  ],
+  "telemetry":{"mode":"jsonl","path":"../../artifacts/application-onboarding/traces.jsonl"}
+}

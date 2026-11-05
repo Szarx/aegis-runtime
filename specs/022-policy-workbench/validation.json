@@ -1,0 +1,154 @@
+{
+  "spec": "SPEC-022",
+  "verified_on": "2026-10-23",
+  "status": "passed",
+  "python_tests": {
+    "run": 244,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 66,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 41,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 10,
+  "previous_methods_rerun": 285,
+  "current_catalogue": 295,
+  "runtime_cases": {
+    "attempts_per_mode": 7,
+    "business_calls_per_mode": 1,
+    "mode_count": 2,
+    "observed_decisions_and_rule_ids": true,
+    "example_spans_per_mode": 14
+  },
+  "package": {
+    "isolated_target": true,
+    "python_flags": [
+      "-I",
+      "-S"
+    ],
+    "third_party_dependencies": false,
+    "check_cases": 7,
+    "explanation": {
+      "effect": "deny",
+      "policy_revision": "workbench-demo-v1",
+      "reason": "explicit_deny",
+      "rule_id": "deny-blocked"
+    },
+    "fingerprint": "e367ad80ff965f8fdd1244e16d34a382269ee0b0ad81104967341fe26c273473",
+    "policy_core_source_identical_to_spec015": true,
+    "wheel": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "5f367b147626825343cba693ae3c4b02602a1cd79f8e2aa13bf62e5387b4b2df"
+  },
+  "docker": {
+    "project": "aegis-spec022-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec022-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "policy_evaluator": true,
+    "sdk": true,
+    "runtime_implementation": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Offline case coverage is not production completeness or unreachable-rule analysis",
+    "Fingerprint has no authentication or approval-binding authority",
+    "No new service/API, SQL, runtime mode, image build or browser acceptance"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 150,
+    "local_links": 567,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 380,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

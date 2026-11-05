@@ -1,0 +1,243 @@
+{
+  "spec": "SPEC-008",
+  "verified_on": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "basis": "Fresh isolated venvs with existing official wheel cache; actual local SDK builds and offline examples",
+  "new_automated_methods": 8,
+  "new_test_result": "passed, including Python -O and actual subprocess timeout",
+  "previous_automated_methods": 108,
+  "previous_suites_rerun": false,
+  "runs": [
+    {
+      "schema_version": "aegis.onboarding.v1",
+      "profile": "native",
+      "status": "passed",
+      "started_at_utc": "2026-10-18T06:03:49.927733+00:00",
+      "python_version": "3.12.14",
+      "platform": "win32",
+      "install_source": "local-wheel-cache",
+      "stages": [
+        {
+          "name": "venv",
+          "status": "passed",
+          "elapsed_ms": 14576.083
+        },
+        {
+          "name": "build-prerequisite",
+          "status": "passed",
+          "elapsed_ms": 8737.288
+        },
+        {
+          "name": "sdk-install",
+          "status": "passed",
+          "elapsed_ms": 9174.903
+        },
+        {
+          "name": "dependency-check",
+          "status": "passed",
+          "elapsed_ms": 757.252
+        },
+        {
+          "name": "example",
+          "status": "passed",
+          "elapsed_ms": 355.863
+        },
+        {
+          "name": "validation",
+          "status": "passed",
+          "elapsed_ms": 21.33
+        }
+      ],
+      "new_provider_requests": 0,
+      "platform_acceptance": "not_run",
+      "human_onboarding_acceptance": "not_run",
+      "verification": {
+        "trace_count": 2,
+        "span_count": 4,
+        "parentage_verified": true,
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "business_comparison_verified": null
+      },
+      "first_valid_trace_ms": 33623.478,
+      "total_ms": 33623.48,
+      "final_validator_rechecked": true,
+      "package_count_including_pip_and_build_tool": 7,
+      "installed_packages": {
+        "aegis-runtime-sdk": "0.1.0.dev0",
+        "opentelemetry-api": "1.45.1",
+        "opentelemetry-sdk": "1.45.1",
+        "opentelemetry-semantic-conventions": "0.66b1",
+        "pip": "25.0.1",
+        "setuptools": "84.0.0",
+        "typing_extensions": "4.16.0"
+      }
+    },
+    {
+      "schema_version": "aegis.onboarding.v1",
+      "profile": "langgraph",
+      "status": "passed",
+      "started_at_utc": "2026-10-18T06:05:09.585274+00:00",
+      "python_version": "3.12.14",
+      "platform": "win32",
+      "install_source": "local-wheel-cache",
+      "stages": [
+        {
+          "name": "venv",
+          "status": "passed",
+          "elapsed_ms": 10588.609
+        },
+        {
+          "name": "build-prerequisite",
+          "status": "passed",
+          "elapsed_ms": 6585.551
+        },
+        {
+          "name": "sdk-install",
+          "status": "passed",
+          "elapsed_ms": 144183.266
+        },
+        {
+          "name": "dependency-check",
+          "status": "passed",
+          "elapsed_ms": 6418.922
+        },
+        {
+          "name": "example",
+          "status": "passed",
+          "elapsed_ms": 9522.228
+        },
+        {
+          "name": "validation",
+          "status": "passed",
+          "elapsed_ms": 12.142
+        }
+      ],
+      "new_provider_requests": 0,
+      "platform_acceptance": "not_run",
+      "human_onboarding_acceptance": "not_run",
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "parentage_verified": true,
+        "diagnostics": {
+          "accepted_spans": 4,
+          "exported_spans": 4,
+          "failed_spans": 0,
+          "dropped_spans": 0,
+          "pending_spans": 0,
+          "export_failures": 0,
+          "instrumentation_failures": 0
+        },
+        "business_comparison_verified": true
+      },
+      "first_valid_trace_ms": 177311.406,
+      "total_ms": 177311.408,
+      "final_validator_rechecked": true,
+      "package_count_including_pip_and_build_tool": 46,
+      "installed_packages": {
+        "PyYAML": "6.0.3",
+        "aegis-runtime-sdk": "0.1.0.dev0",
+        "annotated-types": "0.8.0",
+        "anyio": "4.15.1",
+        "certifi": "2026.7.22",
+        "charset-normalizer": "3.5.2",
+        "distro": "1.9.0",
+        "h11": "0.16.0",
+        "httpcore": "1.0.9",
+        "httpcore2": "2.13.1",
+        "httpx": "0.28.1",
+        "httpx2": "2.13.1",
+        "idna": "3.20",
+        "jiter": "0.17.0",
+        "jsonpatch": "1.35",
+        "jsonpointer": "3.2.1",
+        "langchain-core": "1.6.12",
+        "langchain-protocol": "0.0.19",
+        "langgraph": "1.2.15",
+        "langgraph-checkpoint": "4.3.0",
+        "langgraph-prebuilt": "1.1.1",
+        "langgraph-sdk": "0.4.8",
+        "langsmith": "0.14.11",
+        "openai": "3.33.0",
+        "opentelemetry-api": "1.45.1",
+        "opentelemetry-sdk": "1.45.1",
+        "opentelemetry-semantic-conventions": "0.66b1",
+        "orjson": "3.13.0",
+        "ormsgpack": "1.13.0",
+        "packaging": "26.3",
+        "pip": "25.0.1",
+        "pydantic": "2.14.1",
+        "pydantic_core": "2.50.1",
+        "requests": "2.34.2",
+        "requests-toolbelt": "1.0.0",
+        "setuptools": "84.0.0",
+        "sniffio": "1.3.1",
+        "tenacity": "9.2.1",
+        "truststore": "0.10.5",
+        "typing-inspection": "0.4.4",
+        "typing_extensions": "4.16.0",
+        "urllib3": "2.8.0",
+        "uuid_utils": "0.17.1",
+        "websockets": "16.1.1",
+        "xxhash": "4.0.1",
+        "zstandard": "0.25.0"
+      }
+    },
+    {
+      "schema_version": "aegis.onboarding.v1",
+      "profile": "native",
+      "status": "failed",
+      "started_at_utc": "2026-10-18T06:06:51.194558+00:00",
+      "python_version": "3.12.14",
+      "platform": "win32",
+      "install_source": "local-wheel-cache",
+      "stages": [
+        {
+          "name": "venv",
+          "status": "passed",
+          "elapsed_ms": 17541.059
+        },
+        {
+          "name": "build-prerequisite",
+          "status": "failed",
+          "exit_code": 1,
+          "elapsed_ms": 3916.454
+        }
+      ],
+      "new_provider_requests": 0,
+      "platform_acceptance": "not_run",
+      "human_onboarding_acceptance": "not_run",
+      "error_category": "process_failed",
+      "total_ms": 21458.787
+    }
+  ],
+  "new_provider_requests": 0,
+  "online_install_acceptance": "not_run",
+  "human_five_minute_acceptance": "not_run",
+  "platform_ten_minute_acceptance": "not_run",
+  "platform_blocker": "Docker Linux Engine unavailable",
+  "limits": [
+    "Python preinstalled; local source checkout and verified wheels already present",
+    "No source checkout, human reading or integration edit time included",
+    "No Docker build/start or browser visibility timing included",
+    "Timing receipts retain initial measurements; final validator also rechecked real output in both installed environments"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 70,
+    "local_links": 266,
+    "credential_pattern_scan_files": 167,
+    "official_cache_sha256_files": 59,
+    "artifact_ignores_verified": true,
+    "python_compile_check": true,
+    "current_openapi_unchanged": true
+  },
+  "follow_up_platform_receipt": "platform-validation.json"
+}

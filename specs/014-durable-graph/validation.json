@@ -1,0 +1,548 @@
+{
+  "spec": "SPEC-014",
+  "verified_on": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "executed_this_increment": {
+      "runtime": 54,
+      "actual_http_postgres": 13,
+      "total": 67,
+      "new_methods": 12,
+      "postgres_skipped": 0
+    },
+    "previous_catalogue": 209,
+    "previous_methods_rerun": 55,
+    "previous_methods_inherited": 154,
+    "current_catalogue": 221,
+    "frontend_rerun": false,
+    "frontend_inherited_from": "SPEC-011:35 methods and production build"
+  },
+  "persistence": {
+    "official_sqlite_saver": "3.1.2",
+    "langgraph": "1.2.15",
+    "checkpoint": "4.3.0",
+    "local_marker_format": 1,
+    "explicit_create_or_reopen": true,
+    "no_missing_file_reset": true,
+    "strict_builtin_safe_no_pickle": true,
+    "native_graph_sync_durability": true,
+    "wal_full_synchronous": true,
+    "owned_connections_closed": true,
+    "lock_wait_bounded": true,
+    "version_marker_schema_fail_closed": true
+  },
+  "processes": {
+    "independent_invocations": 47,
+    "methods": {
+      "test_ac1402_new_process_restores_exact_pause_and_persists_completion": {
+        "passed": true,
+        "workers": [
+          {
+            "pid": 42312,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 8444,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47612,
+            "command": "resume",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 6228,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47548,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          }
+        ],
+        "scenarios": [
+          {
+            "case": "independent_start_resume_status",
+            "tool_events": 1,
+            "stable_action": true
+          }
+        ],
+        "actual_http": true,
+        "postgres": true,
+        "sqlite": true,
+        "temporary_schema_and_files_cleaned": true
+      },
+      "test_ac1403_actual_process_exit_at_five_boundaries_never_replays_tool": {
+        "passed": true,
+        "workers": [
+          {
+            "pid": 37596,
+            "command": "start",
+            "phase": "pause",
+            "returncode": 70
+          },
+          {
+            "pid": 46892,
+            "command": "resume",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 46688,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47488,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 44240,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 43796,
+            "command": "resume",
+            "phase": "claim",
+            "returncode": 71
+          },
+          {
+            "pid": 31516,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 45884,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 42744,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47744,
+            "command": "resume",
+            "phase": "write",
+            "returncode": 72
+          },
+          {
+            "pid": 44748,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 9416,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 46896,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 31904,
+            "command": "resume",
+            "phase": "complete",
+            "returncode": 73
+          },
+          {
+            "pid": 33476,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47140,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 47248,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 35200,
+            "command": "resume",
+            "phase": "graph",
+            "returncode": 74
+          },
+          {
+            "pid": 3176,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 44236,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          }
+        ],
+        "scenarios": [
+          {
+            "case": "pause",
+            "crash_returncode": 70,
+            "tool_events": 1,
+            "execution_state": "completed",
+            "checkpoint_completed": true,
+            "duplicate_extra_events": 0
+          },
+          {
+            "case": "claim",
+            "crash_returncode": 71,
+            "tool_events": 0,
+            "execution_state": "claimed",
+            "checkpoint_completed": false,
+            "duplicate_extra_events": 0
+          },
+          {
+            "case": "write",
+            "crash_returncode": 72,
+            "tool_events": 1,
+            "execution_state": "claimed",
+            "checkpoint_completed": false,
+            "duplicate_extra_events": 0
+          },
+          {
+            "case": "complete",
+            "crash_returncode": 73,
+            "tool_events": 1,
+            "execution_state": "completed",
+            "checkpoint_completed": false,
+            "duplicate_extra_events": 0
+          },
+          {
+            "case": "graph",
+            "crash_returncode": 74,
+            "tool_events": 1,
+            "execution_state": "completed",
+            "checkpoint_completed": true,
+            "duplicate_extra_events": 0
+          }
+        ],
+        "actual_http": true,
+        "postgres": true,
+        "sqlite": true,
+        "temporary_schema_and_files_cleaned": true
+      },
+      "test_ac1404_partial_failure_remains_consumed_and_trace_excludes_body": {
+        "passed": true,
+        "workers": [
+          {
+            "pid": 20332,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47428,
+            "command": "resume",
+            "phase": null,
+            "returncode": 2
+          },
+          {
+            "pid": 42728,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 36344,
+            "command": "status",
+            "phase": null,
+            "returncode": 0
+          }
+        ],
+        "scenarios": [
+          {
+            "case": "partial_failure",
+            "tool_events": 1,
+            "duplicate_extra_events": 0,
+            "trace_privacy": true
+          }
+        ],
+        "actual_http": true,
+        "postgres": true,
+        "sqlite": true,
+        "temporary_schema_and_files_cleaned": true
+      },
+      "test_ac1404_pending_rejected_expired_and_damaged_files_fail_closed": {
+        "passed": true,
+        "workers": [
+          {
+            "pid": 47592,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47372,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 38012,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 40568,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 47528,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 38224,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 39036,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 6648,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 31516,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 45748,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 45796,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 47744,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 20116,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 12540,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 48008,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 45612,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          },
+          {
+            "pid": 47144,
+            "command": "start",
+            "phase": null,
+            "returncode": 0
+          },
+          {
+            "pid": 36312,
+            "command": "resume",
+            "phase": null,
+            "returncode": 1
+          }
+        ],
+        "scenarios": [
+          {
+            "case": "pending",
+            "tool_events": 0
+          },
+          {
+            "case": "rejected",
+            "tool_events": 0
+          },
+          {
+            "case": "expired",
+            "tool_events": 0
+          },
+          {
+            "case": "arguments",
+            "tool_events": 0
+          },
+          {
+            "case": "version",
+            "tool_events": 0
+          },
+          {
+            "case": "profile",
+            "tool_events": 0
+          },
+          {
+            "case": "missing",
+            "tool_events": 0
+          },
+          {
+            "case": "duplicate",
+            "tool_events": 0
+          },
+          {
+            "case": "oversize",
+            "tool_events": 0
+          }
+        ],
+        "actual_http": true,
+        "postgres": true,
+        "sqlite": true,
+        "temporary_schema_and_files_cleaned": true
+      }
+    },
+    "five_os_exit_boundaries_verified": true,
+    "duplicate_additional_business_events": 0,
+    "same_action_and_ticket_retained": true,
+    "status_without_credentials_and_business": true,
+    "local_single_host_only": true,
+    "power_failure_tested": false,
+    "multi_host_tested": false
+  },
+  "packages": {
+    "four_wheels": [
+      {
+        "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "fb25005149b142f216469d5a0f5e9830edb52d3693c1ef0cf92033992052501b",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "3fc5137ce90c83b9cab8d0105ce92b26990a8e3b2157ca42b9c7b0415c33e974",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "a119283d2a6bd4446da8d5888bd8fd460da4834a60ce36d997b23e6fd4cb3029",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "f3e144a99b8e0012fb8fc816b9c8a97a9f914514b62ed99781a5f194c2074b29",
+        "source": "local workspace build"
+      }
+    ],
+    "clean_core_without_optional_sqlite_or_framework": true,
+    "missing_extra_creates_no_file": true,
+    "offline_extra_real_sqlite_graph_close_reopen": true,
+    "no_provider_or_collector_in_extra_environment": true,
+    "isolated_pip_check": true
+  },
+  "protocol": {
+    "openapi_exact_snapshot": "specs/011-reviewed-execution/contracts/openapi.json",
+    "migrations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "all_packaged_sql_identical_to_spec013": true,
+    "collector_and_dashboard_behavior_unchanged": true
+  },
+  "dependencies": {
+    "existing_59_versions_unchanged": true,
+    "current_pins": 62,
+    "new_pins": {
+      "langgraph-checkpoint-sqlite": "3.1.2",
+      "aiosqlite": "0.22.1",
+      "sqlite-vec": "0.1.9"
+    },
+    "both_platform_receipts": "resources/downloads/spec014-python-{windows,linux}.json",
+    "official_source_ids": 41
+  },
+  "docker": {
+    "project": "aegis-spec014-check",
+    "linux_62_pin_offline_collector_build": true,
+    "healthy_services": [
+      "collector",
+      "postgres"
+    ],
+    "readiness_http_status": 200,
+    "migration_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec014-check_postgres_data",
+    "volume_preserved": true,
+    "dashboard_rebuilt": false
+  },
+  "delivery_checks": {
+    "delivery": "Validated 110 Markdown documents, 428 local links, 41 official source IDs, 62 installed Python pins and both download receipts, npm direct pins, OpenAPI, privacy constraints and artifact ignores.\nHistorical59 versions/receipts unchanged; all62 cached wheel bytes on each platform match official hashes.",
+    "credentials": "Credential-pattern scan passed for 267 source/document/config files; no credential values printed.",
+    "pip_check": "No broken requirements found."
+  },
+  "harness_corrections": [
+    "SQLite inspection helpers needed closing rather than transaction-only connection contexts",
+    "Process-test ticket inspection needed explicit UTF-8 instead of Windows default GBK"
+  ],
+  "real_llm_requests": 0,
+  "external_business_requests": 0,
+  "limitations": [
+    "Local synchronous single-host serial thread only",
+    "No distributed/async/subgraph/multiple-interrupt scheduling",
+    "No completed receipt reconciliation or automatic claim release/retry",
+    "No cross-version migration or power/hardware durability proof",
+    "Trusted files/host/key and caller-owned consistent backups; no tamperproof audit or external exactly-once guarantee"
+  ]
+}

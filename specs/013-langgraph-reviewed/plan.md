@@ -1,0 +1,7 @@
+# SPEC-013方案
+
+原生LangGraph恢复会重新进入interrupt节点。不要把prepare或业务工具放在该节点前半部：节点只构造请求/暂停/校验收据。宿主从最新根snapshot准备，ReviewedTool对整个图绑定/实参信封做既有审阅和单次claim；调用时ContextVar提供可信图上下文，领取后函数前再校验最新状态。完成确认后才针对interrupt恢复。
+
+action键绑定逻辑call而非可变checkpoint，避免更新checkpoint后绕过消费记录；审阅绑定仍精确到checkpoint。收据HMAC域与action派生域分开，仅同key宿主生成，校验framework根checkpoint_map（锁定1.2.15实际探针验证），不直接信任Command布尔值。
+
+先真实框架/受控同步传输测试边界，再真实HTTP/PG，重建图与复用同一InMemorySaver验证宿主对象重建，不引入未验收的持久化checkpointer第三方依赖。测试/示例都用合成工具，无模型。构建wheel并核对013无服务端变更。

@@ -1,0 +1,8 @@
+{
+  "schema_version": "aegis.policy.v1",
+  "revision": "demo-v1",
+  "rules": [
+    {"id":"allow-read","effect":"allow","subjects":["order-agent","blocked-agent"],"tools":["lookup_order"],"permissions":["orders.read"]},
+    {"id":"deny-blocked","effect":"deny","subjects":["blocked-agent"],"tools":["lookup_order"],"permissions":["orders.read"]}
+  ]
+}

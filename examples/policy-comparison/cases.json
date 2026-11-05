@@ -1,0 +1,13 @@
+{
+  "schema_version": "aegis.policy-cases.v1",
+  "cases": [
+    {"id":"read-allowed","subject":"reader","tool":"lookup","permission":"orders.read","expected":{"effect":"allow","reason":"explicit_allow","rule_id":"allow-read"}},
+    {"id":"deny-overrides-allow","subject":"blocked","tool":"lookup","permission":"orders.read","expected":{"effect":"deny","reason":"explicit_deny","rule_id":"deny-blocked"}},
+    {"id":"unknown-subject","subject":"unknown","tool":"lookup","permission":"orders.read","expected":{"effect":"deny","reason":"no_match","rule_id":null}},
+    {"id":"unknown-tool","subject":"reader","tool":"archive","permission":"orders.read","expected":{"effect":"deny","reason":"no_match","rule_id":null}},
+    {"id":"missing-identity","subject":null,"tool":"lookup","permission":"orders.read","expected":{"effect":"deny","reason":"identity_missing","rule_id":null}},
+    {"id":"missing-permission","subject":"reader","tool":"lookup","permission":null,"expected":{"effect":"deny","reason":"permission_missing","rule_id":null}},
+    {"id":"write-not-allowed","subject":"reader","tool":"lookup","permission":"orders.write","expected":{"effect":"deny","reason":"no_match","rule_id":null}},
+    {"id":"admin-archive","subject":"admin","tool":"archive","permission":"orders.archive","expected":{"effect":"allow","reason":"explicit_allow","rule_id":"allow-admin"}}
+  ]
+}

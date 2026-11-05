@@ -1,0 +1,17 @@
+{
+  "source": "Docker Official Image library/python",
+  "tag": "3.12-slim",
+  "manifest_digest": "sha256:2b4f19dae3a777dfc3b76730bda1e82e1f66ab2a2686fa93ca78edbfb4f04ffe",
+  "config_digest": "sha256:df18428df8a0f9189c84e7424d214b4c50092af1f9dca5842a00c41c39bda316",
+  "layer_digests": [
+    "sha256:ecc510c1e359bdc007b39802570bb7e4dec7d6ebccf357c3201a74299113e05e",
+    "sha256:75b6a36c64a1cf3520fc4b4aae4739d5caa8a6a05c27835a920a61784c9c32f8",
+    "sha256:6912e23eb44595b44dc6d9882b34f305ad6f6e9667cec70b13e5dbc4f8cd97f4",
+    "sha256:bbc5a12237474ec0b23b5051260d56d6436a24d70d9cad961adebe7a037ed813"
+  ],
+  "accessed_on": "2026-10-14",
+  "url": "https://hub.docker.com/_/python",
+  "platform": "linux/amd64",
+  "tested_python": "3.12.15",
+  "verification": "Manifest/config/layer SHA256 and uncompressed diff IDs verified before docker load; upstream manifest digest differs from synthesized local Docker archive manifest."
+}

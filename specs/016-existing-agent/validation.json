@@ -1,0 +1,287 @@
+{
+  "spec": "SPEC-016",
+  "verified_on": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "executed": 78,
+    "sdk": 59,
+    "onboarding_contract": 12,
+    "runtime_basic": 7,
+    "new": 4,
+    "skipped": 0,
+    "previous_catalogue": 234,
+    "previous_rerun": 74,
+    "previous_inherited": 160,
+    "current_catalogue": 238
+  },
+  "synthetic_matrix": [
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "baseline",
+      "async": false,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 0,
+        "span_count": 0,
+        "llm_duration_ms": []
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 187.757
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "observe",
+      "async": false,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          2.0713,
+          0.8076
+        ]
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 284.853
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "allow",
+      "async": false,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          1.8367,
+          2.2216
+        ]
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 253.107
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "deny",
+      "async": false,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          0.5065,
+          1.0054
+        ]
+      },
+      "counts": {
+        "tool_calls": 0,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": false,
+      "execution_and_validation_ms": 287.903
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "baseline",
+      "async": true,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 0,
+        "span_count": 0,
+        "llm_duration_ms": []
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 225.067
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "observe",
+      "async": true,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          0.3277,
+          0.6352
+        ]
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 260.079
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "allow",
+      "async": true,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          2.0158,
+          2.5509
+        ]
+      },
+      "counts": {
+        "tool_calls": 1,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": true,
+      "execution_and_validation_ms": 250.641
+    },
+    {
+      "schema": "aegis.existing-agent.v1",
+      "status": "passed",
+      "mode": "deny",
+      "async": true,
+      "python": "3.12.14",
+      "provider_requests": 0,
+      "human_onboarding": "not_run",
+      "platform_acceptance": "not_run",
+      "host_delta": {
+        "scope": "host import switch only; excludes adapter implementation, SDK lifecycle, install and human edits",
+        "added_lines": 1,
+        "deleted_lines": 1,
+        "application_lines_changed": 0
+      },
+      "verification": {
+        "trace_count": 1,
+        "span_count": 4,
+        "llm_duration_ms": [
+          0.9374,
+          1.5244
+        ]
+      },
+      "counts": {
+        "tool_calls": 0,
+        "model_calls": 2
+      },
+      "equivalent_to_baseline": false,
+      "execution_and_validation_ms": 273.313
+    }
+  ],
+  "real_provider_requests": 0,
+  "application_source_sha256": "6728b5345601259f34ca82432b55a5087c43fd154e46f0924843b7453d577bd1",
+  "scope": "Real official framework and SDK with synthetic model HTTP; existing factory with injectable client/tool. No real third-party Agent migration.",
+  "unchanged": {
+    "core_api": true,
+    "openapi": true,
+    "sql": true,
+    "third_party_pins": 62,
+    "official_source_ids": 41
+  },
+  "inherited": {
+    "wheels": "SPEC-015; packaged modules unchanged",
+    "postgres": "SPEC-015 and earlier",
+    "frontend": "SPEC-011,35 methods/build"
+  },
+  "not_measured": [
+    "human integration",
+    "online installation",
+    "fresh platform visibility",
+    "real model latency"
+  ],
+  "evidence": "artifacts/existing-agent/tests.log,tests.json,matrix.json; per-run receipt/traces under ignored artifacts",
+  "delivery_checks": {
+    "markdown_documents": 122,
+    "local_links": 474,
+    "credential_scan_files": 295,
+    "official_sources": 41,
+    "pins": 62,
+    "both_platform_cached_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "openapi_exact_spec011": true,
+    "pip_check": "passed"
+  }
+}

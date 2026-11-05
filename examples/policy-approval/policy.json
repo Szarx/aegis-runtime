@@ -1,0 +1,45 @@
+{
+  "schema_version": "aegis.policy.v2",
+  "revision": "policy-approval-v2",
+  "rules": [
+    {
+      "id": "permit",
+      "effect": "allow",
+      "subjects": [
+        "reader"
+      ],
+      "tools": [
+        "write"
+      ],
+      "permissions": [
+        "records.write"
+      ]
+    },
+    {
+      "id": "review",
+      "effect": "require_approval",
+      "subjects": [
+        "reviewer"
+      ],
+      "tools": [
+        "write"
+      ],
+      "permissions": [
+        "records.write"
+      ]
+    },
+    {
+      "id": "block",
+      "effect": "deny",
+      "subjects": [
+        "blocked"
+      ],
+      "tools": [
+        "write"
+      ],
+      "permissions": [
+        "records.write"
+      ]
+    }
+  ]
+}

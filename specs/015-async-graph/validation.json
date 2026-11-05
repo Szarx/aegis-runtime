@@ -1,0 +1,220 @@
+{
+  "spec": "SPEC-015",
+  "verified_on": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "executed_this_increment": {
+      "runtime": 65,
+      "actual_http_postgres": 17,
+      "total": 82,
+      "new_methods": 13,
+      "postgres_skipped": 0
+    },
+    "previous_catalogue": 221,
+    "previous_methods_rerun": 69,
+    "previous_methods_inherited": 152,
+    "current_catalogue": 234,
+    "python_catalogue": {
+      "sdk/python/tests": 59,
+      "policy-engine/tests": 5,
+      "runtime/tests": 65,
+      "collector/tests": 26,
+      "tests/contract": 8,
+      "tests/integration": 36
+    },
+    "frontend_rerun": false,
+    "frontend_inherited_from": "SPEC-011:35 methods and production build",
+    "initial_combined_run": {
+      "passed": 81,
+      "errors": 1
+    },
+    "targeted_rerun": {
+      "method": "tests.integration.test_async_graph.AsyncGraphPostgres.test_ac1504_native_sqlite_http_committed_cancel_and_no_retry",
+      "passed": true,
+      "reason": "Test scenarios shared the same logical call; use independent phase thread IDs. No production change."
+    },
+    "post_review": {
+      "run": 6,
+      "successful": true,
+      "skipped": 0,
+      "reason": "Final review removed cursor cleanup waits on failure/cancel; actual fetchall timeout and affected async SQLite/HTTP/CLI tests rerun.",
+      "runtime_methods": 4,
+      "actual_http_postgres_methods": 2,
+      "additional_unique_methods": 0
+    }
+  },
+  "async_graph": {
+    "native_aget_state_ainvoke": true,
+    "tool_awaited_in_caller_task": true,
+    "original_value_error_cancel_identity": true,
+    "snapshot_guard_rechecks_deadline": true,
+    "agent_parent_and_privacy": true,
+    "claim_never_released": true,
+    "automatic_retry_or_compensation": false,
+    "post_confirmation_cancel_propagates": true
+  },
+  "persistence": {
+    "marker_format": 1,
+    "host_owned_aiosqlite": true,
+    "native_async_sqlite_saver": true,
+    "configure_does_not_create_close_or_migrate": true,
+    "strict_builtin_safe_no_pickle": true,
+    "wal_full": true,
+    "invalid_profile_schema_version_attachment_transaction_rejected": true,
+    "queued_sql_cancel_is_not_rollback": true,
+    "host_drains_and_closes_worker": true,
+    "sync_async_format_interoperability": true
+  },
+  "actual_http_postgres_sqlite": [
+    {
+      "phase": "success",
+      "tool_calls": 1,
+      "execution_state": "completed",
+      "worker_closed": true
+    },
+    {
+      "phase": "claim",
+      "tool_calls": 0,
+      "execution_state": "claimed",
+      "worker_closed": true
+    },
+    {
+      "phase": "body",
+      "tool_calls": 1,
+      "execution_state": "claimed",
+      "worker_closed": true
+    },
+    {
+      "phase": "complete",
+      "tool_calls": 1,
+      "execution_state": "completed",
+      "worker_closed": true
+    }
+  ],
+  "processes": {
+    "new_async_invocations_latest_successful_batch": 10,
+    "async_batches_passed": 2,
+    "details": {
+      "workers": [
+        {
+          "pid": 60644,
+          "command": "start",
+          "returncode": 0
+        },
+        {
+          "pid": 52484,
+          "command": "status",
+          "returncode": 0
+        },
+        {
+          "pid": 59888,
+          "command": "resume",
+          "returncode": 0
+        },
+        {
+          "pid": 33088,
+          "command": "status",
+          "returncode": 0
+        },
+        {
+          "pid": 20696,
+          "command": "resume",
+          "returncode": 1
+        },
+        {
+          "pid": 57216,
+          "command": "start",
+          "returncode": 0
+        },
+        {
+          "pid": 58616,
+          "command": "status",
+          "returncode": 0
+        },
+        {
+          "pid": 31372,
+          "command": "resume",
+          "returncode": 2
+        },
+        {
+          "pid": 36476,
+          "command": "status",
+          "returncode": 0
+        },
+        {
+          "pid": 33696,
+          "command": "resume",
+          "returncode": 1
+        }
+      ],
+      "scenarios": [
+        {
+          "partial_failure": false,
+          "tool_calls": 1,
+          "execution_state": "completed"
+        },
+        {
+          "partial_failure": true,
+          "tool_calls": 1,
+          "execution_state": "failed"
+        }
+      ]
+    },
+    "old_sync_invocations_rerun": 47
+  },
+  "packages": {
+    "wheels": [
+      {
+        "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "972d2673bdc1a7bfbe8fbfea7f4f61bea651d68139e0c0e75d194a7167efb4c8"
+      },
+      {
+        "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "e6c50299a5543340ec35bfa9747582cab168cf428902dc2ad5f01545de728424"
+      },
+      {
+        "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "894ba19d5001db0940d0cc71d805b8c01d78b646401b129e8b8bcf79bee64941"
+      },
+      {
+        "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "71fd0f45d6abd14f886f56c764f99b305e2be783ddeddf3b0865f828ff0dd2bb"
+      }
+    ],
+    "clean_core_and_extra_offline_install": true,
+    "optional_import_isolation": true,
+    "third_party_pins": 62,
+    "new_pins": 0,
+    "official_source_ids": 41,
+    "windows_linux_cached_wheel_hashes_verified": true,
+    "original_59_receipts_unchanged": true,
+    "openapi_exact_spec011": true,
+    "four_sql_files_byte_identical_spec014": true
+  },
+  "docker": {
+    "project": "aegis-spec015-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec015-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-014; unchanged server/SQL",
+    "dashboard_build": "inherited SPEC-011; unchanged UI"
+  },
+  "delivery_checks": [
+    "Validated 117 Markdown documents, 453 local links, 41 official source IDs, 62 installed Python pins and both download receipts, npm direct pins, OpenAPI, privacy constraints and artifact ignores.\nHistorical59 versions/receipts unchanged; all62 cached wheel bytes on each platform match official hashes.",
+    "Credential-pattern scan passed for 282 source/document/config files; no credential values printed.",
+    "No broken requirements found."
+  ],
+  "real_llm_requests": 0,
+  "limitations": [
+    "local single serial host and one root interrupt",
+    "Windows Python3.12.14 native async scenarios only",
+    "No distributed transaction or completed-receipt reconstruction",
+    "Host must finish cleanup before event-loop shutdown",
+    "Linux Collector build inherited SPEC-014; frontend inherited SPEC-011"
+  ]
+}

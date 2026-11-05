@@ -1,0 +1,15 @@
+{
+  "source": "Docker Official Image library/node",
+  "tag": "22-slim",
+  "manifest_digest": "sha256:efd0ab5780c2d9ab1f0f869571a00d5edb17793bff4cce4a2792e3eb0ffc7562",
+  "config_digest": "sha256:d0a16be756b6ec6658aecb8b7bcf87fa6c7d0d7fcc6ca53ad14bb49a4c90bdd7",
+  "layer_digests": [
+    "sha256:7fd1ebe418b5079d4aa36f416af9b143d127bc75b0155d71cb5fd559b5e04d39",
+    "sha256:f0400f4b55b0ad346bf6167a1b64a258e4d73db608c457798ce35e4ffeebfaaf",
+    "sha256:d22c69a95cf463f4cb74462bd2899597ce505d82bd4c01ceddf7845e12f13856",
+    "sha256:2cfab517365cfc6b4bd1f8c4cb01754884ef75bc38758b3c41e291c696f019f5",
+    "sha256:a8de9fa052209313d8e45435a8486e29b20eebaa820e2e7f63a7c3c94b4fa567"
+  ],
+  "accessed_on": "2026-10-15",
+  "verification": "Official Registry manifest/config/layer SHA256 and uncompressed diff IDs verified before docker load; archive import may synthesize a different local manifest."
+}

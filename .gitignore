@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Frontend / build
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+
+# Local configuration and data
+.env
+.env.*
+!.env.example
+*.log
+*.sqlite
+*.sqlite3
+/data/
+/artifacts/
+/tmp/
+/deploy/docker/wheelhouse/*.whl
+/deploy/docker/npm-cache/_cacache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

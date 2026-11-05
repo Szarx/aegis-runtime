@@ -1,0 +1,18 @@
+{
+  "source": "Docker Official Image library/nginx",
+  "tag": "alpine",
+  "manifest_digest": "sha256:138af827713b7671ef4ee2deea73bc6f08ae265130ce350307e3e7b52cd4b51b",
+  "config_digest": "sha256:76090a34b858323b6ab169711adc08253b5bee7123a973dc581ed46b643bc109",
+  "layer_digests": [
+    "sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5",
+    "sha256:6711e0c4f5a79e8db637a3412394f29da647e54476d67c5b211a11527568ddc5",
+    "sha256:3bf3671a4e6a18510ca49e3a4a226c2ef734a646e01e34e1ad0eff5faa01e3a0",
+    "sha256:b44956913298a55652fa97af34d296339c089250911e46e1a1c0eab8a88538c7",
+    "sha256:710ec83ca6cd71fa5636d861343b5660636728f71992fd1b68914e03c7af3ad4",
+    "sha256:70683d58fa5c20b5b31c9998a16f6634720d3393dc62934a608754abe449fe3b",
+    "sha256:6638b436592c96dd194db76a6b786b60b344d80ebe160e646c871d4e7eff25b5",
+    "sha256:1fdd0614a47ec2896aea36fb280a7b5e8655614dfb56ec1a64002131791de601"
+  ],
+  "accessed_on": "2026-10-15",
+  "verification": "Official Registry manifest/config/layer SHA256 and uncompressed diff IDs verified before docker load; archive import may synthesize a different local manifest."
+}

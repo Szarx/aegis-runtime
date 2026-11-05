@@ -1,0 +1,160 @@
+{
+  "spec": "SPEC-039",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 82,
+  "new_methods": 7,
+  "python_inherited_from": "SPEC-035",
+  "python_methods": 339,
+  "catalogue": 421,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.98
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.592
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.783
+      }
+    ],
+    "tests": {
+      "run": 82,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 38814,
+        "all_js": 609738,
+        "all_css": 26735
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-B_KpMKx2.js",
+          "bytes": 16120,
+          "gzip_bytes": 6208,
+          "sha256": "7458bd177fd399f12ab5af23d5838e7a06e9c288329138021c0914d30d0a832b",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-CosN6PJY.css",
+          "bytes": 2379,
+          "gzip_bytes": 697,
+          "sha256": "55f0e2765abf4c8b565aac9a73e150321adc1d6ad59602a67f37985ac31673d2",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-9TES6jkk.css",
+          "bytes": 151,
+          "gzip_bytes": 132,
+          "sha256": "13cf772c663d293a1a364a672ab6441a6499e8917d54e8594d2c3524e3b011c2",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-PnUA25Qq.js",
+          "bytes": 1246,
+          "gzip_bytes": 719,
+          "sha256": "a137256d50418dbb65ae0cdcfb6b6159d84e6c08b4a7b03f807755c5a69dcf88",
+          "entry": false
+        },
+        {
+          "path": "assets/index-br9qrjtW.css",
+          "bytes": 22019,
+          "gzip_bytes": 5378,
+          "sha256": "ce704efe98ed61b68a5eb89b9c5258f87e54c86c3a85a4b99ac602bbe751daa3",
+          "entry": true
+        },
+        {
+          "path": "assets/index-D88egBub.js",
+          "bytes": 101522,
+          "gzip_bytes": 38814,
+          "sha256": "0da7bc7728eb682bb661e3eca298b04def2b6fce704a9ea8f557b21780e58c3e",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-C3KQoIo8.css",
+          "bytes": 870,
+          "gzip_bytes": 388,
+          "sha256": "c54602a825fc49567144b196ec1907ced52d2c54b1c46d637b6270c5545ed6f0",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-CkcUdWeq.js",
+          "bytes": 13299,
+          "gzip_bytes": 5539,
+          "sha256": "b99f8ceede01b8a276dacbe5d63ca6624ec926ebb188927ffdfec13a2f29d2b4",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-BNu9Z6X8.js",
+          "bytes": 1537,
+          "gzip_bytes": 714,
+          "sha256": "f038305647b877bd87865a74e76186aaee16af54a7fe10c8802271f38afbc53f",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Dknxnqjl.js",
+          "bytes": 476014,
+          "gzip_bytes": 159541,
+          "sha256": "eecab5fdee7f5d59a29c3901afb63ee7477bf648e3cecc45df9a65774c0ccafd",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-J7EcVIAG.css",
+          "bytes": 1316,
+          "gzip_bytes": 479,
+          "sha256": "20585c45cddef0ebaefd90ffe8c171d4af47ac1801e7fce2d36620f280a7ed1d",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "copied_link": "http://127.0.0.1:5189/#/traces/c4897c41d95e829ff4e39d3bcc29f144?span=6a4d9cb181da9286",
+    "selected_span": "6a4d9cb181da9286",
+    "chat_filter_preserved": true,
+    "visible_model_nodes": 2,
+    "reload_requires_connection": true,
+    "missing_span_keeps_received_nodes": 4,
+    "extra_parameter_rejected": true,
+    "back_and_forward_restored": true,
+    "mobile_viewport": 390,
+    "mobile_page_width": 375,
+    "copy_button_height": 26,
+    "viewport_restored": true
+  },
+  "queries": {
+    "selection_queries": 0,
+    "invalid_or_missing_queries": 0,
+    "reopen_and_reload_log": "INFO:     127.0.0.1:50913 - \"GET /api/v1/traces?limit=20&offset=0 HTTP/1.1\" 200 OK\r\nINFO:     127.0.0.1:54873 - \"GET /api/v1/traces/c4897c41d95e829ff4e39d3bcc29f144 HTTP/1.1\" 200 OK\r\nINFO:     127.0.0.1:60285 - \"GET /api/v1/traces?limit=20&offset=0 HTTP/1.1\" 200 OK\r\nINFO:     127.0.0.1:57523 - \"GET /api/v1/traces/c4897c41d95e829ff4e39d3bcc29f144 HTTP/1.1\" 200 OK\r\n",
+    "history_restore_log": "INFO:     127.0.0.1:64492 - \"GET /api/v1/traces/c4897c41d95e829ff4e39d3bcc29f144 HTTP/1.1\" 200 OK\r\n"
+  },
+  "delayed_requests": {
+    "delay_seconds": 5,
+    "same_trace_inflight_requests": 1,
+    "different_trace_navigation_requests": 2,
+    "final_trace": "c4897c41d95e829ff4e39d3bcc29f144",
+    "final_span": "693f22c36174054c",
+    "test_helpers_stopped": true
+  },
+  "limitations": [
+    "Local Windows IAB only",
+    "Timeline pointer and clipboard rejection not re-simulated"
+  ]
+}

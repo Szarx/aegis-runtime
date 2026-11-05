@@ -1,0 +1,7 @@
+{
+  "schema_version": "aegis.application.v3",
+  "service_name": "configured-graph",
+  "policy_file": "policy.json",
+  "tools": [{"name": "write", "permission": "records.write", "execution": "reviewed_graph", "tool_revision": "write-v1", "graph": {"id": "configured-demo", "revision": "graph-v1", "node": "review"}}],
+  "telemetry": {"mode": "jsonl", "path": "../../artifacts/configured-graph-traces.jsonl"}
+}

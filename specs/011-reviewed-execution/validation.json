@@ -1,0 +1,129 @@
+{
+  "spec": "SPEC-011",
+  "verified_on": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "policy": 5,
+    "runtime": 23,
+    "sdk": 59,
+    "collector_protocol": 26,
+    "postgres_integration": 26,
+    "onboarding": 8,
+    "python_total": 147,
+    "frontend": 35,
+    "total": 182,
+    "new_methods": 24
+  },
+  "postgres_skipped": 0,
+  "database": {
+    "migration_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "approval_count": 5,
+    "reviewed_count": 4,
+    "execution_states": {
+      "completed": 1,
+      "failed": 1,
+      "available": 1,
+      "claimed": 1
+    }
+  },
+  "tool_calls": {
+    "approved_success": 1,
+    "rejected": 0,
+    "partial_failure": 1,
+    "lost_claim_response": 0,
+    "total": 2,
+    "additional_after_restart": 0
+  },
+  "http": {
+    "actual_cli_prepare_resume": true,
+    "duplicate_resume_blocked": true,
+    "unknown_never_released": true,
+    "business_error_identity_tested": true,
+    "records_and_original_times_preserved_after_rebuild_restart": true,
+    "after_restart_retries": [
+      {
+        "action_id": "ffd920e8fba04f76935128c436982fe6",
+        "returncode": 1
+      },
+      {
+        "action_id": "8b55c13c486b41c6bc6e8ab0e0cfc11b",
+        "returncode": 1
+      },
+      {
+        "action_id": "c9d6b0de8d1446c29681d842fa5398f5",
+        "returncode": 1
+      },
+      {
+        "action_id": "b326085778384ae4a12efb576b54c6f0",
+        "returncode": 1
+      }
+    ],
+    "legacy_preparation_isolated": true
+  },
+  "browser": {
+    "full_arguments_and_defaults_visible": true,
+    "signed_64_bit_preserved": true,
+    "digest_acknowledgement_required": true,
+    "approved_and_rejected_synthetic_actions": true,
+    "completed_failed_and_claimed_unknown_visible": true,
+    "route_change_clears_reviewer": true,
+    "old_page_only_legacy_record": true,
+    "no_executor_token_in_browser": true,
+    "temporary_tab_closed": true,
+    "screenshots": [
+      "artifacts/reviewed-execution/dashboard-completed.jpg",
+      "artifacts/reviewed-execution/dashboard-unknown.jpg",
+      "artifacts/reviewed-execution/dashboard-after-restart.jpg"
+    ]
+  },
+  "builds": {
+    "windows_typescript_vite": true,
+    "docker_collector_dashboard": true
+  },
+  "local_wheels": [
+    {
+      "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "43f0bea438d68d305e898c95a538d0f33c194bbe7842628e88ce7bafc7def12e",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "489d4959abbe39e81797c3e88cbcdff69d92ca5209c397d57cdabec75f6c4f77",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "5cbbfcc5f4656b1769f38e40242db04a9f7be9272d2a941f57852a16b83ad6ac",
+      "source": "local workspace build"
+    },
+    {
+      "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+      "sha256": "de79d4641954776cb74690c5f0d32abf5ed829f7673425164a6a3af5dd10032c",
+      "source": "local workspace build"
+    }
+  ],
+  "isolated_install_verified": true,
+  "pip_check": "passed",
+  "openapi_snapshot": "specs/011-reviewed-execution/contracts/openapi.json",
+  "new_provider_requests": 0,
+  "third_party_dependency_baseline_changed": false,
+  "limits": [
+    "Synchronous named JSON functions only; no async or graph checkpoint resume",
+    "Existing policy must explicitly allow; no Policy DSL require_approval branch",
+    "Full review arguments are explicitly disclosed to local Collector/database/reviewer",
+    "Consumed claim is never released, including before a business call starts",
+    "Business failure may include partial side effects; unknown never triggers business retry",
+    "No exactly-once external execution, process sandbox, per-user identity or tamper-proof audit guarantee"
+  ],
+  "cleanup": {
+    "compose_down_completed": true,
+    "remaining_project_containers": 0,
+    "database_volume_preserved": true
+  }
+}

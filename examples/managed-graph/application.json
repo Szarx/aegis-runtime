@@ -1,0 +1,7 @@
+{
+  "schema_version": "aegis.application.v1",
+  "service_name": "managed-graph",
+  "policy_file": "policy.json",
+  "tools": [{"name": "lookup_order", "permission": "orders.read"}],
+  "telemetry": {"mode": "jsonl", "path": "../../artifacts/managed-graph/traces.jsonl"}
+}

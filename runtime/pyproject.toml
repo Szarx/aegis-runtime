@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-runtime-control"
+version = "0.1.0.dev0"
+description = "Aegis in-process tool authorization runtime"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["aegis-runtime-sdk==0.1.0.dev0", "aegis-runtime-policy==0.1.0.dev0"]
+
+[project.optional-dependencies]
+reviewed-async = ["httpx==0.28.1"]
+reviewed-langgraph = ["langgraph==1.2.15"]
+reviewed-langgraph-sqlite = ["langgraph==1.2.15", "langgraph-checkpoint==4.3.0", "langgraph-checkpoint-sqlite==3.1.2", "aiosqlite==0.22.1", "sqlite-vec==0.1.9"]
+reviewed-langgraph-async = ["httpx==0.28.1", "langgraph==1.2.15", "langgraph-checkpoint==4.3.0", "langgraph-checkpoint-sqlite==3.1.2", "aiosqlite==0.22.1", "sqlite-vec==0.1.9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["aegis_runtime*"]
+namespaces = false

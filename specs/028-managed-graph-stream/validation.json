@@ -1,0 +1,263 @@
+{
+  "spec": "SPEC-028",
+  "verified_on": "2026-10-25",
+  "status": "passed",
+  "python_tests": {
+    "run": 330,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 119,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 49,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 51,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 15,
+  "previous_methods_rerun": 366,
+  "current_catalogue": 381,
+  "delivered": [
+    "limited graph invoke/ainvoke/stream/astream/with_config API",
+    "unchanged v1/v2/v3 configurations",
+    "leased lazy stream lifecycle and explicit cleanup retry",
+    "single consumer and original async loop",
+    "preserved object/exception identity and OTel context",
+    "real graph/official SDK synthetic model/tool loop",
+    "real HTTP/PG timing, tokens, governance, lifecycle and offline export",
+    "clean core and explicit graph/model extra installation"
+  ],
+  "actual_workflow": {
+    "call_modes": [
+      "invoke",
+      "ainvoke",
+      "stream",
+      "astream"
+    ],
+    "matrix_profiles": 20,
+    "mode_version_cli_profiles": 12,
+    "full_allowed": {
+      "model_calls": 2,
+      "business_calls": 1,
+      "spans": 4
+    },
+    "full_denied": {
+      "model_calls": 2,
+      "business_calls": 0,
+      "spans": 4
+    },
+    "early_close": {
+      "model_calls": 1,
+      "business_calls": 0,
+      "spans": 2
+    },
+    "governance_events": 16,
+    "denied_events": 8,
+    "matrix_traces": 20,
+    "graph_completed": 8,
+    "graph_closed": 4,
+    "ordinary_agent_traces": 8,
+    "additional_fault_schema": {
+      "traces": 2,
+      "graph_error": 1,
+      "graph_cancelled": 1
+    },
+    "model_usage_per_call": {
+      "input_tokens": 7,
+      "output_tokens": 3
+    },
+    "model_duration_positive": true,
+    "tool_duration": "nonnegative; tiny synthetic tool may share one Windows clock tick",
+    "parent_association": true,
+    "telemetry_content_absent": true,
+    "offline_export_verified": 16,
+    "cleanup_failure_keeps_lease": true,
+    "original_exception_identity_preserved": true
+  },
+  "installation": {
+    "clean_venv": true,
+    "offline_cached_install": true,
+    "online_install_or_human_timing": false,
+    "core": {
+      "packages": [
+        "aegis-runtime-control",
+        "aegis-runtime-policy",
+        "aegis-runtime-sdk",
+        "opentelemetry-api",
+        "opentelemetry-sdk",
+        "opentelemetry-semantic-conventions",
+        "pip",
+        "typing_extensions"
+      ],
+      "lazy_optional_imports": true,
+      "missing_extra_rejected": true,
+      "v1_v2_v3_inspection": true
+    },
+    "optional": {
+      "explicit_sdk_graph_model_extras": true,
+      "installed_package_origins_verified": true,
+      "synthetic_model_transport_only": true,
+      "profiles": [
+        {
+          "mode": "invoke",
+          "early_close": false,
+          "model_calls": 2,
+          "business_calls": 1,
+          "exported_spans": 4
+        },
+        {
+          "mode": "ainvoke",
+          "early_close": false,
+          "model_calls": 2,
+          "business_calls": 1,
+          "exported_spans": 4
+        },
+        {
+          "mode": "stream",
+          "early_close": false,
+          "model_calls": 2,
+          "business_calls": 1,
+          "exported_spans": 4
+        },
+        {
+          "mode": "astream",
+          "early_close": false,
+          "model_calls": 2,
+          "business_calls": 1,
+          "exported_spans": 4
+        },
+        {
+          "mode": "stream",
+          "early_close": true,
+          "model_calls": 1,
+          "business_calls": 0,
+          "exported_spans": 2
+        },
+        {
+          "mode": "astream",
+          "early_close": true,
+          "model_calls": 1,
+          "business_calls": 0,
+          "exported_spans": 2
+        }
+      ]
+    },
+    "original_runtime_and_review_protocol_sources_unchanged": true,
+    "runtime_wheel": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "7a227e769c1908226d3af30052fdb208f45fe9de4a6812ef80127e4506f47517",
+    "sdk_inherited": "SPEC-015",
+    "policy_inherited": "SPEC-023"
+  },
+  "docker": {
+    "project": "aegis-spec028-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec028-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sdk": true,
+    "policy": true,
+    "existing_review_and_graph_protocols": true,
+    "collector": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "automatic_review": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Explicit model/tool wrapping; no automatic discovery, token event projection or new auth authority",
+    "Graph duration includes consumer wait; model duration is client request lifecycle, no TTFT/pure inference claim",
+    "Started stream cleanup failure retains Application lease; explicit same-loop cleanup required, no GC/background cleanup",
+    "One operation per stream, no cross-loop consumption; host owns model/graph/checkpoint resources",
+    "Synthetic model and cached install only; no new real provider, online/human onboarding timing or browser acceptance"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 180,
+    "local_links": 681,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 463,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

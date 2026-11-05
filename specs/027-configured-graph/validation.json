@@ -1,0 +1,205 @@
+{
+  "spec": "SPEC-027",
+  "verified_on": "2026-10-25",
+  "status": "passed",
+  "python_tests": {
+    "run": 315,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 107,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 48,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 49,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 13,
+  "previous_methods_rerun": 353,
+  "current_catalogue": 366,
+  "affected_pg_rerun": {
+    "run": 3,
+    "passed": true,
+    "reason": "Final CLI startup errors use fixed non-disclosing output; all configured graph HTTP/PG workflows rerun"
+  },
+  "delivered": [
+    "strict v3 graph metadata, preserved v1/v2",
+    "non-downgradable configured graph binding",
+    "leased sync/async node and whole prepare/resume/continuation",
+    "borrowed host resources",
+    "real LangGraph and separate processes with local SQLite",
+    "independent HTTP reviewer and governance/Trace/export",
+    "clean core and explicit optional graph installation"
+  ],
+  "actual_workflow": {
+    "sync_and_async": true,
+    "new_process_start_status_resume": true,
+    "pending_calls": 0,
+    "rejected_calls": 0,
+    "tampered_calls": 0,
+    "approved_calls": 1,
+    "repeated_calls_added": 0,
+    "full_int64_review_arguments": true,
+    "graph_after_success": "completed",
+    "committed_complete_ack_loss": {
+      "server": "completed",
+      "host": "unknown",
+      "graph": "pending",
+      "business_calls": 1,
+      "repeated_calls_added": 0
+    },
+    "failure": "failed, partial effect once, graph pending",
+    "cancellation": "claimed, partial effect once, graph pending",
+    "changed_graph_revision": "zero execution; original version may resume original approved action",
+    "governance_events": 2,
+    "event_trace_association": true,
+    "telemetry_argument_content_absent": true,
+    "export_offline_verified": 2,
+    "status_without_credentials_or_live_endpoint": true
+  },
+  "installation": {
+    "clean_venv": true,
+    "offline_cached_install": true,
+    "online_install_or_human_timing": false,
+    "core": {
+      "packages": [
+        "aegis-runtime-control",
+        "aegis-runtime-policy",
+        "aegis-runtime-sdk",
+        "opentelemetry-api",
+        "opentelemetry-sdk",
+        "opentelemetry-semantic-conventions",
+        "pip",
+        "typing_extensions"
+      ],
+      "lazy_graph_import": true,
+      "missing_extra_not_bound": true,
+      "v1_v2_v3_inspection": true
+    },
+    "optional": {
+      "graph_optional_extra": true,
+      "sqlite_close_reopen_sync_async": true,
+      "synthetic_transport_only": true,
+      "business_calls": 2,
+      "borrowed_client_closed_by_host": true
+    },
+    "old_026_loader_rejects_v3": true,
+    "original_graph_and_approval_protocol_sources_unchanged": true,
+    "runtime_wheel": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "22befa3d71daf58ba54cef29dafc193b8f99c5c4b24c4f4f3544253f3f533ffe",
+    "sdk_inherited": "SPEC-015",
+    "policy_inherited": "SPEC-023"
+  },
+  "docker": {
+    "project": "aegis-spec027-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec027-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sdk": true,
+    "policy": true,
+    "original_graph_and_approval_protocols": true,
+    "collector": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "automatic_review": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Explicit complete parameter disclosure to approval server, ticket and checkpoint; trusted host local state",
+    "Single local host, one root interrupt; no multi-host exactly-once or shared business/checkpoint transaction",
+    "Unknown/partial failure/cancellation consume claim permanently; no receipt reconstruction or auto retry",
+    "Synthetic reviewer HTTP role tested; inherited UI and browser acceptance, no new human GUI timing",
+    "Offline cached clean installation only; no online download or human onboarding timing"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 175,
+    "local_links": 659,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 448,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

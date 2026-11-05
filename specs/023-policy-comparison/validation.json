@@ -1,0 +1,169 @@
+{
+  "spec": "SPEC-023",
+  "verified_on": "2026-10-24",
+  "status": "passed",
+  "python_tests": {
+    "run": 254,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 67,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 35,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 41,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 10,
+  "previous_methods_rerun": 295,
+  "current_catalogue": 305,
+  "runtime_cases": {
+    "cases": 8,
+    "mode_count": 2,
+    "policies": 2,
+    "attempts": 32,
+    "before_calls_per_mode": 2,
+    "after_calls_per_mode": 3,
+    "total_business_calls": 10,
+    "observed_decisions_and_rule_ids": true
+  },
+  "comparison_counts": {
+    "widened": 2,
+    "narrowed": 1,
+    "decision_changed": 1,
+    "unchanged": 4
+  },
+  "package": {
+    "isolated_target": true,
+    "python_flags": [
+      "-I",
+      "-S"
+    ],
+    "third_party_dependencies": false,
+    "comparison_cases": 8,
+    "counts": {
+      "decision_changed": 1,
+      "narrowed": 1,
+      "unchanged": 4,
+      "widened": 2
+    },
+    "changed_exit_code": 1,
+    "identical_exit_code": 0,
+    "legacy_check_cases": 7,
+    "legacy_explain": true,
+    "policy_and_workbench_sources_identical_to_spec022": true,
+    "wheel": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+    "sha256": "819d7226b63e59e41372b72c9c079557f9f70a03dd6a5f780d26b5574ce819b6"
+  },
+  "docker": {
+    "project": "aegis-spec023-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec023-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "policy_evaluator": true,
+    "workbench_module": true,
+    "sdk": true,
+    "runtime_implementation": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "policies_automatically_applied": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Finite-case comparison is not global equivalence or production completeness",
+    "Changed configuration or invalid baseline expectations require review; report is not deployment approval",
+    "Fingerprints have no authentication or approval-binding authority",
+    "No new service/API, SQL, runtime mode, image build or browser acceptance"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 155,
+    "local_links": 583,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 393,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

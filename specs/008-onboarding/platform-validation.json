@@ -1,0 +1,153 @@
+{
+  "schema_version": "aegis.platform_onboarding.v1",
+  "spec": "SPEC-008",
+  "verified_on": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "basis": "Independent Compose project and new database; existing Docker/package caches and previously installed SDK venvs",
+  "started_at_utc": "2026-10-18T06:57:37.289922+00:00",
+  "docker_engine_version": "29.7.2",
+  "initial_trace_count": 0,
+  "stages": [
+    {
+      "name": "compose-build-up-healthy",
+      "elapsed_ms": 26231.565,
+      "status": "passed"
+    },
+    {
+      "name": "native-otlp-install",
+      "elapsed_ms": 14479.555,
+      "status": "passed"
+    },
+    {
+      "name": "native-dependency-check",
+      "elapsed_ms": 1367.418,
+      "status": "passed"
+    },
+    {
+      "name": "native-agent-http",
+      "elapsed_ms": 972.512,
+      "status": "passed"
+    },
+    {
+      "name": "langgraph-otlp-install",
+      "elapsed_ms": 7009.611,
+      "status": "passed"
+    },
+    {
+      "name": "langgraph-dependency-check",
+      "elapsed_ms": 1153.464,
+      "status": "passed"
+    },
+    {
+      "name": "langgraph-agent-http",
+      "elapsed_ms": 4425.843,
+      "status": "passed"
+    }
+  ],
+  "first_native_query_ms": 44292.792,
+  "first_confirmed_visible_ms": 107887.062,
+  "visibility_measurement_scope": "Native list plus loaded Agent/Tool detail; includes browser/tool orchestration intervals; confirmation upper bound, not first paint",
+  "query_verification": {
+    "trace_count": 3,
+    "span_count": 8,
+    "parentage_verified": true,
+    "graph_outcome_null_verified": true
+  },
+  "database_verification": {
+    "span_count": 8,
+    "trace_count": 3,
+    "migration_versions": [
+      1,
+      2
+    ]
+  },
+  "status_filter_counts": {
+    "UNSET": 2,
+    "ERROR": 1
+  },
+  "trace_metadata": [
+    {
+      "trace_id": "baf2bbb7f674d97717ff9ed9616c04ef",
+      "agent_names": [
+        "langgraph-order-agent"
+      ],
+      "status": "UNSET",
+      "span_count": 4
+    },
+    {
+      "trace_id": "4dff8c04a27ecb47ad009c822e060735",
+      "agent_names": [
+        "customer-agent"
+      ],
+      "status": "ERROR",
+      "span_count": 2
+    },
+    {
+      "trace_id": "886b260f78c11ce21e19297eb3d51c24",
+      "agent_names": [
+        "customer-agent"
+      ],
+      "status": "UNSET",
+      "span_count": 2
+    }
+  ],
+  "native_diagnostics": {
+    "accepted_spans": 4,
+    "exported_spans": 4,
+    "failed_spans": 0,
+    "dropped_spans": 0,
+    "pending_spans": 0,
+    "export_failures": 0,
+    "instrumentation_failures": 0
+  },
+  "langgraph_diagnostics": {
+    "accepted_spans": 4,
+    "exported_spans": 4,
+    "failed_spans": 0,
+    "dropped_spans": 0,
+    "pending_spans": 0,
+    "export_failures": 0,
+    "instrumentation_failures": 0
+  },
+  "browser": {
+    "native_list": true,
+    "native_error_detail": true,
+    "langgraph_list": true,
+    "langgraph_agent_llm_tool": true,
+    "synthetic_provider_and_usage": true,
+    "screenshots": [
+      "artifacts/platform-onboarding/native-detail.jpg",
+      "artifacts/platform-onboarding/langgraph-detail.jpg"
+    ],
+    "temporary_tab_closed": true
+  },
+  "cleanup": {
+    "old_spec007_containers_removed": true,
+    "current_compose_down_completed": true,
+    "remaining_project_containers": 0,
+    "preserved_volumes": [
+      "aegis-spec007-check_postgres_data",
+      "aegis-spec008-check_postgres_data"
+    ]
+  },
+  "new_provider_requests": 0,
+  "new_automated_methods": 0,
+  "product_source_changes": false,
+  "online_download_acceptance": "not_run",
+  "human_five_minute_acceptance": "not_run",
+  "full_cold_start_ten_minute_acceptance": "not_run",
+  "limits": [
+    "Python/source/Docker and package caches already present",
+    "Uses prior SPEC-008 venvs; OTLP installation is measured separately",
+    "No addition of earlier SDK measurement to present platform timeline",
+    "Human reading and manual integration edits not measured"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 70,
+    "local_links": 272,
+    "credential_pattern_scan_files": 168,
+    "current_openapi_matches": true,
+    "artifact_ignores_verified": true
+  }
+}

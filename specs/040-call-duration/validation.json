@@ -1,0 +1,171 @@
+{
+  "spec": "SPEC-040",
+  "status": "passed",
+  "verified_on": "2026-10-27",
+  "frontend_tests": 87,
+  "new_methods": 5,
+  "python_inherited_from": "SPEC-035",
+  "python_methods": 339,
+  "python_rerun": false,
+  "catalogue": 426,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 3.13
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 7.827
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 1.42
+      }
+    ],
+    "tests": {
+      "run": 87,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 38808,
+        "all_js": 612647,
+        "all_css": 28099
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-CosN6PJY.css",
+          "bytes": 2379,
+          "gzip_bytes": 697,
+          "sha256": "55f0e2765abf4c8b565aac9a73e150321adc1d6ad59602a67f37985ac31673d2",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-XocrdsaF.js",
+          "bytes": 16120,
+          "gzip_bytes": 6205,
+          "sha256": "f0e2107100e5f49669c767ec9f7b0db8eac7b378beab7b12401cefc9a38f08ed",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-9TES6jkk.css",
+          "bytes": 151,
+          "gzip_bytes": 132,
+          "sha256": "13cf772c663d293a1a364a672ab6441a6499e8917d54e8594d2c3524e3b011c2",
+          "entry": false
+        },
+        {
+          "path": "assets/CopyValue-BY9To-lf.js",
+          "bytes": 1246,
+          "gzip_bytes": 720,
+          "sha256": "ffc4a54f06983bb16e3069fbed14e313bed3142b0dff2e52fd4d228e8128b1a8",
+          "entry": false
+        },
+        {
+          "path": "assets/index-br9qrjtW.css",
+          "bytes": 22019,
+          "gzip_bytes": 5378,
+          "sha256": "ce704efe98ed61b68a5eb89b9c5258f87e54c86c3a85a4b99ac602bbe751daa3",
+          "entry": true
+        },
+        {
+          "path": "assets/index-DgBp72Ie.js",
+          "bytes": 101522,
+          "gzip_bytes": 38808,
+          "sha256": "4e381377898aa94a1975d2e3abe678425d183153297b6ecd380dd1c6a5dada06",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-C1hAxHOp.js",
+          "bytes": 13299,
+          "gzip_bytes": 5536,
+          "sha256": "fd8d8e430026c99810ba0f8581c8b79c86a4dbcae87d1280bc95e4d2848fec4f",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-C3KQoIo8.css",
+          "bytes": 870,
+          "gzip_bytes": 388,
+          "sha256": "c54602a825fc49567144b196ec1907ced52d2c54b1c46d637b6270c5545ed6f0",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-DgTtRbln.js",
+          "bytes": 1537,
+          "gzip_bytes": 715,
+          "sha256": "a4dc811f19c591035ea8c370ceaed4238e6c1667bddafad42aca54f3e8782fc9",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-5mj-hlJx.css",
+          "bytes": 2680,
+          "gzip_bytes": 775,
+          "sha256": "c3a29f455b280a4a6b602c100ddc1e8ec702b85a2ae6ff9bb42738e5e5c85c38",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Dcp5fcgK.js",
+          "bytes": 478923,
+          "gzip_bytes": 160567,
+          "sha256": "140fe408e23f2408c71fdfb593f5f0f28f7ba42a31a99ec698a24a89565b2bd1",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "browser": {
+    "trace_id": "c4897c41d95e829ff4e39d3bcc29f144",
+    "rank_initially_open": false,
+    "received_calls": 3,
+    "ranked_durations": [
+      "1.938 ms",
+      "412.1 \u00b5s",
+      "0 ns"
+    ],
+    "ranked_shares": [
+      "23.26%",
+      "4.94%",
+      "0.00%"
+    ],
+    "chat_filtered_nodes": 2,
+    "ranked_rows_with_chat_filter": 3,
+    "located_span": "579f18e0a94aa8e2",
+    "after_locate_filter": "all",
+    "after_locate_nodes": 4,
+    "tree_node_focused": true,
+    "input_tokens": "14",
+    "output_tokens": "6",
+    "raw_start_ns": "1792989215772057300",
+    "copied_link": "http://127.0.0.1:5189/#/traces/c4897c41d95e829ff4e39d3bcc29f144?span=579f18e0a94aa8e2",
+    "selection_window_new_requests": 0,
+    "mobile_viewport": 390,
+    "mobile_page_width": 375,
+    "mobile_keyboard_locate": true,
+    "restored_viewport": [
+      1280,
+      720
+    ]
+  },
+  "real_provider_requests": 0,
+  "tools_executed": 0,
+  "approval_decisions": 0,
+  "timing_note": "Span end timestamp is fixed before processors/exporters; own export wait excluded.",
+  "limitations": [
+    "Local Windows IAB and existing synthetic Trace",
+    "No large-Trace performance or critical path acceptance",
+    "Python regression inherited from SPEC-035; not rerun"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "schema_version": "aegis.policy.v1",
+  "revision": "replay-candidate-v1",
+  "rules": [
+    {"id":"allow","effect":"allow","subjects":["demo-agent"],"tools":["write_record"],"permissions":["demo.write"]}
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "spec": "SPEC-013",
+  "verified_on": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "status": "passed",
+  "automated_methods": {
+    "executed_this_increment": {
+      "runtime": 46,
+      "actual_http_postgres": 9,
+      "total": 55,
+      "new_methods": 15,
+      "postgres_skipped": 0
+    },
+    "previous_catalogue": 194,
+    "previous_methods_rerun": 40,
+    "previous_methods_inherited": 154,
+    "current_catalogue": 209,
+    "frontend_rerun": false,
+    "frontend_inherited_from": "SPEC-011:35 methods and production build"
+  },
+  "behavior": {
+    "real_langgraph": "1.2.15",
+    "checkpoint": "4.3.0",
+    "pause_node_no_network_or_business": true,
+    "precise_checkpoint_thread_interrupt_request_binding": true,
+    "logical_call_action_stable_across_checkpoint_edits": true,
+    "single_claim_with_two_concurrent_hosts": true,
+    "deadline_rechecked_after_checkpoint_read": true,
+    "claimed_or_completed_response_loss_never_repeats": true,
+    "business_value_and_exception_identity": true,
+    "agent_tool_parentage_and_privacy": true,
+    "real_otlp_storage_and_query": true,
+    "forged_boolean_mac_thread_and_checkpoint_receipts_blocked": true,
+    "continuation_unknown_or_blocked_never_retries_business": true
+  },
+  "checkpoint_scope": {
+    "same_process_in_memory_saver_host_and_graph_rebuild": true,
+    "cross_process_durable_backend_tested": false,
+    "host_serializes_same_thread": true,
+    "no_cross_store_atomicity_claim": true
+  },
+  "cli": {
+    "real_cli": true,
+    "real_langgraph": true,
+    "real_http": true,
+    "real_postgres": true,
+    "cases": [
+      {
+        "scenario": "success",
+        "action_id": "9c821d0403f51e6b0f682b192301bd38",
+        "returncode": 0,
+        "result": {
+          "action_id": "9c821d0403f51e6b0f682b192301bd38",
+          "confirmation": "confirmed",
+          "continuation": "resumed",
+          "result": {
+            "record_id": 9223372036854775807,
+            "updated": true
+          }
+        },
+        "execution_state": "completed",
+        "approval_status": "approved"
+      },
+      {
+        "scenario": "failure",
+        "action_id": "e8a7f2439b503c1b541c5ab5b84f32b8",
+        "returncode": 2,
+        "result": {
+          "action_id": "e8a7f2439b503c1b541c5ab5b84f32b8",
+          "business_error": "SyntheticFailure",
+          "retry": false
+        },
+        "execution_state": "failed",
+        "approval_status": "approved"
+      },
+      {
+        "scenario": "rejected",
+        "action_id": "1e5a2fbb683c7163494e4eefc6a979e4",
+        "returncode": 1,
+        "result": {
+          "action_id": "1e5a2fbb683c7163494e4eefc6a979e4",
+          "operation": "not completed",
+          "retry": false
+        },
+        "execution_state": "available",
+        "approval_status": "rejected"
+      },
+      {
+        "scenario": "eof",
+        "action_id": "005c09aa00a8ecb33b82e48028dc455f",
+        "returncode": 4,
+        "result": null,
+        "execution_state": "available",
+        "approval_status": "pending"
+      }
+    ],
+    "host_rebuilt_same_in_memory_saver": true,
+    "cross_process_checkpoint_durability_tested": false,
+    "new_local_events": 2,
+    "local_event_baseline": 4,
+    "local_event_total": 6,
+    "rejected_events": 0,
+    "eof_events": 0,
+    "models_called": 0,
+    "temporary_schema_cleaned": true,
+    "reviewer": "explicit synthetic test harness decision; no external messages"
+  },
+  "packages": {
+    "four_wheels": [
+      {
+        "file": "aegis_runtime_collector-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "e38d7e07b1ca5aeace92f59120ceca5e8de6c6de29be02fe228a597c72bd0620",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "5bcd2be5302763bfadd06fa482198654d39f2c211796bbf9416fcdbd78094e7a",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_policy-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "0ab7cf8a1ec04603cae6a0e09f804da6fc36a8f59e6da36604843aa5fd51f424",
+        "source": "local workspace build"
+      },
+      {
+        "file": "aegis_runtime_sdk-0.1.0.dev0-py3-none-any.whl",
+        "sha256": "e35dca69fccd081469e33b493e01a40ae71424faff8e337308e4982aa0b26a91",
+        "source": "local workspace build"
+      }
+    ],
+    "clean_core_without_langgraph_or_httpx": true,
+    "optional_module_imports_without_framework": true,
+    "missing_extra_fixed_message": true,
+    "offline_extra_real_graph_pause_and_binding": true,
+    "no_model_provider_or_collector_installed": true,
+    "isolated_pip_check": true,
+    "final_runtime_includes_post_checkpoint_deadline_check": true,
+    "final_runtime_sha256": "5bcd2be5302763bfadd06fa482198654d39f2c211796bbf9416fcdbd78094e7a"
+  },
+  "protocol": {
+    "openapi_exact_snapshot": "specs/011-reviewed-execution/contracts/openapi.json",
+    "migrations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "all_packaged_sql_identical_to_spec012": true,
+    "server_and_dashboard_behavior_unchanged": true
+  },
+  "delivery_checks": {
+    "delivery": "Validated 103 Markdown documents, 403 local links, 38 official source IDs, 59 installed Python pins and both download receipts, npm direct pins, OpenAPI, privacy constraints and artifact ignores.",
+    "credentials": "Credential-pattern scan passed for 252 source/document/config files; no credential values printed.",
+    "pip_check": "No broken requirements found."
+  },
+  "official_source_ids": 38,
+  "python_third_party_pins": 59,
+  "real_llm_requests": 0,
+  "external_business_requests": 0,
+  "harness_corrections": [
+    "New PG test helper initially parsed OTLP binary response as JSON; fixed helper and both new methods passed",
+    "CLI harness initially decoded Windows default stderr as UTF-8; explicit child encoding then all four scenarios passed"
+  ],
+  "docker": {
+    "project": "aegis-spec013-check",
+    "services_used": [
+      "postgres"
+    ],
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume_preserved": true,
+    "volume": "aegis-spec013-check_postgres_data"
+  },
+  "limitations": [
+    "Only sync single root interrupt and thread_id config",
+    "No async graph/subgraphs/multiple interrupts",
+    "No cross-process durable checkpointer or receipt reconciliation",
+    "Stable IDs/key and trusted host/checkpointer required",
+    "No require_approval policy branch, production tenant identity, tamperproof audit or external exactly-once guarantee"
+  ]
+}

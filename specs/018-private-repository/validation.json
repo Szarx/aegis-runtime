@@ -1,0 +1,116 @@
+{
+  "spec": "SPEC-018",
+  "verified_on": "2026-10-23",
+  "status": "private_local_ready",
+  "private_upload_local_ready": true,
+  "public_release_ready": false,
+  "license_selected": false,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "python_tests": {
+    "run": 211,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 65,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 26,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend": {
+    "tests": 35,
+    "typecheck": true,
+    "production_build": true
+  },
+  "total_methods": 246,
+  "new_methods": 2,
+  "previous_methods_rerun": 244,
+  "candidate_check": {
+    "status": "passed",
+    "candidate_files": 335,
+    "issues": [],
+    "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+  },
+  "docker": {
+    "project": "aegis-spec018-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec018-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-014; unchanged server/SQL",
+    "dashboard_build": "SPEC-018:35 tests, typecheck and production build passed"
+  },
+  "baseline": {
+    "third_party_pins": 62,
+    "official_sources": 44,
+    "migrations": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "openapi": "unchanged SPEC-011"
+  },
+  "pending": [
+    "GitHub owner/repository name",
+    "GitHub git connectivity",
+    "first remote CI",
+    "license and public release decisions"
+  ],
+  "limitations": [
+    "Current candidate working-tree scan only, not all secrets/history/staged bytes",
+    "Windows local verification is not GitHub Ubuntu verification"
+  ]
+}

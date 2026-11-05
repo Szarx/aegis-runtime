@@ -1,0 +1,8 @@
+{
+  "schema_version":"aegis.policy.v1",
+  "revision":"onboarding-demo-v1",
+  "rules":[
+    {"id":"allow-read","effect":"allow","subjects":["reader"],"tools":["lookup_order"],"permissions":["orders.read"]},
+    {"id":"deny-read","effect":"deny","subjects":["blocked"],"tools":["lookup_order"],"permissions":["orders.read"]}
+  ]
+}

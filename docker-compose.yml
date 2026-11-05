@@ -1,0 +1,58 @@
+name: aegis
+
+services:
+  postgres:
+    image: postgres:16-alpine@sha256:3c5c8892d184f738f4fe282d14ddaa613a38f00f4189d2d94725ebe6f2909ddb
+    environment:
+      POSTGRES_USER: aegis
+      POSTGRES_PASSWORD: ${AEGIS_DB_PASSWORD:-aegis_local}
+      POSTGRES_DB: aegis
+    ports:
+      - "127.0.0.1:${AEGIS_POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aegis -d aegis"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+  collector:
+    build:
+      context: .
+      dockerfile: deploy/docker/collector.Dockerfile
+    environment:
+      AEGIS_DATABASE_URL: postgresql://aegis:${AEGIS_DB_PASSWORD:-aegis_local}@postgres:5432/aegis
+      AEGIS_API_TOKEN: ${AEGIS_API_TOKEN:-aegis-local-dev}
+      AEGIS_APPROVAL_REQUEST_TOKEN: ${AEGIS_APPROVAL_REQUEST_TOKEN:-}
+      AEGIS_APPROVAL_REVIEW_TOKEN: ${AEGIS_APPROVAL_REVIEW_TOKEN:-}
+      AEGIS_APPROVAL_REVIEWER: ${AEGIS_APPROVAL_REVIEWER:-local-reviewer}
+      AEGIS_APPROVAL_EXECUTION_TOKEN: ${AEGIS_APPROVAL_EXECUTION_TOKEN:-}
+      AEGIS_APPROVAL_EXECUTOR: ${AEGIS_APPROVAL_EXECUTOR:-local-executor}
+    ports:
+      - "127.0.0.1:${AEGIS_HTTP_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/ready', timeout=2)"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: deploy/docker/dashboard.Dockerfile
+    ports:
+      - "127.0.0.1:${AEGIS_DASHBOARD_PORT:-8080}:8080"
+    depends_on:
+      collector:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1:8080/"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+volumes:
+  postgres_data:

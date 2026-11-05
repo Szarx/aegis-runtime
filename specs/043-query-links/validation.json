@@ -1,0 +1,198 @@
+{
+  "spec": "SPEC-043",
+  "status": "passed",
+  "verified_on": "2026-10-29",
+  "frontend": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.989
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.829
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.861
+      }
+    ],
+    "tests": {
+      "run": 92,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 41214,
+        "all_js": 616389,
+        "all_css": 28527
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/ApprovalInbox-CEZfSdMD.js",
+          "bytes": 16093,
+          "gzip_bytes": 6197,
+          "sha256": "9e78aea29a65b186101d5dbf73ef8078c4ed0c17c608b38f8d125b007d77f724",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-CosN6PJY.css",
+          "bytes": 2379,
+          "gzip_bytes": 697,
+          "sha256": "55f0e2765abf4c8b565aac9a73e150321adc1d6ad59602a67f37985ac31673d2",
+          "entry": false
+        },
+        {
+          "path": "assets/index-Bt4rMp3d.css",
+          "bytes": 22456,
+          "gzip_bytes": 5467,
+          "sha256": "98cb4345e6359b35e171e853cb62c7203ebf3e680de136b2d5ace092c7a98b45",
+          "entry": true
+        },
+        {
+          "path": "assets/index-DifpaXe4.js",
+          "bytes": 109460,
+          "gzip_bytes": 41214,
+          "sha256": "fb0d90e70bc3df247b3b2b13839a05b40fc4fef31d99c709e5af926e82618e1a",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BLKYoPR8.js",
+          "bytes": 10388,
+          "gzip_bytes": 4548,
+          "sha256": "f4dbe8d9e24bc51a97540c76147c76c70428a4bbc55bf42e1fcc0af4473e00d3",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-BqlGvBK-.css",
+          "bytes": 1012,
+          "gzip_bytes": 430,
+          "sha256": "cb53213646fa6b0a37f3ef0c71b0fd48dd6574538c41e9e3fd3b64bdadfb5b54",
+          "entry": false
+        },
+        {
+          "path": "assets/stringify-k-7iRFyw.js",
+          "bytes": 1537,
+          "gzip_bytes": 715,
+          "sha256": "b161a90dd37ba9f50f18e99d1bcff7a65e9365d78bf7014823a6d6cc04d040f5",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-5mj-hlJx.css",
+          "bytes": 2680,
+          "gzip_bytes": 775,
+          "sha256": "c3a29f455b280a4a6b602c100ddc1e8ec702b85a2ae6ff9bb42738e5e5c85c38",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-CcPoHE6R.js",
+          "bytes": 478911,
+          "gzip_bytes": 160530,
+          "sha256": "4acbb0f3b22feed56a0066f64629b4cc2581812aff5bccc4e2589c7de472d576",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "new_frontend_methods": 5,
+  "python": {
+    "run": 357,
+    "postgres": 53,
+    "source": "SPEC-042",
+    "rerun_this_spec": false
+  },
+  "method_catalogue_total": 449,
+  "timezone_checks": {
+    "UTC": "5 passed",
+    "America_New_York": "5 passed; unchanged fall-back absolute boundary preserved"
+  },
+  "browser": {
+    "production_preview": "http://127.0.0.1:5189",
+    "isolated_delay_preview": "http://127.0.0.1:5199",
+    "database": "existing ui029, no reset",
+    "trace_query": {
+      "agent": "security-events-agent",
+      "total": 35,
+      "offset": 20,
+      "copy_applied_only": true,
+      "refresh_requires_auth": true,
+      "history_restore": true,
+      "detail_back_restore": true,
+      "clear_restore": true
+    },
+    "security_query": {
+      "tool": "write_record",
+      "total": 35,
+      "offset": 20,
+      "copy": true,
+      "refresh_requires_auth": true,
+      "history_restore": true
+    },
+    "time_boundary": {
+      "local": "2026-10-25T12:34:56.123",
+      "utc": "2026-10-25T04:34:56.123Z",
+      "unchanged_reapply": true
+    },
+    "invalid_query": "Unknown parameter shows recovery without broad query",
+    "delayed_responses": "Actual 3-second middleware start/completion recorded for both query routes; rapid successful queries returned 35 while pending and remained 35 after delayed completion",
+    "delay_evidence": "artifacts/ui043/delay.log",
+    "viewport": {
+      "width": 390,
+      "document_width": 375,
+      "table_scroll": "contained",
+      "keyboard_copy_to_refresh": true
+    },
+    "screenshots": [
+      "artifacts/ui043/queries-desktop.png",
+      "artifacts/ui043/traces-mobile.png",
+      "artifacts/ui043/security-mobile.png"
+    ]
+  },
+  "limitations": [
+    "Local Windows/browser acceptance, not all browser engines",
+    "Query addresses are not immutable result snapshots",
+    "No backend regression rerun in this frontend-only SPEC"
+  ],
+  "unchanged": [
+    "OpenAPI",
+    "SQL migrations",
+    "62 Python dependency pins",
+    "npm dependency pins",
+    "approval/execution contracts"
+  ],
+  "publication": "No remote, release or model request.",
+  "final_audit": {
+    "candidate_files": 562,
+    "issues": 0,
+    "markdown_documents": 232,
+    "local_links": 798,
+    "protocol_sources": 44,
+    "installed_python_pins": 62,
+    "cache_hashes": "both platforms matched",
+    "openapi": "unchanged"
+  },
+  "cleanup": {
+    "stopped_ports": [
+      8859,
+      5199
+    ],
+    "retained_ports": [
+      8849,
+      5189
+    ],
+    "verified_by": "actual listening socket inventory"
+  },
+  "continuation": "User requested stop after SPEC-043; no SPEC-044 started."
+}

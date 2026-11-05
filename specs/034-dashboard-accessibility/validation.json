@@ -1,0 +1,147 @@
+{
+  "spec": "SPEC-034",
+  "status": "passed",
+  "verified_on": "2026-10-26",
+  "frontend_tests": 64,
+  "new_methods": 3,
+  "python_catalogue_inherited": 334,
+  "catalogue": 398,
+  "quality": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 1.365
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.392
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.759
+      }
+    ],
+    "tests": {
+      "run": 64,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 37871,
+        "all_js": 602793,
+        "all_css": 23633
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      },
+      "assets": [
+        {
+          "path": "assets/_plugin-vue_export-helper-BDNMzG2s.js",
+          "bytes": 84,
+          "gzip_bytes": 100,
+          "sha256": "27e87fe62aa760227b7529576953d8314891fd2aec28e0a3f03aece406f2d7d7",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-DpkyM5rZ.css",
+          "bytes": 1658,
+          "gzip_bytes": 543,
+          "sha256": "44d8a2d9c8961bcdd9efbe0a3b1b22437add821b8cfcc0e75e9f67eb154cc193",
+          "entry": false
+        },
+        {
+          "path": "assets/ApprovalInbox-Dxgo8XDg.js",
+          "bytes": 16302,
+          "gzip_bytes": 6276,
+          "sha256": "54361ea5e5e74a1b0e228491ae75f7bb4ff93aaa54c4e1746620110719299982",
+          "entry": false
+        },
+        {
+          "path": "assets/index-Bx-Owdy6.css",
+          "bytes": 21090,
+          "gzip_bytes": 5207,
+          "sha256": "ccb04026f1590f0f93d835c03591e97ddf2ce1b9a7a4280ac33507bcdf9d00d5",
+          "entry": true
+        },
+        {
+          "path": "assets/index-DuND-I9Y.js",
+          "bytes": 99302,
+          "gzip_bytes": 37871,
+          "sha256": "8a60e846e72652639316cd1330ad7ccc265ed1aaf167a3c37ac48e2bbd7c0e7a",
+          "entry": true
+        },
+        {
+          "path": "assets/SecurityEvents-BJf3Csho.css",
+          "bytes": 227,
+          "gzip_bytes": 178,
+          "sha256": "0f0f1dbc4a1a89219a49a3f8092782a64e591c58a2e65ceab60e6a446d3c617d",
+          "entry": false
+        },
+        {
+          "path": "assets/SecurityEvents-BV5a1Unl.js",
+          "bytes": 11046,
+          "gzip_bytes": 4540,
+          "sha256": "ace5c1ac0aa0c09082d92c4211e7d7ab2fb53b758f1f58e492a05ee4840b7c1d",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-Br874w73.js",
+          "bytes": 476059,
+          "gzip_bytes": 159619,
+          "sha256": "a89c7ac04ae65ffddb7f6fc06807041befc4f4b2de4187deab93a6f7a32e2b79",
+          "entry": false
+        },
+        {
+          "path": "assets/TraceDetail-l7DDNVFO.css",
+          "bytes": 658,
+          "gzip_bytes": 321,
+          "sha256": "9a8e9557ff4ba6012b166d0e33e8882beed1e984d802fcd23935a4e979797acd",
+          "entry": false
+        }
+      ]
+    }
+  },
+  "contrast": {
+    "neutral_min": 5.229687966178494,
+    "semantic_min": 7.247851460997525,
+    "focus": 9.574040935375693,
+    "scope": "declared tokens only"
+  },
+  "browser": {
+    "copy_target": [
+      26,
+      26
+    ],
+    "density_standard": [
+      36,
+      26
+    ],
+    "mobile_copy": [
+      26,
+      26
+    ],
+    "mobile_density": [
+      30,
+      26
+    ],
+    "mobile_width": 390,
+    "mobile_page": 375,
+    "viewport_reset": true,
+    "skip_link_focuses_main": true,
+    "review_ack_height": 32,
+    "unacknowledged_approve_disabled": true,
+    "decisions_submitted": 0,
+    "system_settings_changed": false
+  },
+  "artifacts": "artifacts/ui034",
+  "whole_site_certification": false
+}

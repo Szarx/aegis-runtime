@@ -1,0 +1,218 @@
+{
+  "spec": "SPEC-025",
+  "verified_on": "2026-10-25",
+  "status": "passed",
+  "python_tests": {
+    "run": 286,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 86,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 32,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 46,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 43,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend_tests": {
+    "run": 51,
+    "failures": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "new_methods": 23,
+  "previous_methods_rerun": 314,
+  "current_catalogue": 337,
+  "delivered": [
+    "strict application/policy snapshot",
+    "owned SDK lifecycle and diagnostics",
+    "explicit configured tool binding",
+    "read-only inspection",
+    "native and real LangGraph sync/async examples",
+    "actual platform/export/replay chain",
+    "clean core package installation"
+  ],
+  "example_matrix": {
+    "frameworks": [
+      "native",
+      "langgraph"
+    ],
+    "asynchronous": [
+      false,
+      true
+    ],
+    "subjects": [
+      "reader",
+      "blocked"
+    ],
+    "profiles": 8,
+    "baseline_business_calls_per_profile": 1,
+    "allowed_managed_calls": 1,
+    "denied_managed_calls": 0,
+    "spans_per_profile": 2,
+    "parent_relationship_verified": true
+  },
+  "platform": {
+    "real_http_otlp_postgres": true,
+    "traces": 8,
+    "spans": 16,
+    "events": 8,
+    "allow": 4,
+    "deny": 4,
+    "exported": 8,
+    "collector_stopped_before_replay": true,
+    "original_policy_replay": {
+      "exit_code": 0,
+      "unchanged": 8
+    },
+    "candidate_replay": {
+      "exit_code": 1,
+      "widened": 4,
+      "unchanged": 4
+    }
+  },
+  "installation": {
+    "clean_venv": true,
+    "offline_cached_install": true,
+    "online_install_or_human_timing": false,
+    "installed": {
+      "packages": [
+        "aegis-runtime-control",
+        "aegis-runtime-policy",
+        "aegis-runtime-sdk",
+        "opentelemetry-api",
+        "opentelemetry-sdk",
+        "opentelemetry-semantic-conventions",
+        "pip",
+        "typing_extensions"
+      ],
+      "runtime_file_in_environment": true
+    },
+    "core_without_optional_framework_or_otlp": true,
+    "otlp_metadata_missing_detected": true,
+    "profiles": [
+      {
+        "subject": "reader",
+        "business_calls": 1,
+        "spans": 2,
+        "closed": true
+      },
+      {
+        "subject": "blocked",
+        "business_calls": 0,
+        "spans": 2,
+        "closed": true
+      }
+    ],
+    "existing_runtime_python_sources_identical_to_spec015": true,
+    "runtime_wheel": "aegis_runtime_control-0.1.0.dev0-py3-none-any.whl",
+    "runtime_sha256": "9d87ea28425d0bb6a56a810e313150bf3b478e05d4ed80c1524bada49a9e9c83",
+    "sdk_wheel_inherited": "SPEC-015",
+    "policy_wheel_inherited": "SPEC-023"
+  },
+  "docker": {
+    "project": "aegis-spec025-check",
+    "healthy_services": [
+      "postgres"
+    ],
+    "test_schemas_remaining": 0,
+    "cleanup": "own containers and network removed; other projects untouched",
+    "volume": "aegis-spec025-check_postgres_data",
+    "volume_preserved": true,
+    "collector_container_build": "inherited SPEC-020 API/SQL; no image rebuild",
+    "dashboard_build": "inherited SPEC-020 build; source unchanged"
+  },
+  "unchanged": {
+    "api_snapshot": "SPEC-020",
+    "sql_versions": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "sdk": true,
+    "policy": true,
+    "existing_runtime_implementations": true,
+    "collector": true,
+    "dashboard_source": true,
+    "python_pins": 62,
+    "official_sources": 44
+  },
+  "inherited": {
+    "typecheck": "SPEC-020",
+    "production_build": "SPEC-020",
+    "collector_wheel": "SPEC-020",
+    "browser": "SPEC-020"
+  },
+  "real_provider_requests": 0,
+  "remote_created": false,
+  "pushed": false,
+  "github_ci_run": false,
+  "license_selected": false,
+  "limitations": [
+    "Host-trusted configuration and fixed subject are not external identity authentication",
+    "Unwrapped functions are not protected; no automatic discovery, managed stream or async context",
+    "Host must await/join work before close; cleanup can fail or time out and is reported",
+    "Offline cached install only; no online download or human onboarding time verified",
+    "No new service image or browser acceptance; platform/UI sources unchanged"
+  ],
+  "delivery_checks": {
+    "markdown_documents": 165,
+    "local_links": 618,
+    "candidate_check": {
+      "status": "passed",
+      "candidate_files": 420,
+      "issues": [],
+      "scope": "Current Git candidate working-tree files only; limited patterns, not all secrets or Git history."
+    },
+    "installed_pins_and_both_platform_hashes": true,
+    "historical_59_receipts_unchanged": true,
+    "pip_check": "passed"
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "spec": "SPEC-048",
+  "status": "passed",
+  "verified_on": "2026-11-05",
+  "upstream": {
+    "repository": "https://github.com/langchain-ai/react-agent",
+    "revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+    "files": [
+      {
+        "sha256": "a01dcffdc1291b4043f2a81d249a9f3e45c9036f2308c9cdfeefe18371371e80",
+        "path": "LICENSE"
+      },
+      {
+        "sha256": "5616ebbc6581470998042a1d7b78adc23d42ffb7d095e579ef7d5d9900c28556",
+        "path": "README.md"
+      },
+      {
+        "sha256": "d281c7eba24bd776385d86be26d6625b7a6fc28a312008aa3fb376bc34961c66",
+        "path": "pyproject.toml"
+      },
+      {
+        "sha256": "06a101ecbc06b81513e5f739a27300ad8f8201b8259fc6edb07cb94d8856867e",
+        "path": "src/react_agent/__init__.py"
+      },
+      {
+        "sha256": "170b09af8180ed64d6a935ac945e4e617d0c12a4f2d64b33c27f5c2765ebc00b",
+        "path": "src/react_agent/graph.py"
+      },
+      {
+        "sha256": "8adc19409de9f6fed39627583dbfbfd68873068b5b0909c6ab9ad2f8429a3219",
+        "path": "src/react_agent/state.py"
+      },
+      {
+        "sha256": "607a8be5ce546df62079604669f7d21682ee63d9d1b48c3a6e21c61f8fb8bc22",
+        "path": "src/react_agent/context.py"
+      },
+      {
+        "sha256": "754639c739d45b0453a80bc434b05b86136ae063b66e89db8bb4a43656bef6ac",
+        "path": "src/react_agent/prompts.py"
+      },
+      {
+        "sha256": "f3466d95c2548a9a3a0b1e0233a79a7d14b87da72e8691ee90570bb9f1000192",
+        "path": "src/react_agent/tools.py"
+      },
+      {
+        "sha256": "7e684556c4a744ce4879c4efb3dfd84fdf6c58bdc29490ff290bdfeb1ce04b11",
+        "path": "src/react_agent/utils.py"
+      }
+    ]
+  },
+  "snapshot": {
+    "schema_version": "aegis.snapshot-check.v1",
+    "status": "passed",
+    "steps": [
+      {
+        "stage": "dependencies",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "repository",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "python",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "dashboard",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "source",
+        "status": "passed"
+      }
+    ],
+    "scope": "Local working-tree candidate bytes; no Git history, remote CI or publication approval.",
+    "before": {
+      "files": 615,
+      "sha256": "7a2376e7a684c061dd05f3ca6d6f03e7a0be7aec5f7cc90cf326226b218e8e68"
+    },
+    "python_tests": 380,
+    "frontend_tests": 108,
+    "after": {
+      "files": 615,
+      "sha256": "7a2376e7a684c061dd05f3ca6d6f03e7a0be7aec5f7cc90cf326226b218e8e68"
+    }
+  },
+  "python": {
+    "run": 380,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 126,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 78,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "dashboard": {
+    "tests": {
+      "run": 108,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 5.804
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 4.468
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 1.46
+      }
+    ],
+    "budget_passed": true
+  },
+  "catalogue_total": 488,
+  "independent_install": {
+    "evidence": "artifacts/spec048/installed-matrix.log",
+    "isolation": "Fresh non-editable package installation; parent unittest runner used -I; child imported installed packages",
+    "modes": {
+      "baseline": {
+        "schema_version": "aegis.external-agent.v1",
+        "status": "completed",
+        "mode": "baseline",
+        "upstream_revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+        "counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "business_sha256": "aeab352b35795bfc5e6fb5b4ebeb87be3d875265d0679e561d8ac24e8e5ddd65",
+        "service_boundary_files": [
+          "src/react_agent/tools.py",
+          "src/react_agent/utils.py"
+        ],
+        "source_diff": {
+          "changed_files": [
+            "src/react_agent/tools.py",
+            "src/react_agent/utils.py"
+          ],
+          "added_lines": 3,
+          "removed_lines": 56
+        },
+        "upstream_graph_unchanged": true,
+        "real_provider_requests": 0,
+        "automated_elapsed_ms": 2690.825
+      },
+      "observe": {
+        "schema_version": "aegis.external-agent.v1",
+        "status": "completed",
+        "mode": "observe",
+        "upstream_revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+        "counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "business_sha256": "aeab352b35795bfc5e6fb5b4ebeb87be3d875265d0679e561d8ac24e8e5ddd65",
+        "service_boundary_files": [
+          "src/react_agent/tools.py",
+          "src/react_agent/utils.py"
+        ],
+        "source_diff": {
+          "changed_files": [
+            "src/react_agent/tools.py",
+            "src/react_agent/utils.py"
+          ],
+          "added_lines": 3,
+          "removed_lines": 56
+        },
+        "upstream_graph_unchanged": true,
+        "real_provider_requests": 0,
+        "automated_elapsed_ms": 2285.486
+      },
+      "allow": {
+        "schema_version": "aegis.external-agent.v1",
+        "status": "completed",
+        "mode": "allow",
+        "upstream_revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+        "counts": {
+          "model_calls": 2,
+          "tool_calls": 1
+        },
+        "business_sha256": "aeab352b35795bfc5e6fb5b4ebeb87be3d875265d0679e561d8ac24e8e5ddd65",
+        "service_boundary_files": [
+          "src/react_agent/tools.py",
+          "src/react_agent/utils.py"
+        ],
+        "source_diff": {
+          "changed_files": [
+            "src/react_agent/tools.py",
+            "src/react_agent/utils.py"
+          ],
+          "added_lines": 3,
+          "removed_lines": 56
+        },
+        "upstream_graph_unchanged": true,
+        "real_provider_requests": 0,
+        "automated_elapsed_ms": 2183.352
+      },
+      "deny": {
+        "schema_version": "aegis.external-agent.v1",
+        "status": "denied",
+        "mode": "deny",
+        "upstream_revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+        "counts": {
+          "model_calls": 1,
+          "tool_calls": 0
+        },
+        "business_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "service_boundary_files": [
+          "src/react_agent/tools.py",
+          "src/react_agent/utils.py"
+        ],
+        "source_diff": {
+          "changed_files": [
+            "src/react_agent/tools.py",
+            "src/react_agent/utils.py"
+          ],
+          "added_lines": 3,
+          "removed_lines": 56
+        },
+        "upstream_graph_unchanged": true,
+        "real_provider_requests": 0,
+        "automated_elapsed_ms": 2243.782
+      }
+    },
+    "all_six_scenarios_passed": true
+  },
+  "timed_install": {
+    "stages": [
+      {
+        "stage": "venv",
+        "elapsed_ms": 11452.566,
+        "passed": true
+      },
+      {
+        "stage": "dependencies",
+        "elapsed_ms": 90934.716,
+        "passed": true
+      },
+      {
+        "stage": "aegis",
+        "elapsed_ms": 7733.611,
+        "passed": true
+      },
+      {
+        "stage": "check",
+        "elapsed_ms": 1859.326,
+        "passed": true
+      },
+      {
+        "stage": "baseline",
+        "elapsed_ms": 3336.183,
+        "passed": true
+      }
+    ],
+    "total_elapsed_ms": 115316.402,
+    "source": "Cached official wheels and new local package wheels; includes fresh venv and first upstream graph run"
+  },
+  "platform": "Actual OTLP HTTP ingestion and independent reviewer decision against isolated PostgreSQL; 7 traces checked and schema cleaned",
+  "cost": "Two external-service files changed by 3 additions and 56 removals. The complete host adapter is run.py and is additional integration work.",
+  "limits": [
+    "External ReAct template with synthetic model and search, not a production application or real provider acceptance",
+    "One tool call, same-process in-memory checkpoint, explicit host resume trigger",
+    "No human first-time integration time measured",
+    "Upstream snapshot includes selected source and metadata files; original README links refer to its complete upstream repository"
+  ],
+  "provenance": "Full verification snapshot is fixed. Validation archival documentation follows the run."
+}

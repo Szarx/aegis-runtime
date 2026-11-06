@@ -1,0 +1,73 @@
+{
+  "spec": "SPEC-050",
+  "verified_on": "2026-11-06",
+  "status": "local_checks_passed_remote_pending",
+  "local_snapshot": {
+    "schema_version": "aegis.snapshot-check.v1",
+    "status": "passed",
+    "steps": [
+      {
+        "stage": "dependencies",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "repository",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "python",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "dashboard",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "source",
+        "status": "passed"
+      }
+    ],
+    "scope": "Local working-tree candidate bytes; no Git history, remote CI or publication approval.",
+    "before": {
+      "files": 653,
+      "sha256": "c205464ebef184b60ae88740755f2af80f0124beece9ad6da44173778b378126"
+    },
+    "python_tests": 393,
+    "frontend_tests": 109,
+    "after": {
+      "files": 653,
+      "sha256": "c205464ebef184b60ae88740755f2af80f0124beece9ad6da44173778b378126"
+    }
+  },
+  "python_tests": 393,
+  "frontend_tests": 109,
+  "total": 502,
+  "source_followup": "After the frozen full run: README demo instructions corrected and dashboard Dockerfile now copies public notices. These are checked by the pending clean-source Compose CI; no Python business logic changed.",
+  "fresh_install": {
+    "status": "passed",
+    "environment": "new venv in staged-tree source export",
+    "source": "official PyPI, no-cache-dir",
+    "local_packages": "four non-editable distributions",
+    "licenses": "LICENSE and NOTICE present in all four installed distributions"
+  },
+  "clean_compose": {
+    "status": "pending_remote",
+    "local_failures": [
+      "Docker Hub auth endpoint connection timeout",
+      "npm container download ECONNRESET"
+    ],
+    "cached_local_fallback": "running; not equivalent to a cache-free online build"
+  },
+  "material_policy": "docs/github-readiness.md",
+  "catalog": "specs/catalog.json",
+  "privacy": "No provider calls. Original third-party template hash-preserved. Raw logs, credentials, cache and temporary delivery helpers excluded.",
+  "remote": {
+    "status": "pending",
+    "repository": "https://github.com/Szarx/aegis-runtime",
+    "visibility": "private_until_ci_passes"
+  }
+}

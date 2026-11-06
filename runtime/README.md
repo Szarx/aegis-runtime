@@ -1,5 +1,6 @@
 # Aegis Runtime
 
+当前公开预览包含策略三类决策、配置 v4、同步/异步审批和受约束图恢复。完整范围以[当前能力](../docs/capabilities.md)为准；下列按 SPEC 编号保留的计数和阶段说明是历史记录。授权为 [Apache-2.0](LICENSE)。
 状态：SPEC-009 的最小进程内工具权限控制已实现，验收状态见 [任务](../specs/009-runtime-policy/tasks.md)。本地开发分发名 aegis-runtime-control，未公开发布。
 
 ## 目录职责

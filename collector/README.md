@@ -1,5 +1,6 @@
 # Aegis Collector / Server
 
+当前公开预览包含Trace/治理/审批/健康 API、SQL 迁移 1–4。完整范围以[当前能力](../docs/capabilities.md)为准；下列按 SPEC 编号保留的计数和阶段说明是历史记录。授权为 [Apache-2.0](LICENSE)。
 已实现 [SPEC-002](../specs/002-collector/spec.md)：单个 FastAPI 服务接收原生 Aegis 与 SPEC-004 LLM Span，持久化到 PostgreSQL，并提供 Trace 查询。实际验收见 [任务记录](../specs/002-collector/tasks.md)。
 
 ## 安装与运行

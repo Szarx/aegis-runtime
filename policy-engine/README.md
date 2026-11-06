@@ -1,5 +1,6 @@
 # Policy Engine
 
+当前公开预览包含Policy v2 三类决策、解释/比较与离线回放。完整范围以[当前能力](../docs/capabilities.md)为准；下列按 SPEC 编号保留的计数和阶段说明是历史记录。授权为 [Apache-2.0](LICENSE)。
 状态：SPEC-009 已实现标准库版本的本地精确匹配策略。本地开发包 aegis-runtime-policy，不依赖 SDK、网络或数据库，未公开发布。
 
 `src/aegis_policy/` 提供不可变 Rule / Policy / Decision；`tests/` 验证优先级、默认拒绝、严格输入和快照隔离。

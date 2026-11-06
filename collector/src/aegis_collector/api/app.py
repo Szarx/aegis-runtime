@@ -62,7 +62,7 @@ def create_app(store: PostgresSpanStore, *, api_token: str | None = None,
             result.headers["Cache-Control"] = "no-store"
             result.headers["Vary"] = "Authorization"
             return result
-        protected = request.url.path == "/v1/traces" or request.url.path.startswith("/api/v1/")
+        protected = request.url.path in ("/v1/traces", "/v1/health") or request.url.path.startswith("/api/v1/")
         if protected and api_token:
             supplied = request.headers.get("authorization", "")
             expected = f"Bearer {api_token}"
@@ -80,6 +80,9 @@ def create_app(store: PostgresSpanStore, *, api_token: str | None = None,
     @app.exception_handler(RequestValidationError)
     async def invalid_parameters(request, error):
         return json_error(400, "invalid query or path parameter")
+
+    from .health import install_routes as install_health
+    install_health(app)
 
     @app.get("/health/live")
     def live():

@@ -1,5 +1,6 @@
 # Aegis Dashboard
 
+当前公开预览包含执行轨迹、事件/审批、策略与运行健康。完整范围以[当前能力](../docs/capabilities.md)为准；下列编号说明与计数保留历史口径。授权见[根许可证](../LICENSE)。
 029–031统一为紧凑数据工作台，含本页审核队列、渐进筛选、ID复制、节点搜索/类型视图、键盘导航和会话密度。设计与操作见[指南](../docs/dashboard-design.md)，实际验证见[031](../specs/031-trace-reading/tasks.md)。后续补齐首屏披露、本页导出/审批排序和[具体Span链接](../specs/039-trace-node-links/tasks.md)，打开链接后仍需独立连接Collector。新增[调用耗时排查](../docs/trace-reading.md)，可按已接收模型/工具耗时排序并定位节点，范围见[040验收](../specs/040-call-duration/tasks.md)。
 
 当前前端87方法、类型/构建/产物预算通过；加载/失败恢复、对比度/触控与焦点范围见[033](../specs/033-dashboard-states/tasks.md)/[034](../specs/034-dashboard-accessibility/tasks.md)。可用[一条合成演示命令](../docs/dashboard-demo.md)准备真实平台中的Trace、模型用量、治理事件及可选待审核记录，无真实模型调用。安全事件支持[本页JSONL/CSV下载](../docs/security-events.md)，实际文件/精度/末页与窄屏验证见[036](../specs/036-security-page-export/tasks.md)。

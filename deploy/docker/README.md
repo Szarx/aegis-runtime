@@ -27,7 +27,7 @@ Dashboard 在官方 Node 22 构建阶段执行 npm ci、类型检查和生产构
 
 ## 数据与停止
 
-Collector 在启动时执行迁移 1 + 2，等待数据库健康后启动。迁移 2 保留原生数据并允许 LLM；readiness 要求两项迁移均完成。`postgres_data` 卷保留数据库，重启 Collector 不丢失记录。
+Collector 启动时执行迁移 1–4，等待数据库健康后启动；readiness 要求当前迁移集合完成。它们支持原生/模型 Span、审批准备和执行审批，不会把旧审批记录升级为执行授权。`postgres_data` 卷保留数据库，重启 Collector 不丢失持久化记录；运行健康快照位于进程内存，重启会清空。
 
 ```text
 docker compose restart collector
@@ -48,8 +48,20 @@ OpenAI 离线示例也可使用同一 endpoint，见 [示例说明](../../exampl
 
 ## 可选审批准备：SPEC-010
 
-Compose 默认不给审批角色设置凭证。启用时同时提供互异且与 AEGIS_API_TOKEN 不同的 AEGIS_APPROVAL_REQUEST_TOKEN / AEGIS_APPROVAL_REVIEW_TOKEN，AEGIS_APPROVAL_REVIEWER 默认为 local-reviewer。只配置一种/复用凭证会拒绝启动。数据库当前迁移为 {1,2,3}，保留卷和旧 Span。重建 Collector / Dashboard 后打开“审批准备”，配置与密钥管理见 [审批接入](../../docs/approvals.md)。批准记录不执行工具。
+Compose 默认不给审批角色设置凭证。启用时同时提供互异且与 AEGIS_API_TOKEN 不同的 AEGIS_APPROVAL_REQUEST_TOKEN / AEGIS_APPROVAL_REVIEW_TOKEN，AEGIS_APPROVAL_REVIEWER 默认为 local-reviewer。只配置一种/复用凭证会拒绝启动。数据库当前迁移为 {1,2,3,4}，保留卷和旧 Span。重建 Collector / Dashboard 后打开“审批准备”，配置与密钥管理见 [审批接入](../../docs/approvals.md)。批准记录不执行工具。
 
 ## 可选同步执行审批：SPEC-011
 
 在既有两种审批凭证之外，显式设置AEGIS_APPROVAL_EXECUTION_TOKEN（不可与任何其他角色/Trace token复用），AEGIS_APPROVAL_EXECUTOR默认local-executor。缺执行凭证只关闭新协议，旧010仍可用。当前迁移{1,2,3,4}，新表不升级旧准备记录。重建服务后已领取动作保持消费/未知，不能重试。完整参数将显式存入数据库，默认Span/旧010不采集它们；见 [接入](../../docs/reviewed-execution.md)。
+
+## 重建与基本可运行验收
+
+已安装锁定 Python 依赖和四个本地包后，可在仓库根目录运行：
+
+```text
+python scripts/platform_smoke.py
+```
+
+命令拒绝复用已有项目或卷，生成独立 aegis-smoke-* 项目、三个回环端口与一次性合成 token，使用 `--pull --no-cache` 从源码构建，不使用本机 wheel/npm 缓存。验证三服务、迁移 1–4、认证、原生/模型/治理合成数据、父子关系、同源代理、静态资源与第三方声明，并重启 Collector 核对持久化。成功或失败后停止本轮容器，保留本轮数据库卷；不操作已有 Aegis 实例。日志和结果保存在新的 artifacts/platform-smoke 目录。
+
+这不是浏览器交互或生产验收；最新实际源码/环境证据见 [SPEC-050](../../specs/050-public-preview/tasks.md)。CI 在干净 checkout 上重复同一入口。构建需要 Docker、官方包源网络与足够空间，失败不自动重跑示例或重置数据。

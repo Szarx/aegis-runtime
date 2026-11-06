@@ -9,6 +9,7 @@ RUN if [ -d /npm-cache/_cacache ]; then \
     fi
 COPY dashboard/index.html dashboard/tsconfig.json dashboard/vite.config.ts ./
 COPY dashboard/src ./src
+COPY dashboard/public ./public
 RUN npm run build
 
 FROM nginx:alpine

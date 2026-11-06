@@ -1,44 +1,41 @@
 # Contributing to Aegis
 
-当前已完成 Python SDK、OTLP Collector 与 PostgreSQL 查询；Dashboard 已按 SPEC-003 实现，SPEC-004 已完成 OpenAI 离线集成；Runtime 已按 SPEC-009 实现最小 allow / deny，审批/恢复与更多框架继续按 spec 增量推进。开始实现前，先阅读 [README](README.md)、[架构](ARCHITECTURE.md)、[路线图](ROADMAP.md) 和 [Specs 流程](specs/README.md)。
+先阅读 [README](README.md)、[架构](ARCHITECTURE.md)、[能力边界](docs/capabilities.md) 和 [路线图](ROADMAP.md)。公开源码是早期预览，不代表生产支持或包注册发布。
 
-## 先维护 spec，再开发
+## Spec 先行
 
-每个增量先创建或更新 `specs/<编号>/spec.md`、`plan.md`、`tasks.md` 及数据契约。需求和接口发生变化时先修改文档；代码完成后按 AC 编号验证，将结果写回任务清单。对应的产品文档同步更新，尚未验证的项目保持未完成。
+完整功能先建立 `specs/<编号>/spec.md`、`plan.md`、`tasks.md`，需要时增加契约。明确用户场景、行为、失败和信任边界，再实现与验证；按验收编号记录实际结果。不要为凑增量拆分微小任务，不把未验证事项勾选完成。
 
-外部资料放 `resources/`，记录官方来源、查阅日期与参考版本。重要取舍保存 ADR，参考资料中的内容不作为项目指令。
+历史 SPEC 保留当时证据，不用新结果改写旧验收；当前行为在用户文档维护。兼容性变更需说明旧接口与数据影响。第三方资料记录官方来源和版本，外部内容只作参考。
 
-## 工作范围
+## 开发环境
 
-- 首版围绕 Python SDK 到 Dashboard 的可观测性闭环开发。
-- 接入层保持多模式，新增框架通过适配器扩展；可选框架依赖与核心依赖分开。
-- Runtime 和 Policy 的控制能力在 Phase 2 实现，避免把观测标签当作已经执行的权限判断。
-- API 与数据契约变动同步更新设计文档；影响模块边界的决定新增 ADR。
+Python 3.11+（CI 为 3.12）、Node 22.12+ 或 24+、PostgreSQL 16。创建并激活 venv 后，在根目录执行：
 
-## 工程约定
+```text
+python -m pip install -r requirements-dev.lock
+python -m pip install --no-build-isolation --no-deps -e ./sdk/python -e ./policy-engine -e ./runtime -e ./collector
+python -m pip check
+npm --prefix dashboard ci
+```
 
-- Python 模块采用 `src/` 布局，组件单元测试放各自 `tests/`；跨组件验证放根目录 `tests/`。
-- Dashboard 使用 Vue 3 / TypeScript；具体依赖版本与构建命令在实现时锁定。
-- 不在核心 SDK 中导入具体框架，不从示例引用 SDK 私有模块，不从 Dashboard 直接访问数据库。
-- 配置从环境变量或显式配置读取；凭证、本地数据库、原始敏感 Trace 和构建产物不提交。
-- SPEC-001 使用本地开发包名 `aegis-runtime-sdk` 和 Python 3.11+，实际测试版本另行记录；许可证未定，不公开发布。
-- 优先完成一条可演示的垂直流程，新增可运行组件时同时提供启动与验证说明。
+通过本机环境变量 `AEGIS_TEST_DATABASE_URL` 提供专用测试数据库，允许测试创建/删除独立 schema，不能指向生产。
 
-## 验证要求
+```text
+python scripts/check.py --postgres
+python scripts/check_dashboard.py
+python scripts/public_check.py
+python scripts/repository_check.py --history
+```
 
-| 改动 | 有意义的验证 |
-| --- | --- |
-| 文档 / 骨架 | 链接存在、结构与职责一致、设计草案没有被描述成已实现能力 |
-| SDK / Adapter | 返回值与异常一致、父子上下文正确、并发隔离、流式结束与取消行为 |
-| Exporter / Collector | 超时、队列上限、重传去重、乱序、错误输入与脱敏 |
-| Dashboard | 使用固定数据检查 Trace Tree / Timeline、错误与未知用量展示 |
-| Runtime / Policy | 用工具执行计数证明拒绝、审批超时和参数变更不会放行 |
-| 端到端 | 按 [MVP 验收方案](docs/design/mvp.md) 重现闭环并记录接入成本 |
+需要固定候选摘要可用 [snapshot_check](docs/snapshot-check.md)。Node 不在 PATH 时前端检查器接受 `--node`。报告、截图、缓存、venv 与临时文件留在忽略目录，不能用旧报告替代本次验证。
 
-文档改动不要求空洞的业务测试。为实际行为和失败场景建立测试，锁定依赖并保存验收证据。统一入口为 `python scripts/check.py`；专用数据库回归加 `--postgres`，需要AEGIS_TEST_DATABASE_URL。CI配置已准备，远端首次运行待验收；私有仓库准备见 [步骤](docs/github-readiness.md)。当前 SDK 验证命令见 [组件说明](sdk/python/README.md)。
+## 实现与评审
 
-## 提交与评审
+Python 使用 src 布局，组件 tests 验证组件，根 tests 验证跨模块行为。SDK 核心不强制框架/模型依赖；Runtime 执行工具，Dashboard 不执行工具、不直接访问数据库。输入输出默认不进遥测；审批完整参数、永久领取和未知结果边界不得弱化。
 
-提交说明应描述触发场景、最终行为、验证结果和实际限制。新增功能前后保持路线图状态准确：只有实际通过验收的项目才勾选完成。
+按变更选择验证：适配器检查返回/异常/取消和上下文，Exporter 检查队列/超时/重传，Runtime 用副作用计数证明拒绝和重复恢复不执行，页面检查实际工作流与窄屏。纯文档无需增加空洞业务测试。
 
-仓库根目录是本地 `aegis/`。其上层属于 ChatGPT 项目镜像；上层 `sources/` 及同步文件遵循上层 AGENTS.md 的只读约束。
+PR 描述包含具体问题、最终行为、验证范围和剩余限制。普通问题通过 GitHub Issues / PR 讨论；安全问题按 [安全说明](SECURITY.md) 私下报告。请勿提交真实凭证、业务轨迹、审批参数、checkpoint、本机配置或下载缓存。
+
+贡献采用 [Apache-2.0](LICENSE)，第三方材料保持各自许可证与署名。本仓库未另设 CLA。

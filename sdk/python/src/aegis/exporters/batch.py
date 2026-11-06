@@ -38,14 +38,22 @@ class BoundedSpanProcessor(SpanProcessor):
         self._failed = 0
         self._dropped = 0
         self._export_failures = 0
+        self._active = {}
+        self._active_count = 0
         self._worker = Thread(target=self._run, name="aegis-span-export", daemon=True)
         self._worker.start()
 
     def on_start(self, span: Span, parent_context: Context | None = None) -> None:
-        pass
+        with self._condition:
+            self._active_count += 1
+            context = span.get_span_context()
+            if len(self._active) < 128:
+                self._active[context.span_id] = format(context.trace_id, '032x')
 
     def on_end(self, span: ReadableSpan) -> None:
         with self._condition:
+            self._active_count = max(0, self._active_count - 1)
+            self._active.pop(span.context.span_id, None)
             if self._closing or len(self._queue) >= self._capacity:
                 self._dropped += 1
                 return
@@ -129,3 +137,9 @@ class BoundedSpanProcessor(SpanProcessor):
                 "pending_spans": self._submitted - self._completed,
                 "export_failures": self._export_failures,
             }
+
+    def activity(self):
+        with self._condition:
+            traces = sorted(set(self._active.values()))
+            return {'active_spans': self._active_count, 'active_traces': traces[:16],
+                    'activity_truncated': self._active_count > len(self._active) or len(traces) > 16}

@@ -1,5 +1,6 @@
 import { parse } from 'lossless-json'
 import type { Span, TraceDetail, TraceList, TraceSummary } from './types'
+import { governanceSignals, type GovernanceSignal } from './types'
 
 export class ApiError extends Error {
   constructor(public kind: 'auth' | 'missing' | 'network' | 'timeout' | 'invalid' | 'server') {
@@ -37,7 +38,9 @@ function summary(value: unknown): TraceSummary {
   const v = object(value)
   const outcome = v.graph_outcome
   if (outcome != null && outcome !== 'completed' && outcome !== 'closed' && outcome !== 'error' && outcome !== 'cancelled') throw new ApiError('invalid')
-  return { trace_id: text(v.trace_id), start_time_unix_nano: integer(v.start_time_unix_nano, 1n), end_time_unix_nano: integer(v.end_time_unix_nano, 1n), duration_ns: integer(v.duration_ns), span_count: count(v.span_count), status: status(v.status), agent_names: array(v.agent_names).map(text), graph_outcome: outcome ?? null }
+  const signal = v.governance_signal
+  if (signal != null && !governanceSignals.includes(signal as GovernanceSignal)) throw new ApiError('invalid')
+  return { trace_id: text(v.trace_id), start_time_unix_nano: integer(v.start_time_unix_nano, 1n), end_time_unix_nano: integer(v.end_time_unix_nano, 1n), duration_ns: integer(v.duration_ns), span_count: count(v.span_count), status: status(v.status), agent_names: array(v.agent_names).map(text), graph_outcome: outcome ?? null, ...(signal == null ? {} : { governance_signal: signal as GovernanceSignal }) }
 }
 function span(value: unknown): Span {
   const v = object(value)
@@ -71,7 +74,7 @@ export class QueryChannel {
   constructor(private fetcher: typeof fetch = (input, init) => fetch(input, init), private timeout = 10000) {}
   cancel() { this.generation++; this.controller?.abort() }
   async run<T>(path: string, token: string, parser: (text: string) => T, commit: (value: T) => void): Promise<boolean> {
-    if (!/^\/api\/v1\/(?:traces(?:\?|$|\/[0-9a-f]{32}$)|security-events(?:\?|$))/.test(path)) throw new ApiError('invalid')
+    if (!/^\/api\/v1\/(?:traces(?:\?|$|\/[0-9a-f]{32}$)|security-events(?:\?|$)|health$)/.test(path)) throw new ApiError('invalid')
     this.cancel()
     const generation = this.generation
     const controller = new AbortController()

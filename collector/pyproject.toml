@@ -8,6 +8,7 @@ version = "0.1.0.dev0"
 description = "Aegis native-span OTLP collector and PostgreSQL query service"
 readme = "README.md"
 requires-python = ">=3.11"
+license = {file = "LICENSE"}
 dependencies = [
     "fastapi==0.143.0",
     "uvicorn==0.54.0",

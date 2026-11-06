@@ -85,16 +85,17 @@ export class ApprovalChannel {
   private controller?: AbortController
   constructor(private fetcher: typeof fetch = (input, init) => fetch(input, init), private timeout = 5000, private reviewed = false) {}
   cancel() { this.generation++; this.controller?.abort() }
-  async run(token: string, offset: number, commit: (list: ApprovalList) => void, decision?: { action: string; value: 'approved' | 'rejected'; reviewDigest?: string }): Promise<boolean> {
+  async run(token: string, offset: number, commit: (list: ApprovalList) => void, decision?: { action: string; value: 'approved' | 'rejected'; reviewDigest?: string }, actionId?: string): Promise<boolean> {
     if (!token || !Number.isInteger(offset) || offset < 0 || offset > 10000 || (decision && (!hex(decision.action, 32) || !['approved', 'rejected'].includes(decision.value)))) throw new ApprovalError()
     if (this.reviewed && decision && !/^[a-f0-9]{64}$/.test(decision.reviewDigest ?? '')) throw new ApprovalError()
+    if (actionId !== undefined && (!this.reviewed || !hex(actionId, 32) || offset !== 0 || (decision && decision.action !== actionId))) throw new ApprovalError()
     this.cancel()
     const generation = this.generation, controller = new AbortController()
     this.controller = controller
     let timeout = false
     const timer = setTimeout(() => { timeout = true; controller.abort() }, this.timeout)
     const root = this.reviewed ? '/api/v1/reviewed-actions' : '/api/v1/approvals'
-    const path = decision ? `${root}/${decision.action}/decision` : `${root}?limit=20&offset=${offset}`
+    const path = decision ? `${root}/${decision.action}/decision` : actionId ? `${root}?limit=1&offset=0&action_id=${actionId}` : `${root}?limit=20&offset=${offset}`
     try {
       const response = await this.fetcher(path, { method: decision ? 'POST' : 'GET', signal: controller.signal, credentials: 'omit', cache: 'no-store', redirect: 'error',
         headers: { Authorization: `Bearer ${token}`, ...(decision ? { 'Content-Type': 'application/json' } : {}) },
@@ -108,7 +109,12 @@ export class ApprovalChannel {
         const result = this.reviewed ? reviewedRecord(decode(raw)) : approvalRecord(JSON.parse(raw))
         if (result.action_id !== decision.action || result.status !== decision.value) throw new ApprovalError()
         if (this.reviewed && (!isReviewed(result) || result.review_digest !== decision.reviewDigest)) throw new ApprovalError()
-      } else commit(this.reviewed ? decodeReviewed(raw) : decodeApprovals(raw))
+      } else {
+        const result = this.reviewed ? decodeReviewed(raw) : decodeApprovals(raw)
+        if (actionId && (result.limit !== 1 || result.offset !== 0 || result.total !== result.items.length ||
+          result.items.some(item => item.action_id !== actionId))) throw new ApprovalError()
+        commit(result)
+      }
       return true
     } catch (error) {
       if (generation !== this.generation) return false

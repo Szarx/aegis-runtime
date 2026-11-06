@@ -113,13 +113,39 @@ def audit(root, *, staged=False, commit=None):
     return report
 
 
+def audit_history(root):
+    """Inspect every reachable commit, including files deleted from HEAD."""
+    report = {'scope': 'reachable_history', 'issues': []}
+    try:
+        commits = git(root, 'rev-list', '--all').decode('ascii').splitlines()
+        if not commits:
+            raise ValueError('empty history')
+        trees = set()
+        for commit in commits:
+            checked = audit(root, commit=commit)
+            if checked['status'] != 'passed':
+                report['issues'].append({
+                    'commit': commit,
+                    'category': checked.get('category', 'unsafe_historical_tree'),
+                    'issues': checked.get('issues', []),
+                })
+            if 'tree' in checked:
+                trees.add(checked['tree'])
+        report.update(status='failed' if report['issues'] else 'passed',
+                      commits=len(commits), trees=len(trees))
+    except (OSError, subprocess.SubprocessError, ValueError):
+        report.update(status='failed', category='history_unavailable')
+    return report
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     source = parser.add_mutually_exclusive_group()
     source.add_argument('--staged', action='store_true', help='check the Git index')
     source.add_argument('--commit', help='check the tree of an existing commit')
+    source.add_argument('--history', action='store_true', help='check all reachable commits')
     args = parser.parse_args()
-    report = audit(ROOT, staged=args.staged, commit=args.commit)
+    report = audit_history(ROOT) if args.history else audit(ROOT, staged=args.staged, commit=args.commit)
     print(json.dumps(report, indent=2))
     return 0 if report['status'] == 'passed' else 1
 

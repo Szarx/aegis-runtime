@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from urllib.error import HTTPError
 from urllib.request import Request,urlopen
 import uuid
 import psycopg
@@ -84,8 +85,14 @@ class PolicyApprovalPostgres(unittest.TestCase):
         self.assertEqual(events['total'],16)
         review=[row for row in events['items'] if row['effect']=='require_approval'];self.assertEqual(len(review),8)
         self.assertEqual(sum(row['outcome']=='awaiting_approval' for row in review),4)
+        listed = self.request('/api/v1/traces?limit=100', token='synthetic-trace')
+        signals = {row['trace_id']: row['governance_signal'] for row in listed['items']}
+        expected = {'denied': 'denied', 'awaiting_approval': 'approval_requested', 'completed': 'review_tool_returned'}
+        for event in events['items']:
+            self.assertEqual(signals[event['trace_id']], expected.get(event['outcome']) if event['effect'] != 'allow' else None)
         for event in review:
             detail=self.request('/api/v1/traces/'+event['trace_id'],token='synthetic-trace')
+            self.assertEqual(detail['trace']['governance_signal'], signals[event['trace_id']])
             self.assertNotIn('synthetic-private-value',str(detail));self.assertEqual(event['rule_id'],'review')
             selected=next(s for s in detail['spans'] if s['span_id']==event['span_id'])
             self.assertEqual(selected['attributes']['aegis.mapping.version'],'aegis.governance.v2')
@@ -95,6 +102,34 @@ class PolicyApprovalPostgres(unittest.TestCase):
         candidate=self.folder/'candidate.json';doc=json.loads((ROOT/'examples/policy-approval/policy.json').read_text());doc['rules'][1]['effect']='allow';candidate.write_text(json.dumps(doc))
         replay=self.cli(1,'scripts/replay_security.py',str(bundle),'--policy',str(candidate),'--output',str(self.folder/'replay.json'))
         self.assertEqual(replay['counts']['widened'],8);self.assertEqual(replay['recorded_outcomes'],{'awaiting_approval':4,'completed':4})
+
+    def test_ac4703_exact_lookup_outside_first_page_requires_reviewer(self):
+        calls = []
+        tool = self.governed(lambda value=1: calls.append(value))
+        record = tool.invoke({}, summary='Target action').record
+        for _ in range(20):
+            tool.invoke({}, summary='Later synthetic action')
+        root = '/api/v1/reviewed-actions'
+        action_id = record['action_id']
+        self.assertNotIn(action_id, {row['action_id'] for row in self.request(root)['items']})
+        exact = root + '?limit=1&offset=0&action_id=' + action_id
+        for token in ('synthetic-trace', 'synthetic-producer', 'synthetic-executor'):
+            with self.assertRaises(HTTPError) as error:
+                self.request(exact, token=token)
+            self.assertEqual(error.exception.code, 401)
+        pending = self.request(exact)
+        self.assertEqual((pending['total'], pending['items'][0]['action_id']), (1, action_id))
+        self.assertEqual(pending['items'][0]['status'], 'pending')
+        self.decide(record)
+        self.assertEqual(self.request(exact)['items'][0]['execution_state'], 'available')
+        self.assertEqual(calls, [])
+        self.assertEqual(tool.resume(record, {}, summary='Target action').confirmation, 'confirmed')
+        confirmed = self.request(exact)['items'][0]
+        self.assertEqual((confirmed['status'], confirmed['execution_state'], calls), ('approved', 'completed', [1]))
+        self.assertEqual(self.request(root + '?action_id=' + 'f' * 32)['items'], [])
+        with self.assertRaises(HTTPError) as error:
+            self.request(root + '?action_id=' + '0' * 32)
+        self.assertEqual(error.exception.code, 400)
 
     def test_pending_reject_expiry_tamper_policy_and_forced_review_floor(self):
         calls=[]

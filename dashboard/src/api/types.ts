@@ -1,3 +1,6 @@
+export const governanceSignals = ['denied', 'tool_error', 'approval_requested', 'review_tool_returned'] as const
+export type GovernanceSignal = typeof governanceSignals[number]
+
 export interface TraceSummary {
   trace_id: string
   start_time_unix_nano: bigint
@@ -7,6 +10,7 @@ export interface TraceSummary {
   status: 'UNSET' | 'ERROR'
   agent_names: string[]
   graph_outcome?: 'completed' | 'closed' | 'error' | 'cancelled' | null
+  governance_signal?: GovernanceSignal | null
 }
 export interface TraceList { items: TraceSummary[]; total: number; limit: number; offset: number }
 export interface Span {

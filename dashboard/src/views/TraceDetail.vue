@@ -3,18 +3,23 @@ import { computed, nextTick, ref, watch } from 'vue'
 import type { TraceDetail } from '../api/types'
 import { buildTree, exactDate, formatDuration, displayName, operationClass, operationLabel, operationSymbol, tokenLabel, statusLabel, spanOutcome, decisionReason } from '../domain'
 import Timeline from '../components/Timeline.vue'
+import Trajectory from '../components/Trajectory.vue'
 import StatusBadge from '../components/StatusBadge.vue'
 import UsageSummary from '../components/UsageSummary.vue'
 import CopyValue from '../components/CopyValue.vue'
 import CallDurationRank from '../components/CallDurationRank.vue'
 import { adjacentNode, filterTraceRows, type NodeFilter } from '../traceExplorer'
-import { traceNodeLink, traceReturn } from '../traceLocation'
+import { traceHash, traceNodeLink, traceReturn } from '../traceLocation'
+import { reviewActionLink } from '../approvalLocation'
+import { isGoverned, receivedSignal, signalLabels } from '../trajectory'
 
-const props = defineProps<{ detail: TraceDetail; dense?: boolean; spanId?: string; pageUrl?: string; returnTo?: string }>()
+const props = defineProps<{ detail: TraceDetail; dense?: boolean; spanId?: string; pageUrl?: string; returnTo?: string; demo?: boolean }>()
 const emit = defineEmits<{ select: [id: string] }>()
 const returnLink = computed(() => traceReturn(props.returnTo))
 const selectedId = ref(''), nodeQuery = ref(''), nodeFilter = ref<NodeFilter>('all')
 const treeContainer = ref<HTMLElement>()
+const view = ref<'trajectory' | 'tree'>('trajectory')
+const trajectory = ref<InstanceType<typeof Trajectory>>()
 const rowHeight = computed(() => props.dense ? 34 : 46)
 const rows = computed(() => buildTree(props.detail.spans))
 function requestedSelection() {
@@ -29,7 +34,8 @@ watch(visibleRows, visible => { if (!visible.some(row => row.span.span_id === se
 function clearNodes() { nodeQuery.value = ''; nodeFilter.value = 'all' }
 async function locateRanked(id: string) {
   clearNodes(); selectNode(id); await nextTick()
-  treeContainer.value?.querySelector<HTMLButtonElement>(`[data-span-id="${id}"]`)?.focus()
+  if (view.value === 'trajectory') await trajectory.value?.focusNode(id)
+  else treeContainer.value?.querySelector<HTMLButtonElement>(`[data-span-id="${id}"]`)?.focus()
 }
 async function onNodeKey(event: KeyboardEvent) {
   const id = adjacentNode(visibleRows.value, selectedId.value, event.key)
@@ -45,13 +51,20 @@ const warnings = computed(() => rows.value.filter(row => row.relation !== 'norma
 const approvalRequests = computed(() => props.detail.spans.filter(span => span.attributes['aegis.mapping.version'] === 'aegis.governance.v2' && span.attributes['aegis.approval.phase'] === 'request').length)
 const hasLlm = computed(() => props.detail.spans.some(span => span.operation === 'chat'))
 const attrs = computed(() => Object.entries(selected.value?.attributes || {}))
-const governed = computed(() => ['aegis.governance.v1','aegis.governance.v2'].includes(String(selected.value?.attributes['aegis.mapping.version'])))
+const governed = computed(() => !!selected.value && isGoverned(selected.value))
+const signal = computed(() => props.detail.trace.governance_signal ?? receivedSignal(props.detail.spans))
+const approvalLink = computed(() => {
+  const span = selected.value
+  if (!span || !governed.value || span.attributes['aegis.decision.effect'] !== 'require_approval') return
+  if (props.demo) return '#/demo/approval'
+  return reviewActionLink(span.attributes['aegis.action.id'], traceHash(props.detail.trace.trace_id, span.span_id, props.returnTo))
+})
 </script>
 
 <template>
   <div class="detail-view">
-    <a class="back-link" :href="returnLink.href">← {{ returnLink.label }}</a>
-    <div class="detail-heading"><div><h1>{{ detail.trace.agent_names.join(' / ') || '执行详情' }}</h1><p class="trace-id"><CopyValue :value="detail.trace.trace_id" label="Trace ID" /></p></div><StatusBadge :status="detail.trace.status" :outcome="detail.trace.graph_outcome" /></div>
+    <a v-if="!demo" class="back-link" :href="returnLink.href">← {{ returnLink.label }}</a>
+    <div class="detail-heading"><div><h1>{{ detail.trace.agent_names.join(' / ') || '执行详情' }}</h1><p class="trace-id"><CopyValue :value="detail.trace.trace_id" label="Trace ID" /></p></div><div class="trace-outcomes"><span>Trace 状态 <StatusBadge :status="detail.trace.status" :outcome="detail.trace.graph_outcome" /></span><strong v-if="signal">{{ signalLabels[signal] }}</strong></div></div>
     <div class="detail-metrics">
       <div><span>执行时长</span><strong>{{ formatDuration(detail.trace.duration_ns) }}</strong></div>
       <div><span>关联节点</span><strong>{{ detail.trace.span_count }} <small>spans</small></strong></div>
@@ -63,9 +76,10 @@ const governed = computed(() => ['aegis.governance.v1','aegis.governance.v2'].in
     <UsageSummary v-if="hasLlm" :detail="detail" />
     <div class="detail-grid">
       <section class="panel execution-panel">
-        <div class="panel-heading"><h2>执行链路</h2><span class="legend"><i class="agent-dot" /> Agent <i class="llm-dot" /> LLM <i class="tool-dot" /> Tool</span></div>
-        <div class="node-filters"><label>查找节点<input v-model="nodeQuery" maxlength="128" placeholder="节点名、服务或 ID" /></label><label>节点类型<select v-model="nodeFilter"><option value="all">全部节点</option><option value="error">仅异常</option><option value="invoke_agent">Agent</option><option value="chat">LLM</option><option value="execute_tool">Tool</option></select></label><button class="text-button" @click="clearNodes">重置节点筛选</button></div>
-        <div v-if="visibleRows.length" class="execution-body">
+        <div class="panel-heading"><h2>执行链路</h2><div class="density-switch" role="group" aria-label="执行链路视图"><button type="button" :aria-pressed="view === 'trajectory'" @click="view = 'trajectory'">轨迹</button><button type="button" :aria-pressed="view === 'tree'" @click="view = 'tree'">树视图</button></div></div>
+        <div class="node-filters"><label>查找节点<input v-model="nodeQuery" maxlength="128" placeholder="名称、服务、规则或 ID" /></label><label>节点类型<select v-model="nodeFilter"><option value="all">全部节点</option><option value="error">仅异常</option><option value="invoke_agent">Agent</option><option value="chat">LLM</option><option value="execute_tool">Tool</option></select></label><button class="text-button" @click="clearNodes">重置节点筛选</button></div>
+        <Trajectory v-if="visibleRows.length && view === 'trajectory'" ref="trajectory" :rows="visibleRows" :origin="detail.trace.start_time_unix_nano" :duration="detail.trace.duration_ns" :selected="selectedId" @select="selectNode" />
+        <div v-else-if="visibleRows.length" class="execution-body">
           <div ref="treeContainer" class="tree-column" role="group" aria-label="执行节点"><div class="axis-label">SPAN / DURATION</div><button v-for="row in visibleRows" :key="row.span.span_id" class="tree-row" :class="{ selected: selectedId === row.span.span_id }" :data-span-id="row.span.span_id" :tabindex="selectedId === row.span.span_id ? 0 : -1" @keydown="onNodeKey" :style="{ height: `${rowHeight}px`, paddingLeft: `${12 + Math.min(row.depth, 6) * 15}px` }" :aria-pressed="selectedId === row.span.span_id" @click="selectNode(row.span.span_id)">
             <span class="node-icon" :class="operationClass(row.span.operation)">{{ operationSymbol(row.span.operation) }}</span><span class="node-title" :title="row.span.name">{{ displayName(row.span.name) }}<small v-if="['closed', 'incomplete', 'cancelled', 'denied', 'awaiting_approval'].includes(String(spanOutcome(row.span)))">{{ statusLabel(row.span.status, spanOutcome(row.span)) }}</small><small v-if="row.relation !== 'normal'">{{ row.relation === 'missing' ? '父节点未到达' : '循环关系' }}</small></span><span v-if="row.span.status === 'ERROR'" class="error-dot" title="异常">!</span><span class="node-duration mono">{{ formatDuration(row.span.end_time_unix_nano - row.span.start_time_unix_nano) }}</span>
           </button></div>
@@ -92,6 +106,7 @@ const governed = computed(() => ['aegis.governance.v1','aegis.governance.v2'].in
               <dt>结束原因</dt><dd>{{ statusLabel(selected.status, spanOutcome(selected)) }} · {{ spanOutcome(selected) }}</dd>
             </dl>
             <small>{{ selected.attributes['aegis.decision.effect'] === 'require_approval' ? (selected.attributes['aegis.approval.phase'] === 'request' ? '审批请求阶段的记录；请在审批收件箱核对当前状态，本节点不执行工具。' : '通过审批绑定与单次领取检查后的执行记录。') : selected.attributes['aegis.decision.effect'] === 'deny' ? 'Runtime 在调用工具前拒绝，本次工具未执行。' : '允许调用；工具执行结果由结束原因表示。' }}</small>
+            <a v-if="approvalLink" class="action-link" :href="approvalLink">{{ demo ? '查看演示审批结果' : '查看此动作的审批状态' }} ↗</a>
             <small>记录来自应用上报，不作为服务端认证身份或不可篡改审计证明。</small>
           </section>
           <section v-if="selected.operation === 'chat'" class="llm-usage" aria-label="模型用量">
@@ -120,4 +135,9 @@ const governed = computed(() => ['aegis.governance.v1','aegis.governance.v2'].in
     </div>
   </div>
 </template>
-<style scoped>.node-link-action{padding:7px 16px;border-bottom:1px solid var(--border)}</style>
+<style scoped>
+.node-link-action{padding:7px 16px;border-bottom:1px solid var(--border)}
+.trace-outcomes{display:grid;gap:6px;justify-items:end;font-size:11px;color:var(--muted)}
+.trace-outcomes strong{color:#d4ba78;font-weight:500}
+.action-link{display:block;margin:9px 0;color:#bdb4e7;text-decoration:underline;text-underline-offset:3px}
+</style>

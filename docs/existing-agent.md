@@ -1,5 +1,7 @@
 # 如何接入已有 Agent
 
+固定外部项目的实际接入见[官方 ReAct 模板配方](../examples/external_react_agent/README.md)。它保留上游图，记录外部服务边界替换和宿主适配，覆盖观测、拒绝及 ToolNode 审批暂停与恢复。
+
 已有Agent可先选用[SPEC-025统一配置入口](application-onboarding.md)，减少Policy/工具权限/SDK关闭的手动装配；仍需显式交给Agent包装后的工具，不自动发现内部调用。下表保留各独立入口，适用于已有SDK会话和高级审批场景。
 
 Aegis 服务不需要 LLM；模型仍由 Agent 的客户端调用。先确定需要的能力，再在可信宿主选择入口。以下是当前已实现的路径，框架外部身份认证、自动发现或任意框架注入不在这些入口的保证范围。

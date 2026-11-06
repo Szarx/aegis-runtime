@@ -25,6 +25,10 @@ coverage/
 *.log
 *.sqlite
 *.sqlite3
+*.pem
+*.key
+*.p12
+*.pfx
 /data/
 /artifacts/
 /tmp/

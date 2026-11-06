@@ -107,8 +107,23 @@ class PostgresSpanStore(ApprovalStore, ReviewedActionStore):
                      WHEN BOOL_OR(attributes->>'aegis.mapping.version' = 'aegis.graph.v1' AND attributes->>'aegis.graph.outcome' = 'cancelled') THEN 'cancelled'
                      WHEN BOOL_OR(attributes->>'aegis.mapping.version' = 'aegis.graph.v1' AND attributes->>'aegis.graph.outcome' = 'closed') THEN 'closed'
                      WHEN BOOL_OR(attributes->>'aegis.mapping.version' = 'aegis.graph.v1' AND attributes->>'aegis.graph.outcome' = 'completed') THEN 'completed'
-                     ELSE NULL END AS graph_outcome
-            FROM {} GROUP BY trace_id
+                     ELSE NULL END AS graph_outcome,
+                   CASE
+                     WHEN BOOL_OR(governed AND outcome = 'denied') THEN 'denied'
+                     WHEN BOOL_OR(governed AND outcome IN ('error', 'cancelled')) THEN 'tool_error'
+                     WHEN BOOL_OR(governed AND mapping = 'aegis.governance.v2'
+                                  AND phase = 'request' AND outcome = 'awaiting_approval') THEN 'approval_requested'
+                     WHEN BOOL_OR(governed AND mapping = 'aegis.governance.v2'
+                                  AND phase = 'execute' AND outcome = 'completed') THEN 'review_tool_returned'
+                     ELSE NULL END AS governance_signal
+            FROM {} CROSS JOIN LATERAL (
+                SELECT operation = 'execute_tool' AND kind = 'INTERNAL'
+                       AND attributes->>'aegis.mapping.version' IN ('aegis.governance.v1', 'aegis.governance.v2') AS governed,
+                       attributes->>'aegis.mapping.version' AS mapping,
+                       attributes->>'aegis.approval.phase' AS phase,
+                       attributes->>'aegis.action.outcome' AS outcome
+            ) AS governance
+            GROUP BY trace_id
         """).format(self._table)
 
     def list_traces(

@@ -126,8 +126,15 @@ def install_routes(app, store, reviewer, executor, body, errors):
         return await write(request, ReviewedRequest, store.create_reviewed)
 
     @app.get("/api/v1/reviewed-actions", response_model=ReviewedList, responses=errors)
-    def listing(limit: Annotated[int, Query(ge=1, le=100)] = 20, offset: Annotated[int, Query(ge=0, le=10000)] = 0):
-        try: return store.list_reviewed(limit=limit, offset=offset)
+    def listing(
+        limit: Annotated[int, Query(ge=1, le=100)] = 20,
+        offset: Annotated[int, Query(ge=0, le=10000)] = 0,
+        action_id: Annotated[str | None, Query(pattern=r"^[0-9a-f]{32}$")] = None,
+    ):
+        if action_id == "0" * 32:
+            return json_error(400, "invalid action ID")
+        try:
+            return store.list_reviewed(limit=limit, offset=offset, action_id=action_id)
         except StorageError: return json_error(503, "storage unavailable")
 
     @app.post("/api/v1/reviewed-actions/{action_id}/decision", response_model=ReviewedRecord, responses=errors, openapi_extra=schema(ReviewedDecision))

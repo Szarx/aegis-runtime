@@ -1,0 +1,136 @@
+{
+  "spec": "SPEC-047",
+  "status": "passed",
+  "verified_on": "2026-11-05",
+  "method_catalogue_total": 487,
+  "added_methods": {
+    "python_postgres": 1,
+    "frontend": 6
+  },
+  "evidence": {
+    "python": "artifacts/spec047/final/python",
+    "frontend": "artifacts/spec047/dashboard-delivery"
+  },
+  "verification_mode": "Separate passing Python and dashboard receipts; only front-end code changed after the full Python run.",
+  "python": {
+    "run": 379,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 59,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 126,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 34,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 78,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 58,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 5.095
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 4.152
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 1.563
+      }
+    ],
+    "tests": {
+      "run": 108,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    },
+    "bundle": {
+      "passed": true,
+      "sizes": {
+        "entry_js_gzip": 43856,
+        "all_js": 632278,
+        "all_css": 31885
+      },
+      "limits": {
+        "entry_js_gzip": 51200,
+        "all_js": 1228800,
+        "all_css": 65536
+      }
+    }
+  },
+  "earlier_run": {
+    "evidence": "artifacts/spec047/full",
+    "status": "source fingerprint changed during browser-driven front-end fixes",
+    "python_and_frontend_stages_passed": true,
+    "used_for_final_pass": false
+  },
+  "second_snapshot": {
+    "evidence": "artifacts/spec047/final/result.json",
+    "status": "Python passed; front-end tests found a legacy missing attributes object in node search. Fixed and verified in the separate full dashboard run."
+  },
+  "browser": {
+    "surface": "Chromium in-app browser, local Vite, updated Collector, isolated PostgreSQL demo schema ui045",
+    "demo": "No credential required; overview selected the 1.2-second model step, request showed refund-write-review, approval confirmed completion, then separate recovery trace",
+    "real_api": "Trace list distinguished request and tool return; approval exact query required independent reviewer credential; original span restored after return",
+    "expired_approved_record": "Recorded approval and closed claim window shown separately from confirmed completion",
+    "narrow": {
+      "viewport_width": 390,
+      "document_width": 375
+    },
+    "interaction": "Rank located and focused the slow model, ArrowDown selected the next tool, rule search isolated the request, tree preserved selection",
+    "screenshot": "artifacts/spec047/trajectory-demo.png"
+  },
+  "compatibility": "OpenAPI equals 045 after removing only optional TraceSummary governance_signal and reviewed-list action_id. No migration, pin, or credential role changes.",
+  "provenance": "No unified pass is claimed. Full component receipts cover the backend and frontend independently. Final archival documentation added after verification."
+}

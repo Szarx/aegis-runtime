@@ -32,6 +32,8 @@ class SDK:
         self._lock = Lock()
         self._enabled = True
         self._instrumentation_failures = 0
+        self.service_name = service_name
+        self._health = None
         self._processor = BoundedSpanProcessor(
             exporter, max_queue_size, max_export_batch_size, schedule_delay_millis
         )
@@ -70,6 +72,15 @@ class SDK:
     def flush(self, timeout_millis: int = 5000) -> bool:
         return self._processor.force_flush(timeout_millis)
 
+    def start_health_reporting(self, endpoint: str, *, token: str | None = None, interval_seconds=10) -> str:
+        from ..health import HealthReporter
+        with self._lock:
+            if not self._enabled or self._health is not None:
+                raise RuntimeError('Health reporting requires an active SDK and can start once')
+            reporter = HealthReporter(self, endpoint, token, interval_seconds)
+            self._health = reporter
+            return reporter.start()
+
     def shutdown(self, timeout_millis: int = 5000) -> bool:
         global _default
         validate_timeout(timeout_millis)
@@ -79,6 +90,8 @@ class SDK:
         with self._lock:
             first_close = self._enabled
             self._enabled = False
+            if self._health is not None:
+                self._health.stop()
         if first_close:
             self._provider.shutdown()
         return self._processor.close(timeout_millis)

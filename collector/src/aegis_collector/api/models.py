@@ -18,6 +18,7 @@ class TraceSummary(BaseModel):
     status: Literal["UNSET", "ERROR"]
     agent_names: list[str]
     graph_outcome: Literal["completed", "closed", "error", "cancelled"] | None = None
+    governance_signal: Literal["denied", "tool_error", "approval_requested", "review_tool_returned"] | None = None
 
 
 class TraceList(BaseModel):

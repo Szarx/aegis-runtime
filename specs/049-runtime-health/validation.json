@@ -1,0 +1,175 @@
+{
+  "spec": "SPEC-049",
+  "status": "passed",
+  "verified_on": "2026-11-05",
+  "evidence": "artifacts/spec049/final",
+  "snapshot": {
+    "schema_version": "aegis.snapshot-check.v1",
+    "status": "passed",
+    "steps": [
+      {
+        "stage": "dependencies",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "repository",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "python",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "dashboard",
+        "status": "passed",
+        "returncode": 0
+      },
+      {
+        "stage": "source",
+        "status": "passed"
+      }
+    ],
+    "scope": "Local working-tree candidate bytes; no Git history, remote CI or publication approval.",
+    "before": {
+      "files": 630,
+      "sha256": "cc4d03fbce4ea61be2953eb4616e1ae718d7a33889c51f2a7b9fc3a4a4af326a"
+    },
+    "python_tests": 386,
+    "frontend_tests": 109,
+    "after": {
+      "files": 630,
+      "sha256": "cc4d03fbce4ea61be2953eb4616e1ae718d7a33889c51f2a7b9fc3a4a4af326a"
+    }
+  },
+  "python": {
+    "run": 386,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "postgres": true,
+    "passed": true,
+    "suites": [
+      {
+        "suite": "sdk/python/tests",
+        "run": 61,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "policy-engine/tests",
+        "run": 24,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "runtime/tests",
+        "run": 126,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "collector/tests",
+        "run": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/contract",
+        "run": 78,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      },
+      {
+        "suite": "tests/integration",
+        "run": 61,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "passed": true
+      }
+    ]
+  },
+  "frontend": {
+    "status": "passed",
+    "steps": [
+      {
+        "step": "tests",
+        "returncode": 0,
+        "seconds": 2.295
+      },
+      {
+        "step": "types",
+        "returncode": 0,
+        "seconds": 2.895
+      },
+      {
+        "step": "build",
+        "returncode": 0,
+        "seconds": 0.901
+      }
+    ],
+    "tests": {
+      "run": 109,
+      "passed": true,
+      "failures": 0,
+      "skipped": 0
+    }
+  },
+  "bundle_budget": {
+    "passed": true,
+    "sizes": {
+      "entry_js_gzip": 44370,
+      "all_js": 638748,
+      "all_css": 33056
+    },
+    "limits": {
+      "entry_js_gzip": 51200,
+      "all_js": 1228800,
+      "all_css": 65536
+    }
+  },
+  "total": 495,
+  "integration_scope": "59 existing PostgreSQL methods plus 2 new actual HTTP health methods, one terminating a synthetic process",
+  "new_coverage": "SDK bounded activity/release and validation; Collector strict body/auth/sequence/capacity; real HTTP failure recovery, overflow, shutdown and process death; strict frontend decode and monotonic snapshot aging",
+  "browser": {
+    "url": "http://127.0.0.1:5219/#/health",
+    "collector": "http://127.0.0.1:8869",
+    "instance_id": "402245f01e67454abc09365cb8d38de1",
+    "active_trace_id": "e00ac16a95bd3cc88c92afc242508fb8",
+    "reporting": "2 active spans, 0 completed/exported, activity link correctly showed not-yet-received detail",
+    "stale": "Terminated verified synthetic PID; after 45 seconds UI preserved 2 last-observed active spans with heartbeat interrupted",
+    "unavailable": "Stopped dedicated demonstration Collector; UI retained snapshot and displayed query failure",
+    "restart": "Restarted Collector; UI showed no hosts reporting, confirming process-local scope",
+    "narrow": {
+      "viewport_width": 390,
+      "document_width": 390
+    },
+    "screenshots": [
+      "artifacts/spec049/reporting.png",
+      "artifacts/spec049/stale.png",
+      "artifacts/spec049/unavailable.png"
+    ]
+  },
+  "limits": [
+    "Opt-in health reporting; bounded in-memory host and Collector snapshots",
+    "Collector restart clears records; single-process deployment required",
+    "Heartbeat interruption does not establish business failure",
+    "No durable live spans or distributed recovery guarantee",
+    "Final SDK health snapshot is best effort; process exit may interrupt delivery"
+  ],
+  "compatibility": "Only two health paths added to 047 OpenAPI; original OTLP mapping, auth roles, SQL migrations and dependency locks retained",
+  "provenance": "Full run uses the stable source hash shown above. Validation archival documents follow that run."
+}

@@ -1,0 +1,46 @@
+{
+  "repository": "https://github.com/langchain-ai/react-agent",
+  "revision": "9e516c6d8d4f2025949ad9279c4af147eab0683e",
+  "files": [
+    {
+      "sha256": "a01dcffdc1291b4043f2a81d249a9f3e45c9036f2308c9cdfeefe18371371e80",
+      "path": "LICENSE"
+    },
+    {
+      "sha256": "5616ebbc6581470998042a1d7b78adc23d42ffb7d095e579ef7d5d9900c28556",
+      "path": "README.md"
+    },
+    {
+      "sha256": "d281c7eba24bd776385d86be26d6625b7a6fc28a312008aa3fb376bc34961c66",
+      "path": "pyproject.toml"
+    },
+    {
+      "sha256": "06a101ecbc06b81513e5f739a27300ad8f8201b8259fc6edb07cb94d8856867e",
+      "path": "src/react_agent/__init__.py"
+    },
+    {
+      "sha256": "170b09af8180ed64d6a935ac945e4e617d0c12a4f2d64b33c27f5c2765ebc00b",
+      "path": "src/react_agent/graph.py"
+    },
+    {
+      "sha256": "8adc19409de9f6fed39627583dbfbfd68873068b5b0909c6ab9ad2f8429a3219",
+      "path": "src/react_agent/state.py"
+    },
+    {
+      "sha256": "607a8be5ce546df62079604669f7d21682ee63d9d1b48c3a6e21c61f8fb8bc22",
+      "path": "src/react_agent/context.py"
+    },
+    {
+      "sha256": "754639c739d45b0453a80bc434b05b86136ae063b66e89db8bb4a43656bef6ac",
+      "path": "src/react_agent/prompts.py"
+    },
+    {
+      "sha256": "f3466d95c2548a9a3a0b1e0233a79a7d14b87da72e8691ee90570bb9f1000192",
+      "path": "src/react_agent/tools.py"
+    },
+    {
+      "sha256": "7e684556c4a744ce4879c4efb3dfd84fdf6c58bdc29490ff290bdfeb1ce04b11",
+      "path": "src/react_agent/utils.py"
+    }
+  ]
+}

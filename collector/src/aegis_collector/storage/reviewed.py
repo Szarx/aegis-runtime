@@ -34,11 +34,16 @@ class ReviewedActionStore:
             now = connection.execute("SELECT clock_timestamp() AS now").fetchone()["now"]
             return effective(row, now)
 
-    def list_reviewed(self, *, limit=20, offset=0):
+    def list_reviewed(self, *, limit=20, offset=0, action_id=None):
+        where = sql.SQL("WHERE r.action_id=%s ") if action_id is not None else sql.SQL("")
+        params = [action_id] if action_id is not None else []
         with self.connection(readonly=True) as connection:
             now = connection.execute("SELECT clock_timestamp() AS now").fetchone()["now"]
-            total = connection.execute(sql.SQL("SELECT COUNT(*) AS total FROM {}").format(self._reviewed)).fetchone()["total"]
-            rows = connection.execute(self._reviewed_select(sql.SQL("ORDER BY created_at DESC, action_id LIMIT %s OFFSET %s")), [limit, offset]).fetchall()
+            total = connection.execute(sql.SQL("SELECT COUNT(*) AS total FROM {} r ").format(self._reviewed) + where, params).fetchone()["total"]
+            rows = connection.execute(
+                self._reviewed_select(where + sql.SQL("ORDER BY created_at DESC, action_id LIMIT %s OFFSET %s")),
+                [*params, limit, offset],
+            ).fetchall()
         return dict(items=[effective(row, now) for row in rows], total=total, limit=limit, offset=offset)
 
     def decide_reviewed(self, action_id, decision, digest, reviewer):

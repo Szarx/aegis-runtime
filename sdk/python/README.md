@@ -1,5 +1,6 @@
 # Aegis Python SDK
 
+当前公开预览包含原生/模型/图追踪和可选心跳。完整范围以[当前能力](../../docs/capabilities.md)为准；下列按 SPEC 编号保留的计数和阶段说明是历史记录。授权为 [Apache-2.0](LICENSE)。
 状态：SPEC-001 基础追踪与 SPEC-002 网络导出已实现并通过验收。并按 SPEC-004 实现 OpenAI 离线追踪。提供原生 Python 与模型调用追踪，本地开发分发名 `aegis-runtime-sdk`，导入名 `aegis`；未公开发布。
 
 ## 已实现

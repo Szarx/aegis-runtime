@@ -3,6 +3,11 @@ import type { Approval } from './api/approvals'
 export type QueueStatus = '' | Approval['status']
 export type QueueOrder = 'received' | 'pending' | 'expires'
 
+export function approvalDecisionLabel(item: Pick<Approval, 'status' | 'decided_at'>): string {
+  if (item.status === 'expired') return item.decided_at ? '已记录批准 · 领取窗口已结束' : '审核已过期'
+  return { pending: '待审核', approved: '已记录批准', rejected: '已记录拒绝' }[item.status]
+}
+
 export function sortReviewPage(items: readonly Approval[], order: QueueOrder): Approval[] {
   const rows = [...items]
   if (order === 'received') return rows

@@ -50,6 +50,17 @@ class SecurityProtocol(unittest.TestCase):
 
     def test_ac2001_openapi_additive_and_matches_new_snapshot(self):
         current=create_app(None).openapi()
+        self.assertEqual(current,json.loads((ROOT/'specs/049-runtime-health/contracts/openapi.json').read_text(encoding='utf-8')))
+        current['paths'].pop('/v1/health')
+        current['paths'].pop('/api/v1/health')
+        self.assertEqual(current,json.loads((ROOT/'specs/047-execution-trajectory/contracts/openapi.json').read_text(encoding='utf-8')))
+        trace_schema = current['components']['schemas']['TraceSummary']
+        self.assertNotIn('governance_signal', trace_schema['required'])
+        trace_schema['properties'].pop('governance_signal')
+        parameters = current['paths']['/api/v1/reviewed-actions']['get']['parameters']
+        self.assertEqual([p['name'] for p in parameters].count('action_id'), 1)
+        self.assertFalse(next(p['required'] for p in parameters if p['name'] == 'action_id'))
+        parameters[:] = [p for p in parameters if p['name'] != 'action_id']
         self.assertEqual(current,json.loads((ROOT/'specs/045-policy-approval/contracts/openapi.json').read_text(encoding='utf-8')))
         # Only the two intentional security-event enum additions may differ from 020.
         def legacy(value):

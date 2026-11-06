@@ -1,0 +1,455 @@
+{
+  "schema_version": "aegis.spec-catalog.v1",
+  "records": [
+    {
+      "number": "001",
+      "path": "specs/001-python-sdk",
+      "title": "SPEC-001：Python SDK 基础追踪",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "002",
+      "path": "specs/002-collector",
+      "title": "SPEC-002：OTLP Collector 与 PostgreSQL 查询",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "003",
+      "path": "specs/003-dashboard",
+      "title": "SPEC-003：Trace Dashboard",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "004",
+      "path": "specs/004-openai",
+      "title": "SPEC-004：OpenAI 模型客户端接入",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_with_deferred_items",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "005",
+      "path": "specs/005-deepseek",
+      "title": "SPEC-005：DeepSeek Provider 与真实调用验收",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "006",
+      "path": "specs/006-langgraph",
+      "title": "SPEC-006：LangGraph 首批显式接入",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_with_deferred_items",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "007",
+      "path": "specs/007-langgraph-stream",
+      "title": "SPEC-007：LangGraph stream / astream 生命周期",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "008",
+      "path": "specs/008-onboarding",
+      "title": "SPEC-008：首次本地接入与可重复测量",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "009",
+      "path": "specs/009-runtime-policy",
+      "title": "SPEC-009：进程内工具权限控制",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "010",
+      "path": "specs/010-approval-records",
+      "title": "SPEC-010：持久化审批准备与决定",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "011",
+      "path": "specs/011-reviewed-execution",
+      "title": "SPEC-011：可审阅参数与单次受约束恢复",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "012",
+      "path": "specs/012-async-reviewed-execution",
+      "title": "SPEC-012：异步工具的审批恢复与取消",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "013",
+      "path": "specs/013-langgraph-reviewed",
+      "title": "SPEC-013：LangGraph单个审批中断的受约束恢复",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "014",
+      "path": "specs/014-durable-graph",
+      "title": "SPEC-014：本机持久checkpoint与独立进程恢复",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "015",
+      "path": "specs/015-async-graph",
+      "title": "SPEC-015：单个异步审批图与本机checkpoint",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "016",
+      "path": "specs/016-existing-agent",
+      "title": "SPEC-016：已有 Agent 接入配方",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "017",
+      "path": "specs/017-preflight",
+      "title": "SPEC-017：接入前的元数据检查",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "018",
+      "path": "specs/018-private-repository",
+      "title": "SPEC-018：GitHub私有仓库准备",
+      "group": "仓库与交付",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "019",
+      "path": "specs/019-trace-usage",
+      "title": "SPEC-019：Trace模型用量汇总",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "020",
+      "path": "specs/020-security-events",
+      "title": "SPEC-020：安全事件中心（完整纵向增量）",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "021",
+      "path": "specs/021-security-export",
+      "title": "SPEC-021：治理事件离线排查包",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "022",
+      "path": "specs/022-policy-workbench",
+      "title": "SPEC-022：策略开发与验收工作台",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "023",
+      "path": "specs/023-policy-comparison",
+      "title": "SPEC-023：策略变更影响评估",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "024",
+      "path": "specs/024-event-policy-replay",
+      "title": "SPEC-024：历史治理事件的候选策略回放",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "025",
+      "path": "specs/025-application-onboarding",
+      "title": "SPEC-025：已有Agent统一接入流程",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "026",
+      "path": "specs/026-configured-review",
+      "title": "SPEC-026：统一接入中的人工审核与单次恢复",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "027",
+      "path": "specs/027-configured-graph",
+      "title": "SPEC-027：配置驱动的持久化审批图完整接入",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "028",
+      "path": "specs/028-managed-graph-stream",
+      "title": "SPEC-028：统一接入中的图流式生命周期与观测治理闭环",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "029",
+      "path": "specs/029-dashboard-design",
+      "title": "SPEC-029：统一数据工作台视觉与页面质量",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "030",
+      "path": "specs/030-dashboard-workflows",
+      "title": "SPEC-030：审核队列、渐进筛选与详情阅读",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "031",
+      "path": "specs/031-trace-reading",
+      "title": "SPEC-031：Trace 阅读工作台与键盘效率",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "032",
+      "path": "specs/032-dashboard-quality",
+      "title": "SPEC-032：可重复前端验收入口与生产预览",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "033",
+      "path": "specs/033-dashboard-states",
+      "title": "SPEC-033：真实加载、刷新与失败恢复状态",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "034",
+      "path": "specs/034-dashboard-accessibility",
+      "title": "SPEC-034：阅读对比度、触控目标和焦点质量",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "035",
+      "path": "specs/035-dashboard-demo",
+      "title": "SPEC-035：可复现Dashboard演示与完整回归",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "036",
+      "path": "specs/036-security-page-export",
+      "title": "SPEC-036：安全事件查询到本页导出",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "037",
+      "path": "specs/037-dashboard-hierarchy",
+      "title": "SPEC-037：工作台信息层级与渐进披露",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "038",
+      "path": "specs/038-review-reading",
+      "title": "SPEC-038：审批收件箱排序与绑定阅读",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "039",
+      "path": "specs/039-trace-node-links",
+      "title": "SPEC-039：Trace节点深链与可复制定位",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "040",
+      "path": "specs/040-call-duration",
+      "title": "SPEC-040：已接收模型/工具调用耗时排查",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "041",
+      "path": "specs/041-snapshot-check",
+      "title": "SPEC-041：私有开发快照统一验收",
+      "group": "仓库与交付",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "042",
+      "path": "specs/042-platform-diagnostics",
+      "title": "SPEC-042：已有Agent的平台连通性诊断",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "043",
+      "path": "specs/043-query-links",
+      "title": "SPEC-043：可复现的列表查询地址",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "044",
+      "path": "specs/044-trace-return",
+      "title": "SPEC-044：关联Trace与来源查询返回",
+      "group": "Dashboard 工作流与质量",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "045",
+      "path": "specs/045-policy-approval",
+      "title": "SPEC-045：策略驱动的人工审批闭环",
+      "group": "治理、审批与图恢复",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "046",
+      "path": "specs/046-private-github",
+      "title": "SPEC-046 · 首次私有 GitHub 交付",
+      "group": "仓库与交付",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "047",
+      "path": "specs/047-execution-trajectory",
+      "title": "SPEC-047 执行轨迹与审批排查",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "048",
+      "path": "specs/048-external-agent",
+      "title": "SPEC-048 外部 Agent 首次接入验收",
+      "group": "接入与可复现体验",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "049",
+      "path": "specs/049-runtime-health",
+      "title": "SPEC-049 运行与采集健康",
+      "group": "观测与适配",
+      "disposition": "public",
+      "status": "historical_verified",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    },
+    {
+      "number": "050",
+      "path": "specs/050-public-preview",
+      "title": "SPEC-050 · 公开预览整理与交付",
+      "group": "仓库与交付",
+      "disposition": "public",
+      "status": "in_progress",
+      "review": "原创契约/方案和有限合成验收摘要；原始本机证据不发布"
+    }
+  ]
+}

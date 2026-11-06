@@ -3,7 +3,9 @@ export type NodeFilter = 'all' | 'error' | 'invoke_agent' | 'chat' | 'execute_to
 export function filterTraceRows(rows: readonly TreeRow[], filter: NodeFilter, query: string): TreeRow[] {
   const needle = query.trim().toLowerCase()
   return rows.filter(({ span }) => (filter === 'all' || (filter === 'error' ? span.status === 'ERROR' : span.operation === filter)) &&
-    (!needle || [span.name, span.service_name, span.span_id, span.parent_span_id ?? ''].some(value => value.toLowerCase().includes(needle))))
+    (!needle || [span.name, span.service_name, span.span_id, span.parent_span_id,
+      span.attributes?.['aegis.action.id'], span.attributes?.['aegis.decision.rule_id']].some(
+      value => typeof value === 'string' && value.toLowerCase().includes(needle))))
 }
 export function adjacentNode(rows: readonly TreeRow[], selected: string, key: string): string | undefined {
   if (!rows.length || !['ArrowUp','ArrowDown','Home','End'].includes(key)) return undefined

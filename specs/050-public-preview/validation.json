@@ -60,7 +60,85 @@
       "Docker Hub auth endpoint connection timeout",
       "npm container download ECONNRESET"
     ],
-    "cached_local_fallback": "running; not equivalent to a cache-free online build"
+    "cached_local_fallback": {
+      "schema_version": "aegis.platform-smoke.v1",
+      "status": "passed",
+      "project": "aegis-smoke-spec050-final",
+      "ports": [
+        59424,
+        59425,
+        59426
+      ],
+      "stages": [
+        {
+          "stage": "project_inventory",
+          "returncode": 0,
+          "seconds": 0.438
+        },
+        {
+          "stage": "volume_inventory",
+          "returncode": 0,
+          "seconds": 0.156
+        },
+        {
+          "stage": "build",
+          "returncode": 0,
+          "seconds": 100.0
+        },
+        {
+          "stage": "start",
+          "returncode": 0,
+          "seconds": 11.047
+        },
+        {
+          "stage": "migrations",
+          "returncode": 0,
+          "seconds": 0.469
+        },
+        {
+          "stage": "native_agent",
+          "returncode": 0,
+          "seconds": 0.546
+        },
+        {
+          "stage": "synthetic_demo",
+          "returncode": 0,
+          "seconds": 3.391
+        },
+        {
+          "stage": "diagnostics",
+          "returncode": 0,
+          "seconds": 0.297
+        },
+        {
+          "stage": "restart",
+          "returncode": 0,
+          "seconds": 1.046
+        },
+        {
+          "stage": "stop",
+          "returncode": 0,
+          "seconds": 2.047
+        }
+      ],
+      "real_provider_requests": 0,
+      "database_volume_retained": true,
+      "trace_count": 15,
+      "security_events": 13,
+      "span_count": 32,
+      "migration_versions": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "dashboard_assets": 4,
+      "authenticated_proxy": true,
+      "restart_persisted": true
+    },
+    "cached_local_scope": "Staged source export plus corrected Docker public copy and smoke event count; official local base images and verified npm content cache used only because local Docker Hub/npm networking failed. Fresh host Python uses online PyPI. Remote CI still uses clean checkout with no dependency cache.",
+    "first_ci": "https://github.com/Szarx/aegis-runtime/actions/runs/42192305168",
+    "regression": "First smoke assertion expected 12 events but managed graph adds one allow event. Corrected acceptance requires exactly 15 traces, 32 spans and 13 events; actual corrected local run passed."
   },
   "material_policy": "docs/github-readiness.md",
   "catalog": "specs/catalog.json",
@@ -68,6 +146,7 @@
   "remote": {
     "status": "pending",
     "repository": "https://github.com/Szarx/aegis-runtime",
-    "visibility": "private_until_ci_passes"
+    "visibility": "private_until_ci_passes",
+    "baseline_commit": "10a5f0f9a5fc41f733c6fa358a744f4f151d99e6"
   }
 }

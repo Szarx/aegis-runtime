@@ -114,7 +114,12 @@ def main():
                               '--output', str(folder / 'demo')], 180)
         traces = json.loads(fetch(ports[0], '/api/v1/traces?limit=100&offset=0'))
         events = json.loads(fetch(ports[0], '/api/v1/security-events?limit=100&offset=0'))
-        if traces['total'] < 3 or events['total'] != 12:
+        span_count = sum(row['span_count'] for row in traces['items'])
+        report.update(trace_count=traces['total'], security_events=events['total'], span_count=span_count)
+        save()
+        # Native: 2 traces/4 spans. Governance: 12/24. Model graph: 1/4,
+        # including its own allowed tool event in addition to the 12 attempts.
+        if traces['total'] != 15 or events['total'] != 13 or span_count != 32:
             raise ValueError('synthetic data missing')
         for trace in traces['items']:
             detail = json.loads(fetch(ports[0], '/api/v1/traces/' + trace['trace_id']))

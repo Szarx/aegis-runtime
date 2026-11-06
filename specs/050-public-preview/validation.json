@@ -1,7 +1,7 @@
 {
   "spec": "SPEC-050",
   "verified_on": "2026-11-06",
-  "status": "local_checks_passed_remote_pending",
+  "status": "passed",
   "local_snapshot": {
     "schema_version": "aegis.snapshot-check.v1",
     "status": "passed",
@@ -46,7 +46,7 @@
   "python_tests": 393,
   "frontend_tests": 109,
   "total": 502,
-  "source_followup": "After the frozen full run: README demo instructions corrected and dashboard Dockerfile now copies public notices. These are checked by the pending clean-source Compose CI; no Python business logic changed.",
+  "source_followup": "After the frozen local full run: README demo instructions, Docker public copy and smoke event count were corrected. The published commit then passed all three clean Linux CI jobs. This archival update changes only SPEC progress/evidence/catalog, not runtime code.",
   "fresh_install": {
     "status": "passed",
     "environment": "new venv in staged-tree source export",
@@ -55,7 +55,7 @@
     "licenses": "LICENSE and NOTICE present in all four installed distributions"
   },
   "clean_compose": {
-    "status": "pending_remote",
+    "status": "passed",
     "local_failures": [
       "Docker Hub auth endpoint connection timeout",
       "npm container download ECONNRESET"
@@ -138,15 +138,157 @@
     },
     "cached_local_scope": "Staged source export plus corrected Docker public copy and smoke event count; official local base images and verified npm content cache used only because local Docker Hub/npm networking failed. Fresh host Python uses online PyPI. Remote CI still uses clean checkout with no dependency cache.",
     "first_ci": "https://github.com/Szarx/aegis-runtime/actions/runs/42192305168",
-    "regression": "First smoke assertion expected 12 events but managed graph adds one allow event. Corrected acceptance requires exactly 15 traces, 32 spans and 13 events; actual corrected local run passed."
+    "regression": "First smoke assertion expected 12 events but managed graph adds one allow event. Corrected acceptance requires exactly 15 traces, 32 spans and 13 events; actual corrected local run passed.",
+    "remote_receipt": {
+      "schema_version": "aegis.platform-smoke.v1",
+      "status": "passed",
+      "project": "aegis-smoke-ci",
+      "ports": [
+        45499,
+        42733,
+        51005
+      ],
+      "stages": [
+        {
+          "stage": "project_inventory",
+          "returncode": 0,
+          "seconds": 0.467
+        },
+        {
+          "stage": "volume_inventory",
+          "returncode": 0,
+          "seconds": 0.032
+        },
+        {
+          "stage": "build",
+          "returncode": 0,
+          "seconds": 38.83
+        },
+        {
+          "stage": "start",
+          "returncode": 0,
+          "seconds": 16.87
+        },
+        {
+          "stage": "migrations",
+          "returncode": 0,
+          "seconds": 0.165
+        },
+        {
+          "stage": "native_agent",
+          "returncode": 0,
+          "seconds": 0.466
+        },
+        {
+          "stage": "synthetic_demo",
+          "returncode": 0,
+          "seconds": 2.425
+        },
+        {
+          "stage": "diagnostics",
+          "returncode": 0,
+          "seconds": 0.165
+        },
+        {
+          "stage": "restart",
+          "returncode": 0,
+          "seconds": 0.566
+        },
+        {
+          "stage": "stop",
+          "returncode": 0,
+          "seconds": 0.918
+        }
+      ],
+      "real_provider_requests": 0,
+      "database_volume_retained": true,
+      "trace_count": 15,
+      "security_events": 13,
+      "span_count": 32,
+      "migration_versions": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "dashboard_assets": 4,
+      "authenticated_proxy": true,
+      "restart_persisted": true
+    },
+    "remote_run": "https://github.com/Szarx/aegis-runtime/actions/runs/42193107104",
+    "remote_scope": "Clean GitHub checkout; docker compose build --pull --no-cache; no vendored wheelhouse/npm cache; real HTTP, PostgreSQL and static browser assets; synthetic model/tool boundaries only"
   },
   "material_policy": "docs/github-readiness.md",
   "catalog": "specs/catalog.json",
   "privacy": "No provider calls. Original third-party template hash-preserved. Raw logs, credentials, cache and temporary delivery helpers excluded.",
   "remote": {
-    "status": "pending",
+    "status": "passed",
     "repository": "https://github.com/Szarx/aegis-runtime",
-    "visibility": "private_until_ci_passes",
-    "baseline_commit": "10a5f0f9a5fc41f733c6fa358a744f4f151d99e6"
-  }
+    "visibility": "public",
+    "publication_commit": "82ed907d8ccd6e248451195778d64e9afd2e6705",
+    "ci": {
+      "id": 42193107104,
+      "name": "Verify source preview",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Szarx/aegis-runtime/actions/runs/42193107104"
+    },
+    "jobs": [
+      {
+        "id": 127809651972,
+        "name": "python",
+        "status": "completed",
+        "conclusion": "success",
+        "relevant_steps": []
+      },
+      {
+        "id": 127809652508,
+        "name": "local-platform",
+        "status": "completed",
+        "conclusion": "success",
+        "relevant_steps": []
+      },
+      {
+        "id": 127809652765,
+        "name": "dashboard",
+        "status": "completed",
+        "conclusion": "success",
+        "relevant_steps": []
+      }
+    ],
+    "anonymous": {
+      "status": "passed",
+      "authenticated": false,
+      "repository": "https://github.com/Szarx/aegis-runtime",
+      "visibility": "public",
+      "sha": "82ed907d8ccd6e248451195778d64e9afd2e6705",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      },
+      "files": {
+        "README.md": "bb47bf1f3db7df007f2cac3887adf3a16c0b8d310504c25642aee97a8dca8fa9",
+        "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    },
+    "private_vulnerability_reporting": true,
+    "temporary_deploy_keys": 0,
+    "archival_note": "This record identifies the runtime commit actually verified and made public. A subsequent documentation-only commit archives this evidence; its latest workflow status is available in GitHub Actions."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:18080",
+    "verified": "Production Nginx: unauthenticated demo, return, token connection, 15 traces/32 spans, actual 4-node model/tool trajectory and usage coverage",
+    "provider_requests": 0
+  },
+  "known_limits": [
+    "Early source preview, no PyPI/npm release or production support promise",
+    "Static role tokens, no tenant/user RBAC",
+    "In-memory telemetry queue and Collector-local heartbeat snapshots",
+    "Consumed unknown action outcomes require manual business reconciliation",
+    "Constrained single-root local graph recovery; no distributed exactly-once or complete audit",
+    "Original local network failures retained; cached local fallback is not presented as a cache-free online success"
+  ]
 }
